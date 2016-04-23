@@ -1,5 +1,6 @@
 package main.java.br.com.sestaro.characters.attributes;
 
+import main.java.br.com.sestaro.characters.attributes.exceptions.NegativeAttributeValueException;
 import main.java.br.com.sestaro.characters.attributes.utils.AttributesUtils;
 
 public class AttributesValues {

@@ -3,6 +3,8 @@ package test.java.br.com.sestaro.character.attributes;
 import org.junit.Test;
 
 import main.java.br.com.sestaro.characters.attributes.AttributesValues;
+import main.java.br.com.sestaro.characters.attributes.exceptions.NegativeAttributeValueException;
+
 import static org.junit.Assert.*;
 
 public class AttributesValuesTest {
@@ -24,5 +26,47 @@ public class AttributesValuesTest {
 		assertEquals(intelligence, attributes.getIntelligence());
 		assertEquals(wisdom, attributes.getWisdom());
 		assertEquals(charisma, attributes.getCharisma());
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeStrengthValue() {
+		AttributesValues attributes = new AttributesValues();
+		
+		attributes.setStrength(-1);
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeDexterityValue() {
+		AttributesValues attributes = new AttributesValues();
+		
+		attributes.setDexterity(-1);
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeConstitutionValue() {
+		AttributesValues attributes = new AttributesValues();
+		
+		attributes.setConstitution(-1);
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeIntelligenceValue() {
+		AttributesValues attributes = new AttributesValues();
+		
+		attributes.setIntelligence(-1);
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeWisdomValue() {
+		AttributesValues attributes = new AttributesValues();
+		
+		attributes.setWisdom(-1);
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeCharismaValue() {
+		AttributesValues attributes = new AttributesValues();
+		
+		attributes.setCharisma(-1);
 	}
 }
