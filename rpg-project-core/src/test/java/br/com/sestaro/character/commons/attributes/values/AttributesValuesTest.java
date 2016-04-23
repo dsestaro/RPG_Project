@@ -1,16 +1,16 @@
-package test.java.br.com.sestaro.character.attributes;
+package test.java.br.com.sestaro.character.commons.attributes.values;
+
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import main.java.br.com.sestaro.characters.attributes.AttributesValues;
-import main.java.br.com.sestaro.characters.attributes.exceptions.NegativeAttributeValueException;
-
-import static org.junit.Assert.*;
+import main.java.br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import main.java.br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 
 public class AttributesValuesTest {
 
 	@Test
-	public void testAttributes() {
+	public void testInitializationWithValues() {
 		int strength = 1;
 		int dexterity = 2;
 		int constitution = 3;
@@ -26,6 +26,18 @@ public class AttributesValuesTest {
 		assertEquals(intelligence, attributes.getIntelligence());
 		assertEquals(wisdom, attributes.getWisdom());
 		assertEquals(charisma, attributes.getCharisma());
+	}
+	
+	@Test
+	public void testInitializationWithoutValues() {
+		AttributesValues attributes = new AttributesValues();
+		
+		assertEquals(0, attributes.getStrength());
+		assertEquals(0, attributes.getDexterity());
+		assertEquals(0, attributes.getConstitution());
+		assertEquals(0, attributes.getIntelligence());
+		assertEquals(0, attributes.getWisdom());
+		assertEquals(0, attributes.getCharisma());
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)

@@ -1,7 +1,7 @@
-package main.java.br.com.sestaro.characters.attributes;
+package main.java.br.com.sestaro.characters.commons.attributes.values;
 
-import main.java.br.com.sestaro.characters.attributes.exceptions.NegativeAttributeValueException;
-import main.java.br.com.sestaro.characters.attributes.utils.AttributesUtils;
+import main.java.br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import main.java.br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
 public class AttributesValues {
 	private int strength;
