@@ -24,4 +24,8 @@ public class Attributes {
 	public int getAttributeModifier (AttributesNames attributeName) {
 		return AttributesUtils.calculateModifier(AttributesValueHandler.getAttributeByPosition(this.values, attributeName));
 	}
+	
+	public void addAttributeValue (AttributesNames attributeName, int value) {
+		AttributesValueHandler.addAttributeByPosition(this.values, attributeName, value);
+	}
 }

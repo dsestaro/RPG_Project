@@ -36,15 +36,26 @@ public class AttributesTests {
 		new Attributes(null);
 	}
 	
+	@Test
 	public void positiveAttributeModifierTest() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
 		assertEquals(1, attributes.getAttributeModifier(AttributesNames.CONSTITUTION));
 	}
 	
+	@Test
 	public void negativeAttributeModifierTest() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
 		assertEquals(-2, attributes.getAttributeModifier(AttributesNames.WISDOM));
+	}
+	
+	@Test
+	public void addAttributeValueTest() {
+		Attributes attributes = new Attributes(this.attributesValues);
+		
+		attributes.addAttributeValue(AttributesNames.INTELLIGENCE, 6);
+		
+		assertEquals(5, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE));
 	}
 }

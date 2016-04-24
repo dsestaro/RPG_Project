@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.sestaro</groupId>
-	<artifactId>rpg-project-core</artifactId>
+	<artifactId>rpg-project-character</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RPG Project</name>
 	<description>A D&amp;D experiment using Java</description>

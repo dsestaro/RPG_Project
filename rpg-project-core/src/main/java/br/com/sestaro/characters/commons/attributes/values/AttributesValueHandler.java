@@ -22,4 +22,29 @@ public class AttributesValueHandler {
 		
 		throw new InvalidAttributeNameException();
 	}
+	
+	public static void addAttributeByPosition(AttributesValues values, AttributesNames attributeName, int value) {
+		switch(attributeName) {
+			case STRENGTH:
+				values.setStrength(values.getStrength() + value);
+				return;
+			case DEXTERITY:
+				values.setDexterity(values.getDexterity() + value);
+				return;
+			case CONSTITUTION:
+				values.setConstitution(values.getConstitution() + value);
+				return;
+			case INTELLIGENCE:
+				values.setIntelligence(values.getIntelligence() + value);
+				return;
+			case WISDOM:
+				values.setWisdom(values.getWisdom() + value);
+				return;
+			case CHARISMA:
+				values.setCharisma(values.getCharisma() + value);
+				return;
+		}
+		
+		throw new InvalidAttributeNameException();
+	}
 }
