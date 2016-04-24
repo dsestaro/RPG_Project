@@ -1,4 +1,4 @@
-package main.java.br.com.sestaro.characters.commons.attributes.exceptions;
+package br.com.sestaro.characters.commons.attributes.exceptions;
 
 public class NegativeAttributeValueException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

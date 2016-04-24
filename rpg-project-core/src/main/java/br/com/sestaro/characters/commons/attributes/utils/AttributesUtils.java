@@ -1,6 +1,6 @@
-package main.java.br.com.sestaro.characters.commons.attributes.utils;
+package br.com.sestaro.characters.commons.attributes.utils;
 
-import main.java.br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
 
 public class AttributesUtils {
 
@@ -8,5 +8,9 @@ public class AttributesUtils {
 		if(value < 0) {
 			throw new NegativeAttributeValueException();
 		}
+	}
+	
+	public static int calculateModifier(int value) {
+		return (value - 10) / 2;
 	}
 }

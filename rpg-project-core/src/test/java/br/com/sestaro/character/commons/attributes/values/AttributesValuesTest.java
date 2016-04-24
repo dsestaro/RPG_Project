@@ -1,11 +1,11 @@
-package test.java.br.com.sestaro.character.commons.attributes.values;
+package br.com.sestaro.character.commons.attributes.values;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import main.java.br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
-import main.java.br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 
 public class AttributesValuesTest {
 

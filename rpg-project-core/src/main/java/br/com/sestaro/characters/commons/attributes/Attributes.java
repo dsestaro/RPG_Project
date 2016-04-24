@@ -1,7 +1,10 @@
-package main.java.br.com.sestaro.characters.commons.attributes;
+package br.com.sestaro.characters.commons.attributes;
 
-import main.java.br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
-import main.java.br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
+import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
+import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
+import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 
 public class Attributes {
 	private AttributesValues values;
@@ -16,5 +19,9 @@ public class Attributes {
 
 	public AttributesValues getValues() {
 		return values;
+	}
+	
+	public int getAttributeModifier (AttributesNames attributeName) {
+		return AttributesUtils.calculateModifier(AttributesValueHandler.getAttributeByPosition(this.values, attributeName));
 	}
 }
