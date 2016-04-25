@@ -3,3 +3,8 @@
 /rpg-project-core/.project
 /rpg-project-core/.settings/org.eclipse.jdt.core.prefs
 /rpg-project-core/.settings/org.eclipse.m2e.core.prefs
+/rpg-project-controller/.project
+/rpg-project-controller/.classpath
+/rpg-project-controller/.settings/org.eclipse.jdt.core.prefs
+/rpg-project-controller/.settings/org.eclipse.m2e.core.prefs
+/rpg-project-controller/.gitignore
