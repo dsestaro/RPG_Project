@@ -4,7 +4,7 @@ import br.com.sestaro.characters.commons.info.enums.CharacterAlignNames;
 import br.com.sestaro.characters.commons.info.enums.GenderNames;
 import br.com.sestaro.characters.commons.info.utils.CharacterInformationUtils;
 
-public class CharacterInformations {
+public class CharacterInformationsValues {
 	private String name;
 	private CharacterAlignNames alignment;
 	private String deity;
@@ -16,7 +16,7 @@ public class CharacterInformations {
 	private String hairColor;
 	private String eyesColor;
 	
-	public CharacterInformations(String name, CharacterAlignNames alignment, String deity, String homeland,
+	public CharacterInformationsValues(String name, CharacterAlignNames alignment, String deity, String homeland,
 			GenderNames gender, int age, int height, int weight, String hairColor, String eyesColor) {
 		this.setName(name);;
 		this.setAlignment(alignment);
@@ -27,7 +27,7 @@ public class CharacterInformations {
 		this.setHeight(height);
 		this.setWeight(weight);
 		this.setHairColor(hairColor);
-		this.eyesColor = eyesColor;
+		this.setEyesColor(eyesColor);
 	}
 
 	public String getName() {
