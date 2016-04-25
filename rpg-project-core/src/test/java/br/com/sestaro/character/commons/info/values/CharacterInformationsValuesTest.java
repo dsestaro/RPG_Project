@@ -1,6 +1,5 @@
 package br.com.sestaro.character.commons.info.values;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.info.enums.CharacterAlignNames;
