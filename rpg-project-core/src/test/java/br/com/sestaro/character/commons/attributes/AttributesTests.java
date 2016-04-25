@@ -37,6 +37,11 @@ public class AttributesTests {
 	}
 	
 	@Test
+	public void testInitializationWithoutValues() {
+		new Attributes(this.attributesValues).getValues();
+	}
+	
+	@Test
 	public void positiveAttributeModifierTest() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
