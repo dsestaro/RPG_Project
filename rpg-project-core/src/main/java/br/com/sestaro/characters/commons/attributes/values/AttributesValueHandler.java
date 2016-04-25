@@ -26,22 +26,22 @@ public class AttributesValueHandler {
 	public static void addAttributeByPosition(AttributesValues values, AttributesNames attributeName, int value) {
 		switch(attributeName) {
 			case STRENGTH:
-				values.setStrength(values.getStrength() + value);
+				values.setStrength(getAttributeByPosition(values, attributeName) + value);
 				return;
 			case DEXTERITY:
-				values.setDexterity(values.getDexterity() + value);
+				values.setDexterity(getAttributeByPosition(values, attributeName) + value);
 				return;
 			case CONSTITUTION:
-				values.setConstitution(values.getConstitution() + value);
+				values.setConstitution(getAttributeByPosition(values, attributeName) + value);
 				return;
 			case INTELLIGENCE:
-				values.setIntelligence(values.getIntelligence() + value);
+				values.setIntelligence(getAttributeByPosition(values, attributeName) + value);
 				return;
 			case WISDOM:
-				values.setWisdom(values.getWisdom() + value);
+				values.setWisdom(getAttributeByPosition(values, attributeName) + value);
 				return;
 			case CHARISMA:
-				values.setCharisma(values.getCharisma() + value);
+				values.setCharisma(getAttributeByPosition(values, attributeName) + value);
 				return;
 		}
 		
