@@ -1,0 +1,1 @@
+angular.module('index.app', ['ngAnimate', 'ui.bootstrap']);
