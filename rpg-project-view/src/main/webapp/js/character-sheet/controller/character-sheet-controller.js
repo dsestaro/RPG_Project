@@ -1,6 +1,14 @@
 angular.module('character.sheet.app').controller('CharacterSheetController', function ($scope, $window, $location) {
 	
-	$scope.goToCharacterSheet = function() {
-		$window.location.href = 'pages/character-sheet.html';
+	$scope.getCharacterInformatioPage = function() {
+		return 'tabs/character-information.html';
+	}
+	
+	$scope.getCharacterAttributesPage = function() {
+		return 'tabs/character-attributes.html';
+	}
+	
+	$scope.getCharacterSavingThrowsPage = function() {
+		return 'tabs/character-information.html';
 	}
 });
