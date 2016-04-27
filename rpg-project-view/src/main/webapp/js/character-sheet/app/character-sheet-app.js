@@ -1,0 +1,1 @@
+angular.module('character.sheet.app', ['ngAnimate', 'ui.bootstrap']);
