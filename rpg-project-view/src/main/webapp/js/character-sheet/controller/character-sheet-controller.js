@@ -9,6 +9,6 @@ angular.module('character.sheet.app').controller('CharacterSheetController', fun
 	}
 	
 	$scope.getCharacterSavingThrowsPage = function() {
-		return 'tabs/character-information.html';
+		return 'tabs/character-savingthrows.html';
 	}
 });
