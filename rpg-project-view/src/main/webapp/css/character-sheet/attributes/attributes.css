@@ -9,6 +9,10 @@
 	text-align: center;
 	font-size: 80%;
 	font-weight: bold;
+	display: inline-block;
+    vertical-align: middle;
+    float: none;
+    padding: 0px;
 }
 
 .attributevalues {
@@ -20,6 +24,12 @@
 	padding-top: 5px;
 }
 
+.attributetitlebox {
+	padding-top: 5px;
+	background-color: #F0F0F0;
+}
+
 .attributespacer {
-	padding-right: 0px;
+	padding-right: 7px;
+	padding-left: 7px;
 }
