@@ -7,7 +7,11 @@ public class AttributesValueHandler {
 	public static int getAttributeByPosition(AttributesValues values, AttributesNames attributeName) {
 		switch(attributeName) {
 			case STRENGTH:
-				return values.getStrength();
+				return values.getStrength().getStrength();
+			case STRENGTH_PHYSICALSTRENGTH:
+				return values.getStrength().getPhysicalStrength();
+			case STRENGTH_ENDURANCE:
+				return values.getStrength().getEndurance();
 			case DEXTERITY:
 				return values.getDexterity();
 			case CONSTITUTION:
@@ -25,8 +29,11 @@ public class AttributesValueHandler {
 	
 	public static void addAttributeByPosition(AttributesValues values, AttributesNames attributeName, int value) {
 		switch(attributeName) {
-			case STRENGTH:
-				values.setStrength(getAttributeByPosition(values, attributeName) + value);
+			case STRENGTH_PHYSICALSTRENGTH:
+				values.getStrength().addPhysicalStrength(value);
+				return;
+			case STRENGTH_ENDURANCE:
+				values.getStrength().addEndurance(value);
 				return;
 			case DEXTERITY:
 				values.setDexterity(getAttributeByPosition(values, attributeName) + value);

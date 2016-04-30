@@ -33,7 +33,7 @@ public class AttributesValueHandlerTest {
 		
 		AttributesNames attributeName = AttributesNames.STRENGTH;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(strength, attributeValue);
+		assertEquals(10, attributeValue);
 		
 		attributeName = AttributesNames.DEXTERITY;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -60,10 +60,10 @@ public class AttributesValueHandlerTest {
 	public void addAttributeByPositionTest() {
 		int attributeValue = 0;
 		
-		AttributesNames attributeName = AttributesNames.STRENGTH;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 2);
+		AttributesNames attributeName = AttributesNames.STRENGTH_PHYSICALSTRENGTH;
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, 1);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(strength + 2, attributeValue);
+		assertEquals(13, attributeValue);
 		
 		attributeName = AttributesNames.DEXTERITY;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, 3);
