@@ -6,7 +6,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Endurance implements Specialization {
 
 	private int endurance;
-	public static final String NAME = "Endurance";
+	private static final String NAME = "Endurance";
 	
 	public Endurance(int endurance) {
 		setValue(endurance);
@@ -19,5 +19,9 @@ public class Endurance implements Specialization {
 	public void setValue(int endurance) {
 		AttributesUtils.validateAttributeValue(endurance);
 		this.endurance = endurance;
+	}
+	
+	public String getName() {
+		return this.NAME;
 	}
 }

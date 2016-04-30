@@ -9,10 +9,10 @@ public class Strength {
 	private Endurance endurance;
 	
 	public Strength(int physicalStrength, int endurance) {
-		AttributesUtils.initialValidations(physicalStrength, endurance, PhysicalStrength.NAME, Endurance.NAME);
-		
 		this.physicalStrength = new PhysicalStrength(physicalStrength);
 		this.endurance = new Endurance(endurance);
+
+		AttributesUtils.initialValidations(this.physicalStrength, this.endurance);
 	}
 	
 	public int getStrength() {

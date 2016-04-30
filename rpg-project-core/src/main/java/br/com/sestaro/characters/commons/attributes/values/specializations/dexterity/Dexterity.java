@@ -9,10 +9,10 @@ public class Dexterity {
 	private Coordination coordination;
 	
 	public Dexterity(int speed, int coordination) {
-		AttributesUtils.initialValidations(speed, coordination, Speed.NAME, Coordination.NAME);
-		
 		this.speed = new Speed(speed);
 		this.coordination = new Coordination(coordination);
+
+		AttributesUtils.initialValidations(this.speed, this.coordination);
 	}
 	
 	public int getDexterity() {

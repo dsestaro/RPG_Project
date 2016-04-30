@@ -4,4 +4,6 @@ public interface Specialization {
 	public int getValue();
 	
 	public void setValue(int value);
+	
+	public String getName();
 }

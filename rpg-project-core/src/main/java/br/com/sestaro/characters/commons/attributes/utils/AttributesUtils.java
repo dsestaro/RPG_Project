@@ -2,6 +2,7 @@ package br.com.sestaro.characters.commons.attributes.utils;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength;
 
@@ -17,21 +18,22 @@ public class AttributesUtils {
 		return (value - 10) / 2;
 	}
 	
-	public static void initialValidations(int specializationValue1, int specializationValue2, String specializationName1, String specializationName2) {
-		if(specializationValue1 > 18 && specializationValue1 != specializationValue2) {
-			throw new InvalidAttributeValueException(specializationName1);
+	public static void initialValidations(Specialization specialization1, Specialization specialization2) {
+		
+		if(specialization1.getValue() > 18 && specialization1.getValue() != specialization2.getValue()) {
+			throw new InvalidAttributeValueException(specialization1.getName());
 		}
 		
-		if(specializationValue1 > 18 && specializationValue1 != specializationValue2) {
-			throw new InvalidAttributeValueException(specializationName2);
+		if(specialization2.getValue() > 18 && specialization2.getValue() != specialization1.getValue()) {
+			throw new InvalidAttributeValueException(specialization2.getName());
 		}
 		
-		if(specializationValue1 - 4 > specializationValue2) {
-			throw new InvalidAttributeValueException(specializationName1, specializationName2);
+		if(specialization1.getValue() - 4 > specialization2.getValue()) {
+			throw new InvalidAttributeValueException(specialization1.getName(), specialization2.getName());
 		}
 		
-		if(specializationValue2 - 4 > specializationValue1) {
-			throw new InvalidAttributeValueException(specializationName2, specializationName1);
+		if(specialization2.getValue() - 4 > specialization1.getValue()) {
+			throw new InvalidAttributeValueException(specialization2.getName(), specialization1.getName());
 		}
 	}
 }
