@@ -1,4 +1,4 @@
-package br.com.sestaro.character.commons.savingthrows;
+package br.com.sestaro.characters.commons.savingthrows;
 
 import static org.junit.Assert.*;
 

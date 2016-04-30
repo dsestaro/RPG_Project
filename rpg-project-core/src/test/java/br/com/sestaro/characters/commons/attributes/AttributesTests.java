@@ -1,4 +1,4 @@
-package br.com.sestaro.character.commons.attributes;
+package br.com.sestaro.characters.commons.attributes;
 
 import static org.junit.Assert.assertEquals;
 

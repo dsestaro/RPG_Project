@@ -1,4 +1,4 @@
-package br.com.sestaro.character.commons.info;
+package br.com.sestaro.characters.commons.info;
 
 import static org.junit.Assert.assertEquals;
 

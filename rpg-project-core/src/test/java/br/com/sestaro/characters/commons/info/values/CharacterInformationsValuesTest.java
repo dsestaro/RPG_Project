@@ -1,4 +1,4 @@
-package br.com.sestaro.character.commons.info.values;
+package br.com.sestaro.characters.commons.info.values;
 
 import org.junit.Test;
 

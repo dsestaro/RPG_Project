@@ -1,4 +1,4 @@
-package br.com.sestaro.character.commons.info.enums;
+package br.com.sestaro.characters.commons.info.enums;
 
 import static org.junit.Assert.assertEquals;
 

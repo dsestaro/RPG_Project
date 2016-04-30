@@ -1,4 +1,4 @@
-package br.com.sestaro.character.commons.info.utils;
+package br.com.sestaro.characters.commons.info.utils;
 
 import org.junit.Test;
 
