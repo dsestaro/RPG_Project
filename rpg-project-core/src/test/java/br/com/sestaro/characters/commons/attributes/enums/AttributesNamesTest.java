@@ -10,7 +10,9 @@ public class AttributesNamesTest {
 	
 	@Test
 	public void enumTest() {
-		assertEquals(1, AttributesNames.STRENGTH.getPosition());
+		assertEquals(10, AttributesNames.STRENGTH.getPosition());
+		assertEquals(11, AttributesNames.STRENGTH_PHYSICALSTRENGTH.getPosition());
+		assertEquals(12, AttributesNames.STRENGTH_ENDURANCE.getPosition());
 		assertEquals(2, AttributesNames.DEXTERITY.getPosition());
 		assertEquals(3, AttributesNames.CONSTITUTION.getPosition());
 		assertEquals(4, AttributesNames.INTELLIGENCE.getPosition());

@@ -1,7 +1,9 @@
 package br.com.sestaro.characters.commons.attributes.enums;
 
 public enum AttributesNames {
-	STRENGTH(1),
+	STRENGTH(10),
+	STRENGTH_PHYSICALSTRENGTH(11),
+	STRENGTH_ENDURANCE(12),
 	DEXTERITY(2),
 	CONSTITUTION(3),
 	INTELLIGENCE(4),
