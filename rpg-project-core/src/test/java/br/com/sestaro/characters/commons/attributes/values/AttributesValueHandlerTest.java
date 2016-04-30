@@ -8,11 +8,12 @@ import org.junit.Test;
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 public class AttributesValueHandlerTest {
 
 	private AttributesValues values; 
-	private int strength = 10;
+	private Strength strength;
 	private int dexterity = 12;
 	private int constitution = 13;
 	private int intelligence = 14;
@@ -21,6 +22,8 @@ public class AttributesValueHandlerTest {
 	
 	@Before
 	public void initialize() {
+		this.strength = new Strength(10, 12, 8);
+		
 		this.values = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
 	
