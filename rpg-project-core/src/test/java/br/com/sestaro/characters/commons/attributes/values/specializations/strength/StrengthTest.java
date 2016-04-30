@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+
 public class StrengthTest {
 
 	@Test
@@ -13,6 +16,16 @@ public class StrengthTest {
 		assertEquals(15, strength.getStrength());
 		assertEquals(14, strength.getEndurance());
 		assertEquals(16, strength.getPhysicalStrength());
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativePhysicalStrengthValue() {
+		new Strength(-1, 1);
+	}
+	
+	@Test(expected=NegativeAttributeValueException.class)
+	public void testNegativeEnduranceValue() {
+		new Strength(1, -1);
 	}
 	
 	@Test

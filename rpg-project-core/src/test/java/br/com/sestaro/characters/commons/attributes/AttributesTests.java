@@ -9,6 +9,7 @@ import br.com.sestaro.characters.commons.attributes.Attributes;
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 public class AttributesTests {
 	
@@ -16,7 +17,7 @@ public class AttributesTests {
 	
 	@Before
 	public void initialContext() {
-		int strength = 10;
+		Strength strength = new Strength(10, 14);
 		int dexterity = 12;
 		int constitution = 13;
 		int intelligence = 14;

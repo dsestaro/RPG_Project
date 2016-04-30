@@ -2,83 +2,63 @@ package br.com.sestaro.characters.commons.attributes.values;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 public class AttributesValuesTest {
 
+	private AttributesValues attributes; 
+	private Strength strength;
+	private int dexterity = 2;
+	private int constitution = 3;
+	private int intelligence = 4;
+	private int wisdom = 5;
+	private int charisma = 6;
+	
+	@Before
+	public void initialization() {
+		this.strength = new Strength(12, 16);
+		this.attributes = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
+	}
+	
 	@Test
 	public void testInitializationWithValues() {
-		int strength = 1;
-		int dexterity = 2;
-		int constitution = 3;
-		int intelligence = 4;
-		int wisdom = 5;
-		int charisma = 6;
-		
-		AttributesValues attributes = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
-		
-		assertEquals(strength, attributes.getStrength());
-		assertEquals(dexterity, attributes.getDexterity());
-		assertEquals(constitution, attributes.getConstitution());
-		assertEquals(intelligence, attributes.getIntelligence());
-		assertEquals(wisdom, attributes.getWisdom());
-		assertEquals(charisma, attributes.getCharisma());
-	}
-	
-	@Test
-	public void testInitializationWithoutValues() {
-		AttributesValues attributes = new AttributesValues();
-		
-		assertEquals(0, attributes.getStrength());
-		assertEquals(0, attributes.getDexterity());
-		assertEquals(0, attributes.getConstitution());
-		assertEquals(0, attributes.getIntelligence());
-		assertEquals(0, attributes.getWisdom());
-		assertEquals(0, attributes.getCharisma());
-	}
-	
-	@Test(expected=NegativeAttributeValueException.class)
-	public void testNegativeStrengthValue() {
-		AttributesValues attributes = new AttributesValues();
-		
-		attributes.setStrength(-1);
+		assertEquals(14, this.attributes.getStrength().getStrength());
+		assertEquals(12, this.attributes.getStrength().getPhysicalStrength());
+		assertEquals(16, this.attributes.getStrength().getEndurance());
+		assertEquals(this.dexterity, this.attributes.getDexterity());
+		assertEquals(this.constitution, this.attributes.getConstitution());
+		assertEquals(this.intelligence, this.attributes.getIntelligence());
+		assertEquals(this.wisdom, this.attributes.getWisdom());
+		assertEquals(this.charisma, this.attributes.getCharisma());
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)
 	public void testNegativeDexterityValue() {
-		AttributesValues attributes = new AttributesValues();
-		
 		attributes.setDexterity(-1);
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)
 	public void testNegativeConstitutionValue() {
-		AttributesValues attributes = new AttributesValues();
-		
 		attributes.setConstitution(-1);
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)
 	public void testNegativeIntelligenceValue() {
-		AttributesValues attributes = new AttributesValues();
-		
 		attributes.setIntelligence(-1);
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)
 	public void testNegativeWisdomValue() {
-		AttributesValues attributes = new AttributesValues();
-		
 		attributes.setWisdom(-1);
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)
 	public void testNegativeCharismaValue() {
-		AttributesValues attributes = new AttributesValues();
-		
 		attributes.setCharisma(-1);
 	}
 }
