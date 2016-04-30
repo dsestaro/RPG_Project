@@ -22,7 +22,7 @@ public class AttributesValueHandlerTest {
 	
 	@Before
 	public void initialize() {
-		this.strength = new Strength(10, 12, 8);
+		this.strength = new Strength(12, 8);
 		
 		this.values = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}

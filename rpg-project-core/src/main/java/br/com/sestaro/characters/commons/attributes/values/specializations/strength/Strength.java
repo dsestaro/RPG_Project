@@ -7,11 +7,8 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
 public class Strength {
 	private PhysicalStrength physicalStrength;
 	private Endurance endurance;
-	private int strength;
 	
-	public Strength(int strength, int physicalStrength, int endurance) {
-		this.setStrength(strength);
-		
+	public Strength(int physicalStrength, int endurance) {
 		AttributesUtils.initialValidations(physicalStrength, endurance, PhysicalStrength.NAME, Endurance.NAME);
 		
 		this.physicalStrength = new PhysicalStrength(physicalStrength);
@@ -19,14 +16,9 @@ public class Strength {
 	}
 	
 	public int getStrength() {
-		return strength;
+		return (physicalStrength.getValue() + endurance.getValue()) / 2;
 	}
 
-	public void setStrength(int strength) {
-		AttributesUtils.validateAttributeValue(strength);
-		this.strength = strength;
-	}
-	
 	public void addPhysicalStrength(int value) {
 		this.physicalStrength.setValue(physicalStrength.getValue() + value);
 	}

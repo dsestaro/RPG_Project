@@ -8,7 +8,7 @@ public class StrengthTest {
 
 	@Test
 	public void initializationTest() {
-		Strength strength = new Strength(15, 16, 14);
+		Strength strength = new Strength(16, 14);
 		
 		assertEquals(15, strength.getStrength());
 		assertEquals(14, strength.getEndurance());
@@ -17,7 +17,7 @@ public class StrengthTest {
 	
 	@Test
 	public void addPhysicalStrengthTest() {
-		Strength strength = new Strength(15, 16, 14);
+		Strength strength = new Strength(16, 14);
 		
 		strength.addPhysicalStrength(2);
 		
@@ -26,7 +26,7 @@ public class StrengthTest {
 	
 	@Test
 	public void removePhysicalStrengthTest() {
-		Strength strength = new Strength(15, 16, 14);
+		Strength strength = new Strength(16, 14);
 		
 		strength.addPhysicalStrength(-2);
 		
@@ -35,7 +35,7 @@ public class StrengthTest {
 	
 	@Test
 	public void addEnduranceTest() {
-		Strength strength = new Strength(15, 16, 14);
+		Strength strength = new Strength(16, 14);
 		
 		strength.addEndurance(3);
 		
@@ -44,7 +44,7 @@ public class StrengthTest {
 	
 	@Test
 	public void removeEnduranceTest() {
-		Strength strength = new Strength(15, 16, 14);
+		Strength strength = new Strength(16, 14);
 		
 		strength.addEndurance(-1);
 		
