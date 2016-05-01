@@ -14,12 +14,12 @@ public class Constitution {
 	private Resistance resistance;
 	
 	/**
-	 * @param toughnessParam                       - Thoughness value
-	 * @param resistanceParam                      - Resistence value 
+	 * @param value1                               - Thoughness value
+	 * @param value2                               - Resistence value 
 	 */
-	public Constitution(final int toughnessParam, final int resistanceParam) {
-		this.toughness = new Toughness(toughnessParam);
-		this.resistance = new Resistance(resistanceParam);
+	public Constitution(final int value1, final int value2) {
+		this.toughness = new Toughness(value1);
+		this.resistance = new Resistance(value2);
 
 		AttributesUtils.initialValidations(this.toughness, this.resistance);
 	}

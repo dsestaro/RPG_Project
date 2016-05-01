@@ -14,12 +14,12 @@ public class Strength {
 	private Endurance endurance;
 	
 	/**
-   * @param physicalStrengthParam                - Physical strength value
-   * @param enduranceParam                       - Endurance value 
+   * @param value1                                - Physical strength value
+   * @param value2                                - Endurance value 
    */
-	public Strength(final int physicalStrengthParam, final int enduranceParam) {
-		this.physicalStrength = new PhysicalStrength(physicalStrengthParam);
-		this.endurance = new Endurance(enduranceParam);
+	public Strength(final int value1, final int value2) {
+		this.physicalStrength = new PhysicalStrength(value1);
+		this.endurance = new Endurance(value2);
 
 		AttributesUtils.initialValidations(this.physicalStrength, this.endurance);
 	}
@@ -27,7 +27,7 @@ public class Strength {
 	/**
    * Calculate the strength based on the mean of the 2 specializations.
    * 
-   * @return                                     - Returns the constitution value
+   * @return                                      - Returns the constitution value
    */
 	public final int getStrength() {
 		return (physicalStrength.getValue() + endurance.getValue()) / 2;

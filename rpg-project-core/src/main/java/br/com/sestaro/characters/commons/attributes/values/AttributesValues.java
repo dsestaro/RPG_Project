@@ -5,6 +5,11 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.const
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
+/**
+ * Class that group all the attributes and give the methods to access their values.
+ * 
+ * @author davidson.sestaro
+ */
 public class AttributesValues {
 	private Strength strength;
 	private Dexterity dexterity;
@@ -13,51 +18,87 @@ public class AttributesValues {
 	private int wisdom;
 	private int charisma;
 	
-	public AttributesValues(Strength strength, Dexterity dexterity, Constitution constitution, int intelligence, int wisdom, int charisma) {
-		this.strength = strength;
-		this.dexterity = dexterity;
-		this.constitution = constitution;
-		this.setIntelligence(intelligence);
-		this.setWisdom(wisdom);
-		this.setCharisma(charisma);
+	/**
+	 * @param value1                                         - Strength
+	 * @param value2                                         - Dexterity
+	 * @param value3                                         - Constitution
+	 * @param value4                                         - Intelligence
+	 * @param value5                                         - Wisdom
+	 * @param value6                                         - Charisma
+	 */
+	public AttributesValues(final Strength value1, final Dexterity value2, final Constitution value3, 
+	    final int value4, final int value5, final int value6) {
+		this.strength = value1;
+		this.dexterity = value2;
+		this.constitution = value3;
+		this.setIntelligence(value4);
+		this.setWisdom(value5);
+		this.setCharisma(value6);
 	}
 	
-	public Strength getStrength() {
+	/**
+	 * @return                                               - Return the strength
+	 */
+	public final Strength getStrength() {
 		return strength;
 	}
 	
-	public Dexterity getDexterity() {
+	/**
+   * @return                                               - Return the dexterity
+   */
+	public final Dexterity getDexterity() {
 		return dexterity;
 	}
 	
-	public Constitution getConstitution() {
+	/**
+   * @return                                               - Return the constitution
+   */
+	public final Constitution getConstitution() {
 		return constitution;
 	}
 	
-	public int getIntelligence() {
+	/**
+   * @return                                               - Return the intelligence
+   */
+	public final int getIntelligence() {
 		return intelligence;
 	}
 	
-	public void setIntelligence(int intelligence) {
-		AttributesUtils.validateAttributeValue(intelligence);
-		this.intelligence = intelligence;
+	/**
+	 * @param value                                          - Value to add
+	 */
+	public final void setIntelligence(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.intelligence = value;
 	}
 	
-	public int getWisdom() {
+	/**
+   * @return                                               - Return the wisdom
+   */
+	public final int getWisdom() {
 		return wisdom;
 	}
 	
-	public void setWisdom(int wisdom) {
-		AttributesUtils.validateAttributeValue(wisdom);
-		this.wisdom = wisdom;
+	/**
+   * @param value                                          - Value to add
+   */
+	public final void setWisdom(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.wisdom = value;
 	}
 	
-	public int getCharisma() {
+	/**
+   * @return                                               - Return the charisma
+   */
+	public final int getCharisma() {
 		return charisma;
 	}
 	
-	public void setCharisma(int charisma) {
-		AttributesUtils.validateAttributeValue(charisma);
-		this.charisma = charisma;
+	/**
+   * @param value                                          - Value to add
+   */
+	public final void setCharisma(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.charisma = value;
 	}
 }

@@ -9,17 +9,17 @@ public class InvalidAttributeValueException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @param specialization1                      - Attribute specialization that violate the rule
-	 * @param specialization2                      - The second attribute specialization
+	 * @param value1                      - Attribute specialization that violate the rule
+	 * @param value2                      - The second attribute specialization
 	 */
-	public InvalidAttributeValueException(final String specialization1, final String specialization2) {
-		super("The " + specialization1 + " the value can not be 4 higher points than " + specialization2 + ".");
+	public InvalidAttributeValueException(final String value1, final String value2) {
+		super("The " + value1 + " the value can not be 4 higher points than " + value2 + ".");
 	}
 	
 	/**
-   * @param specialization                       - Attribute specialization that violate the rule
+   * @param value                       - Attribute specialization that violate the rule
    */
-	public InvalidAttributeValueException(final String specialization) {
-		super("The " + specialization + "can not be higher points than 18 points.");
+	public InvalidAttributeValueException(final String value) {
+		super("The " + value + "can not be higher points than 18 points.");
 	}
 }

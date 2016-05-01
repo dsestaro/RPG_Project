@@ -47,25 +47,25 @@ public final class AttributesUtils {
 	/**
 	 * Validate the initial configurations of specializations of an attribute.
 	 * 
-	 * @param specialization1                          - Attribute specialization
-	 * @param specialization2                          - Attribute specialization
+	 * @param value1                                   - Attribute specialization
+	 * @param value2                                   - Attribute specialization
 	 */
-	public static void initialValidations(final Specialization specialization1, final Specialization specialization2) {
+	public static void initialValidations(final Specialization value1, final Specialization value2) {
 		
-		if (specialization1.getValue() > MAX_INITIAL_VALUE && specialization1.getValue() != specialization2.getValue()) {
-			throw new InvalidAttributeValueException(specialization1.getName());
+		if (value1.getValue() > MAX_INITIAL_VALUE && value1.getValue() != value2.getValue()) {
+			throw new InvalidAttributeValueException(value1.getName());
 		}
 		
-		if (specialization2.getValue() > MAX_INITIAL_VALUE && specialization2.getValue() != specialization1.getValue()) {
-			throw new InvalidAttributeValueException(specialization2.getName());
+		if (value2.getValue() > MAX_INITIAL_VALUE && value2.getValue() != value1.getValue()) {
+			throw new InvalidAttributeValueException(value2.getName());
 		}
 		
-		if (specialization1.getValue() - MAX_INITIAL_DIF > specialization2.getValue()) {
-			throw new InvalidAttributeValueException(specialization1.getName(), specialization2.getName());
+		if (value1.getValue() - MAX_INITIAL_DIF > value2.getValue()) {
+			throw new InvalidAttributeValueException(value1.getName(), value2.getName());
 		}
 		
-		if (specialization2.getValue() - MAX_INITIAL_DIF > specialization1.getValue()) {
-			throw new InvalidAttributeValueException(specialization2.getName(), specialization1.getName());
+		if (value2.getValue() - MAX_INITIAL_DIF > value1.getValue()) {
+			throw new InvalidAttributeValueException(value2.getName(), value1.getName());
 		}
 	}
 }

@@ -14,12 +14,12 @@ public class Dexterity {
 	private Coordination coordination;
 	
 	/**
-   * @param speedParam                           - Thoughness value
-   * @param coordinationParam                    - Resistence value 
+   * @param value1                                - Thoughness value
+   * @param value2                                - Resistence value 
    */
-	public Dexterity(final int speedParam, final int coordinationParam) {
-		this.speed = new Speed(speedParam);
-		this.coordination = new Coordination(coordinationParam);
+	public Dexterity(final int value1, final int value2) {
+		this.speed = new Speed(value1);
+		this.coordination = new Coordination(value2);
 
 		AttributesUtils.initialValidations(this.speed, this.coordination);
 	}
@@ -27,7 +27,7 @@ public class Dexterity {
 	/**
    * Calculate the dexterity based on the mean of the 2 specializations.
    * 
-   * @return                                     - Returns the dexterity value
+   * @return                                      - Returns the dexterity value
    */
 	public final int getDexterity() {
 		return (speed.getValue() + coordination.getValue()) / 2;

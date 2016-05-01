@@ -3,66 +3,93 @@ package br.com.sestaro.characters.commons.attributes.values;
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
 
-public class AttributesValueHandler {
-	public static int getAttributeByPosition(AttributesValues values, AttributesNames attributeName) {
-		switch(attributeName) {
+/**
+ * Class to handle the values in difference attributes and specializations.
+ * 
+ * @author davidson.sestaro
+ */
+public final class AttributesValueHandler {
+  
+  /**
+   * Constructor to prevent class instantiation.
+   */
+  private AttributesValueHandler() {
+    
+  }
+  
+  /**
+   * Class that given a {@link AttributesValues} will give the attribute value corresponding to the name.
+   * 
+   * @param value1                                      - Class with the attribute values  
+   * @param value2                                      - Name of the desired attribute
+   * @return                                            - Attribute value
+   */
+	public static int getAttributeByPosition(final AttributesValues value1, final AttributesNames value2) {
+		switch(value2) {
 			case STRENGTH:
-				return values.getStrength().getStrength();
+				return value1.getStrength().getStrength();
 			case STRENGTH_PHYSICALSTRENGTH:
-				return values.getStrength().getPhysicalStrength();
+				return value1.getStrength().getPhysicalStrength();
 			case STRENGTH_ENDURANCE:
-				return values.getStrength().getEndurance();
+				return value1.getStrength().getEndurance();
 			case DEXTERITY:
-				return values.getDexterity().getDexterity();
+				return value1.getDexterity().getDexterity();
 			case DEXTERITY_SPEED:
-				return values.getDexterity().getSpeed();
+				return value1.getDexterity().getSpeed();
 			case DEXTERITY_COORDINATION:
-				return values.getDexterity().getCoordination();
+				return value1.getDexterity().getCoordination();
 			case CONSTITUTION:
-				return values.getConstitution().getConstitution();
+				return value1.getConstitution().getConstitution();
 			case CONSTITUTION_TOUGHNESS:
-				return values.getConstitution().getToughness();
+				return value1.getConstitution().getToughness();
 			case CONSTITUTION_RESISTANCE:
-				return values.getConstitution().getResistance();
+				return value1.getConstitution().getResistance();
 			case INTELLIGENCE:
-				return values.getIntelligence();
+				return value1.getIntelligence();
 			case WISDOM:
-				return values.getWisdom();
+				return value1.getWisdom();
 			case CHARISMA:
-				return values.getCharisma();
+				return value1.getCharisma();
+			default:
+			  throw new InvalidAttributeNameException();
 		}
-		
-		throw new InvalidAttributeNameException();
 	}
 	
-	public static void addAttributeByPosition(AttributesValues values, AttributesNames attributeName, int value) {
-		switch(attributeName) {
+	 /**
+   * Class that given a {@link AttributesValues} will add a value to the attribute of corresponding name.
+   * 
+   * @param value1                                      - Class with the attribute values  
+   * @param value2                                      - Name of the desired attribute
+   * @param value3                                      - Value to add to the attribute
+   */
+	public static void addAttributeByPosition(final AttributesValues value1, final AttributesNames value2, final int value3) {
+		switch(value2) {
 			case STRENGTH_PHYSICALSTRENGTH:
-				values.getStrength().addPhysicalStrength(value);
+				value1.getStrength().addPhysicalStrength(value3);
 				return;
 			case STRENGTH_ENDURANCE:
-				values.getStrength().addEndurance(value);
+				value1.getStrength().addEndurance(value3);
 				return;
 			case DEXTERITY_SPEED:
-				values.getDexterity().addSpeed(value);
+				value1.getDexterity().addSpeed(value3);
 				return;
 			case DEXTERITY_COORDINATION:
-				values.getDexterity().addCoordination(value);
+				value1.getDexterity().addCoordination(value3);
 				return;
 			case CONSTITUTION_TOUGHNESS:
-				values.getConstitution().addToughness(value);
+				value1.getConstitution().addToughness(value3);
 				return;
 			case CONSTITUTION_RESISTANCE:
-				values.getConstitution().addResistance(value);
+				value1.getConstitution().addResistance(value3);
 				return;
 			case INTELLIGENCE:
-				values.setIntelligence(getAttributeByPosition(values, attributeName) + value);
+				value1.setIntelligence(getAttributeByPosition(value1, value2) + value3);
 				return;
 			case WISDOM:
-				values.setWisdom(getAttributeByPosition(values, attributeName) + value);
+				value1.setWisdom(getAttributeByPosition(value1, value2) + value3);
 				return;
 			case CHARISMA:
-				values.setCharisma(getAttributeByPosition(values, attributeName) + value);
+				value1.setCharisma(getAttributeByPosition(value1, value2) + value3);
 				return;
 			default:
 				throw new InvalidAttributeNameException();
