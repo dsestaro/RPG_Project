@@ -4,10 +4,17 @@ import br.com.sestaro.characters.commons.info.enums.CharacterAlignNames;
 import br.com.sestaro.characters.commons.info.enums.GenderNames;
 import br.com.sestaro.characters.commons.info.utils.CharacterInformationUtils;
 
+/**
+ * Class that will group informations about the character.
+ * 
+ * @author davidson.sestaro
+ *
+ */
 public class CharacterInformationsValues {
-	private String name;
+
+  private String name;
 	private CharacterAlignNames alignment;
-	private String deity;
+  private String deity;
 	private String homeland;
 	private GenderNames gender;
 	private int age;
@@ -16,83 +23,178 @@ public class CharacterInformationsValues {
 	private String hairColor;
 	private String eyesColor;
 	
-	public CharacterInformationsValues(String name, CharacterAlignNames alignment, String deity, String homeland,
-			GenderNames gender, int age, int height, int weight, String hairColor, String eyesColor) {
-		this.setName(name);;
-		this.setAlignment(alignment);
-		this.setDeity(deity);
-		this.setHomeland(homeland);
-		this.setGender(gender);
-		this.setAge(age);
-		this.setHeight(height);
-		this.setWeight(weight);
-		this.setHairColor(hairColor);
-		this.setEyesColor(eyesColor);
+	/**
+	 * Character Information default constructor.
+	 * 
+	 * @param nameParam                            - Character name
+	 * @param alignmentParam                       - Character aligment
+	 * @param deityParam                           - Deity name
+	 * @param homelandParam                        - Homeland city
+	 * @param genderParam                          - Gender type
+	 * @param ageParam                             - Character age
+	 * @param heightParam                          - Character height
+	 * @param weightParam                          - Character weight
+	 * @param hairColorParam                       - Character hair's color
+	 * @param eyesColorParam                       - Character eye's color
+	 */
+	public CharacterInformationsValues(final String nameParam, final CharacterAlignNames alignmentParam, final String deityParam, 
+	    final String homelandParam, final GenderNames genderParam, final int ageParam, final int heightParam, final int weightParam,
+	    final String hairColorParam, final String eyesColorParam) {
+		
+	  this.setName(nameParam);
+		this.setAlignment(alignmentParam);
+		this.setDeity(deityParam);
+		this.setHomeland(homelandParam);
+		this.setGender(genderParam);
+		this.setAge(ageParam);
+		this.setHeight(heightParam);
+		this.setWeight(weightParam);
+		this.setHairColor(hairColorParam);
+		this.setEyesColor(eyesColorParam);
 	}
 
-	public String getName() {
+	/**
+	 * @return                                     - Characters name
+	 */
+	public final String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		CharacterInformationUtils.validateInformation(name);
-		this.name = name;
+	
+	/**
+	 * @param nameParam                            - Characters name
+	 */
+	public final void setName(final String nameParam) {
+		CharacterInformationUtils.validateInformation(nameParam);
+		this.name = nameParam;
 	}
-	public CharacterAlignNames getAlignment() {
+	
+	/**
+	 * @return                                     - Character aligment
+	 */
+	public final CharacterAlignNames getAlignment() {
 		return alignment;
 	}
-	public void setAlignment(CharacterAlignNames alignment) {
-		this.alignment = alignment;
+	
+	/**
+	 * @param alignmentParam                       - Character aligment
+	 */
+	public final void setAlignment(final CharacterAlignNames alignmentParam) {
+		this.alignment = alignmentParam;
 	}
-	public String getDeity() {
+	
+	/**
+	 * @return                                     - Character's deity
+	 */
+	public final String getDeity() {
 		return deity;
 	}
-	public void setDeity(String deity) {
-		CharacterInformationUtils.validateInformation(deity);
-		this.deity = deity;
+	
+	/**
+	 * @param deityParam                           - Character's deity
+	 */
+	public final void setDeity(final String deityParam) {
+		CharacterInformationUtils.validateInformation(deityParam);
+		this.deity = deityParam;
 	}
-	public String getHomeland() {
+	
+	/**
+	 * @return                                     - Character's homeland
+	 */
+	public final String getHomeland() {
 		return homeland;
 	}
-	public void setHomeland(String homeland) {
-		CharacterInformationUtils.validateInformation(homeland);
-		this.homeland = homeland;
+	
+	/**
+	 * @param homelandParam                        - Character's homeland
+	 */
+	public final void setHomeland(final String homelandParam) {
+		CharacterInformationUtils.validateInformation(homelandParam);
+		this.homeland = homelandParam;
 	}
-	public GenderNames getGender() {
+	
+	/**
+	 * @return                                     - Character gender
+	 */
+	public final GenderNames getGender() {
 		return gender;
 	}
-	public void setGender(GenderNames gender) {
-		this.gender = gender;
+	
+	/**
+	 * @param genderParam                          - Character gender
+	 */
+	public final void setGender(final GenderNames genderParam) {
+		this.gender = genderParam;
 	}
-	public int getAge() {
+	
+	/**
+	 * @return                                     - Character age
+	 */
+	public final int getAge() {
 		return age;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	
+	/**
+	 * @param ageParam                             - Character age
+	 */
+	public final void setAge(final int ageParam) {
+		this.age = ageParam;
 	}
-	public int getHeight() {
+	
+	/**
+	 * @return                                     - Character height
+	 */
+	public final int getHeight() {
 		return height;
 	}
-	public void setHeight(int height) {
-		this.height = height;
+	
+	/**
+	 * @param heightParam                          - Character height
+	 */
+	public final void setHeight(final int heightParam) {
+		this.height = heightParam;
 	}
-	public int getWeight() {
+	
+	/**
+	 * @return                                     - Character weight
+	 */
+	public final int getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
-		this.weight = weight;
+	
+	/**
+	 * @param weightParam                          - Character weight
+	 */
+	public final void setWeight(final int weightParam) {
+		this.weight = weightParam;
 	}
-	public String getHairColor() {
+	
+	/**
+	 * @return                                     - Character hair color
+	 */
+	public final String getHairColor() {
 		return hairColor;
 	}
-	public void setHairColor(String hairColor) {
-		CharacterInformationUtils.validateInformation(hairColor);
-		this.hairColor = hairColor;
+	
+	/**
+	 * @param hairColorParam                       - Character hair color
+	 */
+	public final void setHairColor(final String hairColorParam) {
+		CharacterInformationUtils.validateInformation(hairColorParam);
+		this.hairColor = hairColorParam;
 	}
-	public String getEyesColor() {
+	
+	/**
+	 * @return                                     - Character eye color
+	 */
+	public final String getEyesColor() {
 		return eyesColor;
 	}
-	public void setEyesColor(String eyesColor) {
-		CharacterInformationUtils.validateInformation(eyesColor);
-		this.eyesColor = eyesColor;
+	
+	/**
+	 * @param eyesColorParam                       - Character eye color                          
+	 */
+	public final void setEyesColor(final String eyesColorParam) {
+		CharacterInformationUtils.validateInformation(eyesColorParam);
+		this.eyesColor = eyesColorParam;
 	}
 }

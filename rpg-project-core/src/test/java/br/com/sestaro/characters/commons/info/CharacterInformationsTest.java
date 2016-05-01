@@ -32,12 +32,12 @@ public class CharacterInformationsTest {
 	
 	@Test
 	public void initializationWithValueTest() {
-		CharacterInformations character = new CharacterInformations(this.values);
+		new CharacterInformations(this.values);
 	}
 	
 	@Test(expected=InvalidInformationException.class)
 	public void initializationWithoutValueTest() {
-		CharacterInformations character = new CharacterInformations(null);
+		new CharacterInformations(null);
 	}
 	
 	@Test

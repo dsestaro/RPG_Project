@@ -1,5 +1,10 @@
 package br.com.sestaro.characters.commons.attributes.enums;
 
+/**
+ * Class that contain all attributes and subdividions names.
+ * 
+ * @author davidson.sestaro
+ */
 public enum AttributesNames {
 	STRENGTH(10),
 	STRENGTH_PHYSICALSTRENGTH(11),
@@ -16,10 +21,18 @@ public enum AttributesNames {
 	
 	private final int position;
 	
-	AttributesNames(int position) {
-		this.position = position;
+	/**
+	 * Enum constructor.
+	 * 
+	 * @param value                                    - Enum position
+	 */
+	AttributesNames(final int value) {
+		this.position = value;
 	}
 	
+	/**
+	 * @return                                         - Enum position
+	 */
 	public int getPosition() {
 		return this.position;
 	}
