@@ -5,22 +5,22 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.const
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
 
 public class Constitution {
-	private Toughness health;
+	private Toughness toughness;
 	private Resistance resistance;
 	
-	public Constitution(int health, int coordination) {
-		this.health = new Toughness(health);
+	public Constitution(int toughness, int coordination) {
+		this.toughness = new Toughness(toughness);
 		this.resistance = new Resistance(coordination);
 
-		AttributesUtils.initialValidations(this.health, this.resistance);
+		AttributesUtils.initialValidations(this.toughness, this.resistance);
 	}
 	
 	public int getConstitution() {
-		return (health.getValue() + resistance.getValue()) / 2;
+		return (toughness.getValue() + resistance.getValue()) / 2;
 	}
 
 	public void addToughness(int value) {
-		this.health.setValue(health.getValue() + value);
+		this.toughness.setValue(toughness.getValue() + value);
 	}
 	
 	public void addResistance(int value) {
@@ -28,7 +28,7 @@ public class Constitution {
 	}
 
 	public int getToughness() {
-		return health.getValue();
+		return toughness.getValue();
 	}
 
 	public int getResistance() {

@@ -12,9 +12,9 @@ public class ConstitutionTest {
 	public void initializationTest() {
 		Constitution constitution = new Constitution(12, 14);
 		
-		assertEquals(15, constitution.getConstitution());
-		assertEquals(14, constitution.getToughness());
-		assertEquals(16, constitution.getResistance());
+		assertEquals(13, constitution.getConstitution());
+		assertEquals(12, constitution.getToughness());
+		assertEquals(14, constitution.getResistance());
 	}
 	
 	@Test(expected=NegativeAttributeValueException.class)

@@ -16,7 +16,9 @@ public class AttributesNamesTest {
 		assertEquals(20, AttributesNames.DEXTERITY.getPosition());
 		assertEquals(21, AttributesNames.DEXTERITY_SPEED.getPosition());
 		assertEquals(22, AttributesNames.DEXTERITY_COORDINATION.getPosition());
-		assertEquals(3, AttributesNames.CONSTITUTION.getPosition());
+		assertEquals(30, AttributesNames.CONSTITUTION.getPosition());
+		assertEquals(31, AttributesNames.CONSTITUTION_TOUGHNESS.getPosition());
+		assertEquals(32, AttributesNames.CONSTITUTION_RESISTANCE.getPosition());
 		assertEquals(4, AttributesNames.INTELLIGENCE.getPosition());
 		assertEquals(5, AttributesNames.WISDOM.getPosition());
 		assertEquals(6, AttributesNames.CHARISMA.getPosition());

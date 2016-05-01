@@ -9,6 +9,7 @@ import br.com.sestaro.characters.commons.attributes.Attributes;
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
@@ -20,7 +21,7 @@ public class AttributesTests {
 	public void initialContext() {
 		Strength strength = new Strength(10, 14);
 		Dexterity dexterity = new Dexterity(12, 14);
-		int constitution = 13;
+		Constitution constitution = new Constitution(13, 13);
 		int intelligence = 14;
 		int wisdom = 5;
 		int charisma = 16;
