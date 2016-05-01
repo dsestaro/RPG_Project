@@ -1,9 +1,23 @@
 package br.com.sestaro.characters.commons.attributes.interfaces;
 
+/**
+ * Interface to attributes specialization.
+ * 
+ * @author davidson.sestaro
+ */
 public interface Specialization {
-	public int getValue();
+  /**
+   * @return                                  - Specialization value
+   */
+	int getValue();
 	
-	public void setValue(int value);
+	/**
+	 * @param value                             - Specialization value
+	 */
+	void setValue(int value);
 	
-	public String getName();
+	/**
+	 * @return                                   - Specialization name
+	 */
+	String getName();
 }
