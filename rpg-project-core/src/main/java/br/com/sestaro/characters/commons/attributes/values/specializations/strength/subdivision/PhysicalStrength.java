@@ -3,25 +3,42 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.stre
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
+/**
+ * Strength subdivision. 
+ * 
+ * @author davidson.sestaro
+ */
 public class PhysicalStrength implements Specialization {
 
 	private int physicalStrength;
-	private final String NAME = "Physical Strength";
+	private final String name = "Physical Strength";
 	
-	public PhysicalStrength(int physicalStrength) {
-		setValue(physicalStrength);
+	/**
+   * @param value                              - Physical strength value
+   */
+	public PhysicalStrength(final int value) {
+		setValue(value);
 	}
 
-	public int getValue() {
+	/**
+   * @return                                   - Return physical strength value
+   */
+	public final int getValue() {
 		return this.physicalStrength;
 	}
 
-	public void setValue(int physicalStrength) {
-		AttributesUtils.validateAttributeValue(physicalStrength);
-		this.physicalStrength = physicalStrength;
+	/**
+   * @param value                              - Physical Strength value
+   */
+	public final void setValue(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.physicalStrength = value;
 	}
 	
-	public String getName() {
-		return this.NAME;
+	/**
+   * @return                                   - Return the specialization name
+   */
+	public final String getName() {
+		return this.name;
 	}
 }

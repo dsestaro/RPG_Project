@@ -14,7 +14,7 @@ public class Logic implements Specialization {
 	private final String name = "Logic";
 	
 	/**
-   * @param value                              - Knowledge value
+   * @param value                              - Logic value
    */
 	public Logic(final int value) {
 		setValue(value);
