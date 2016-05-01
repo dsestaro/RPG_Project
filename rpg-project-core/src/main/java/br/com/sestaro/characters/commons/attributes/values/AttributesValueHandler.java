@@ -13,7 +13,11 @@ public class AttributesValueHandler {
 			case STRENGTH_ENDURANCE:
 				return values.getStrength().getEndurance();
 			case DEXTERITY:
-				return values.getDexterity();
+				return values.getDexterity().getDexterity();
+			case DEXTERITY_SPEED:
+				return values.getDexterity().getSpeed();
+			case DEXTERITY_COORDINATION:
+				return values.getDexterity().getCoordination();
 			case CONSTITUTION:
 				return values.getConstitution();
 			case INTELLIGENCE:
@@ -35,8 +39,11 @@ public class AttributesValueHandler {
 			case STRENGTH_ENDURANCE:
 				values.getStrength().addEndurance(value);
 				return;
-			case DEXTERITY:
-				values.setDexterity(getAttributeByPosition(values, attributeName) + value);
+			case DEXTERITY_SPEED:
+				values.getDexterity().addSpeed(value);
+				return;
+			case DEXTERITY_COORDINATION:
+				values.getDexterity().addCoordination(value);
 				return;
 			case CONSTITUTION:
 				values.setConstitution(getAttributeByPosition(values, attributeName) + value);

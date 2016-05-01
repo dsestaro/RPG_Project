@@ -9,13 +9,14 @@ import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 public class AttributesValueHandlerTest {
 
 	private AttributesValues values; 
 	private Strength strength;
-	private int dexterity = 12;
+	private Dexterity dexterity;
 	private int constitution = 13;
 	private int intelligence = 14;
 	private int wisdom = 15;
@@ -24,6 +25,7 @@ public class AttributesValueHandlerTest {
 	@Before
 	public void initialize() {
 		this.strength = new Strength(12, 8);
+		this.dexterity = new Dexterity(14, 14);
 		
 		this.values = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
@@ -38,7 +40,7 @@ public class AttributesValueHandlerTest {
 		
 		attributeName = AttributesNames.DEXTERITY;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(dexterity, attributeValue);
+		assertEquals(14, attributeValue);
 		
 		attributeName = AttributesNames.CONSTITUTION;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -71,10 +73,15 @@ public class AttributesValueHandlerTest {
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(10, attributeValue);
 		
-		attributeName = AttributesNames.DEXTERITY;
+		attributeName = AttributesNames.DEXTERITY_SPEED;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, 3);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(dexterity + 3, attributeValue);
+		assertEquals(17, attributeValue);
+		
+		attributeName = AttributesNames.DEXTERITY_COORDINATION;
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, 2);
+		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
+		assertEquals(16, attributeValue);
 		
 		attributeName = AttributesNames.CONSTITUTION;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, -2);
