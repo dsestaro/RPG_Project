@@ -3,25 +3,42 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.cons
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
-public class Toughness implements Specialization{
+/**
+ * Constituion subdivion. 
+ * 
+ * @author davidson.sestaro
+ */
+public class Toughness implements Specialization {
 
 	private int health;
-	private final String NAME = "Toughness";
+	private final String name = "Toughness";
 	
-	public Toughness(int health) {
-		setValue(health);
+	/**
+   * @param value                              - Toughness value
+   */
+  public Toughness(final int value) {
+		setValue(value);
 	}
 	
-	public int getValue() {
+  /**
+   * @return                                   - Toughness value
+   */
+  public final int getValue() {
 		return this.health;
 	}
 
-	public void setValue(int health) {
-		AttributesUtils.validateAttributeValue(health);
-		this.health = health;
+  /**
+   * @param value                              - Toughness value
+   */
+  public final void setValue(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.health = value;
 	}
 
-	public String getName() {
-		return this.NAME;
+  /**
+   * @return                                   - Return the specialization name
+   */
+  public final String getName() {
+		return this.name;
 	}
 }

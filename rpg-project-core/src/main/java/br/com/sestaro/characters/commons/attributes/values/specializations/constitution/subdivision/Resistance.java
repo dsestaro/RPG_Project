@@ -3,25 +3,42 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.cons
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
-public class Resistance implements Specialization{
+/**
+ * Constituion subdivion. 
+ * 
+ * @author davidson.sestaro
+ */
+public class Resistance implements Specialization {
 
 	private int resistance;
-	private final String NAME = "Resistance";
+	private final String name = "Resistance";
 	
-	public Resistance(int resistance) {
-		setValue(resistance);
+	/**
+	 * @param value                              - Resistence value
+	 */
+	public Resistance(final int value) {
+		setValue(value);
 	}
 	
-	public int getValue() {
+	/**
+	 * @return                                   - Return resistence value
+	 */
+	public final int getValue() {
 		return this.resistance;
 	}
 
-	public void setValue(int resistance) {
-		AttributesUtils.validateAttributeValue(resistance);
-		this.resistance = resistance;
+	/**
+	 * @param value                              - Resistence value
+	 */
+	public final void setValue(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.resistance = value;
 	}
 
-	public String getName() {
-		return this.NAME;
+	/**
+	 * @return                                   - Return the specialization name
+	 */
+	public final String getName() {
+		return this.name;
 	}
 }
