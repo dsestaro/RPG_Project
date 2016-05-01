@@ -3,12 +3,12 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.cons
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
-public class Health implements Specialization{
+public class Toughness implements Specialization{
 
 	private int health;
-	private final String NAME = "Health";
+	private final String NAME = "Toughness";
 	
-	public Health(int health) {
+	public Toughness(int health) {
 		setValue(health);
 	}
 	
