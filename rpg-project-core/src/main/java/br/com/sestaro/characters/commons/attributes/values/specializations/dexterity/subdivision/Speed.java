@@ -3,25 +3,42 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.dext
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
+/**
+ * Dexterity subdivion. 
+ * 
+ * @author davidson.sestaro
+ */
 public class Speed implements Specialization {
 
 	private int speed;
-	private final String NAME = "Speed";
+	private final String name = "Speed";
 	
-	public Speed(int speed) {
-		setValue(speed);
+	/**
+   * @param value                              - Speed value
+   */
+	public Speed(final int value) {
+		setValue(value);
 	}
 	
-	public int getValue() {
+	/**
+   * @return                                   - Speed value
+   */
+	public final int getValue() {
 		return this.speed;
 	}
 
-	public void setValue(int speed) {
-		AttributesUtils.validateAttributeValue(speed);
-		this.speed = speed;
+	/**
+   * @param value                              - Speed value
+   */
+	public final void setValue(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.speed = value;
 	}
 	
-	public String getName() {
-		return this.NAME;
+	/**
+   * @return                                   - Return the specialization name
+   */
+	public final String getName() {
+		return this.name;
 	}
 }

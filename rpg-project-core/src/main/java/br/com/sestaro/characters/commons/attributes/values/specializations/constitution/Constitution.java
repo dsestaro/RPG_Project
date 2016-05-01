@@ -27,7 +27,7 @@ public class Constitution {
 	/**
 	 * Calculate the constution based on the mean of the 2 specializations.
 	 * 
-	 * @return                                     - Returns the constution value
+	 * @return                                     - Returns the constitution value
 	 */
 	public final int getConstitution() {
 		return (toughness.getValue() + resistance.getValue()) / 2;

@@ -3,25 +3,42 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.dext
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
+/**
+ * Dexterity subdivion. 
+ * 
+ * @author davidson.sestaro
+ */
 public class Coordination implements Specialization {
 
 	private int coordination;
-	private final String NAME = "Coordination";
+	private final String name = "Coordination";
 	
-	public Coordination(int coordination) {
-		setValue(coordination);
+	/**
+   * @param value                              - Coordination value
+   */
+	public Coordination(final int value) {
+		setValue(value);
 	}
 	
-	public int getValue() {
+	/**
+   * @return                                   - Coordination value
+   */
+	public final int getValue() {
 		return this.coordination;
 	}
 
-	public void setValue(int coordination) {
-		AttributesUtils.validateAttributeValue(coordination);
-		this.coordination = coordination;
+	/**
+   * @param value                              - Coordination value
+   */
+	public final void setValue(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.coordination = value;
 	}
 
-	public String getName() {
-		return this.NAME;
+	/**
+   * @return                                   - Return the specialization name
+   */
+	public final String getName() {
+		return this.name;
 	}
 }
