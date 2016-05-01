@@ -19,7 +19,11 @@ public class AttributesValueHandler {
 			case DEXTERITY_COORDINATION:
 				return values.getDexterity().getCoordination();
 			case CONSTITUTION:
-				return values.getConstitution();
+				return values.getConstitution().getConstitution();
+			case CONSTITUTION_TOUGHNESS:
+				return values.getConstitution().getToughness();
+			case CONSTITUTION_RESISTANCE:
+				return values.getConstitution().getResistance();
 			case INTELLIGENCE:
 				return values.getIntelligence();
 			case WISDOM:
@@ -45,8 +49,11 @@ public class AttributesValueHandler {
 			case DEXTERITY_COORDINATION:
 				values.getDexterity().addCoordination(value);
 				return;
-			case CONSTITUTION:
-				values.setConstitution(getAttributeByPosition(values, attributeName) + value);
+			case CONSTITUTION_TOUGHNESS:
+				values.getConstitution().addToughness(value);
+				return;
+			case CONSTITUTION_RESISTANCE:
+				values.getConstitution().addResistance(value);
 				return;
 			case INTELLIGENCE:
 				values.setIntelligence(getAttributeByPosition(values, attributeName) + value);

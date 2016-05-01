@@ -1,21 +1,22 @@
 package br.com.sestaro.characters.commons.attributes.values;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 public class AttributesValues {
 	private Strength strength;
 	private Dexterity dexterity;
-	private int constitution;
+	private Constitution constitution;
 	private int intelligence;
 	private int wisdom;
 	private int charisma;
 	
-	public AttributesValues(Strength strength, Dexterity dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+	public AttributesValues(Strength strength, Dexterity dexterity, Constitution constitution, int intelligence, int wisdom, int charisma) {
 		this.strength = strength;
 		this.dexterity = dexterity;
-		this.setConstitution(constitution);
+		this.constitution = constitution;
 		this.setIntelligence(intelligence);
 		this.setWisdom(wisdom);
 		this.setCharisma(charisma);
@@ -29,13 +30,8 @@ public class AttributesValues {
 		return dexterity;
 	}
 	
-	public int getConstitution() {
+	public Constitution getConstitution() {
 		return constitution;
-	}
-	
-	public void setConstitution(int constitution) {
-		AttributesUtils.validateAttributeValue(constitution);
-		this.constitution = constitution;
 	}
 	
 	public int getIntelligence() {
