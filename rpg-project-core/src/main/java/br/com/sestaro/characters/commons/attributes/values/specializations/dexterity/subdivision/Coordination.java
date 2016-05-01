@@ -6,7 +6,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Coordination implements Specialization {
 
 	private int coordination;
-	private static final String NAME = "Coordination";
+	private final String NAME = "Coordination";
 	
 	public Coordination(int coordination) {
 		setValue(coordination);

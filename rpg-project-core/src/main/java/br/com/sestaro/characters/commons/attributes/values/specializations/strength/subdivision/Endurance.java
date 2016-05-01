@@ -6,7 +6,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Endurance implements Specialization {
 
 	private int endurance;
-	private static final String NAME = "Endurance";
+	private final String NAME = "Endurance";
 	
 	public Endurance(int endurance) {
 		setValue(endurance);

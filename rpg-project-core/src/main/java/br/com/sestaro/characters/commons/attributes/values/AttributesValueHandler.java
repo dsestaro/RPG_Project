@@ -50,8 +50,8 @@ public class AttributesValueHandler {
 			case CHARISMA:
 				values.setCharisma(getAttributeByPosition(values, attributeName) + value);
 				return;
+			default:
+				throw new InvalidAttributeNameException();
 		}
-		
-		throw new InvalidAttributeNameException();
 	}
 }

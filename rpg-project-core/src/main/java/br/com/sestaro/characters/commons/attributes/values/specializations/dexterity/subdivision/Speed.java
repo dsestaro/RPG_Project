@@ -6,7 +6,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Speed implements Specialization {
 
 	private int speed;
-	private static final String NAME = "Speed";
+	private final String NAME = "Speed";
 	
 	public Speed(int speed) {
 		setValue(speed);

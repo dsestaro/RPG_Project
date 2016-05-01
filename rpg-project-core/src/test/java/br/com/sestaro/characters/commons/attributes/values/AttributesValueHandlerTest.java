@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
+import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
@@ -65,6 +66,11 @@ public class AttributesValueHandlerTest {
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(13, attributeValue);
 		
+		attributeName = AttributesNames.STRENGTH_ENDURANCE;
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, 2);
+		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
+		assertEquals(10, attributeValue);
+		
 		attributeName = AttributesNames.DEXTERITY;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, 3);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -89,5 +95,11 @@ public class AttributesValueHandlerTest {
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, 3);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(charisma + 3, attributeValue);
+	}
+	
+	@Test(expected=InvalidAttributeNameException.class)
+	public void invalidNameTest() {
+		AttributesNames attributeName = AttributesNames.STRENGTH;
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, 1);
 	}
 }

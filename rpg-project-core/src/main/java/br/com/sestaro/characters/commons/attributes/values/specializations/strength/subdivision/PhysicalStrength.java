@@ -6,7 +6,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class PhysicalStrength implements Specialization {
 
 	private int physicalStrength;
-	private static final String NAME = "Physical Strength";
+	private final String NAME = "Physical Strength";
 	
 	public PhysicalStrength(int physicalStrength) {
 		setValue(physicalStrength);

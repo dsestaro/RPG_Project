@@ -3,8 +3,6 @@ package br.com.sestaro.characters.commons.attributes.utils;
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
-import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance;
-import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength;
 
 public class AttributesUtils {
 
