@@ -3,25 +3,42 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.inte
 import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 
+/**
+ * Intelligence subdivion. 
+ * 
+ * @author davidson.sestaro
+ */
 public class Knowledge implements Specialization {
 
 	private int knowledge;
-	private final String NAME = "Knowledge";
+	private final String name = "Knowledge";
 	
-	public Knowledge(int knowledge) {
-		setValue(knowledge);
+	/**
+   * @param value                              - Knowledge value
+   */
+	public Knowledge(final int value) {
+		setValue(value);
 	}
 	
-	public int getValue() {
+	/**
+   * @return                                   - Return knowledge value
+   */
+	public final int getValue() {
 		return this.knowledge;
 	}
 
-	public void setValue(int knowledge) {
-		AttributesUtils.validateAttributeValue(knowledge);
-		this.knowledge = knowledge;
+	/**
+   * @param value                              - Knowledge value
+   */
+	public final void setValue(final int value) {
+		AttributesUtils.validateAttributeValue(value);
+		this.knowledge = value;
 	}
 
-	public String getName() {
-		return this.NAME;
+	/**
+   * @return                                   - Return the specialization name
+   */
+	public final String getName() {
+		return this.name;
 	}
 }
