@@ -45,6 +45,22 @@ public class AttributesUtilsTest {
 	
 	@Test(expected=InvalidAttributeValueException.class)
 	public void initialValidationsGreaterThan18Test() {
+		Specialization spec1 = new Speed(19);
+		Specialization spec2 = new Speed(14);
+		
+		AttributesUtils.initialValidations(spec1, spec2);
+	}
+	
+	@Test
+	public void initialValidationsGreaterThan18Test3() {
+		Specialization spec1 = new Speed(19);
+		Specialization spec2 = new Speed(19);
+		
+		AttributesUtils.initialValidations(spec1, spec2);
+	}
+	
+	@Test(expected=InvalidAttributeValueException.class)
+	public void initialValidationsGreaterThan18Test2() {
 		Specialization spec1 = new Speed(14);
 		Specialization spec2 = new Speed(19);
 		
