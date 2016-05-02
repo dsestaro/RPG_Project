@@ -1,6 +1,19 @@
 package br.com.sestaro.characters.commons.attributes.enums;
 
 import static org.junit.Assert.assertEquals;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.STRENGTH_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.STRENGTH_PHYSICAL_STRENGTH_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.STRENGTH_ENDURANCE_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.DEXTERITY_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.DEXTERITY_SPEED_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.DEXTERITY_COORDINATION_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CONSTITUTION_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CONSTITUTION_TOUGHNESS_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CONSTITUTION_RESISTANCE_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.INTELLIGENCE_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.WISDOM_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CHARISMA_POSITION;
+
 
 import org.junit.Test;
 
@@ -11,19 +24,6 @@ import org.junit.Test;
  */
 public class AttributesNamesTest {
 	
-  private static final int STRENGTH_POSITION = 10;
-  private static final int STRENGTH_PHYSICAL_STRENGTH_POSITION = 11;
-  private static final int STRENGTH_ENDURANCE_STRENGTH_POSITION = 12;
-  private static final int DEXTERITY_POSITION = 20;
-  private static final int DEXTERITY_SPEED_POSITION = 21;
-  private static final int DEXTERITY_COORDINATION_POSITION = 22;
-  private static final int CONSTITUTION_POSITION = 30;
-  private static final int CONSTITUTION_TOUGHNESS_POSITION = 31;
-  private static final int CONSTITUTION_RESISTANCE_POSITION = 32;
-  private static final int INTELLIGENCE_POSITION = 4;
-  private static final int WISDOM_POSITION = 5;
-  private static final int CHARISMA_POSITION = 6;
-  
   /**
    * Test enum position.
    */
@@ -31,7 +31,7 @@ public class AttributesNamesTest {
   public final void enumTest() {
 		assertEquals(STRENGTH_POSITION, AttributesNames.STRENGTH.getPosition());
 		assertEquals(STRENGTH_PHYSICAL_STRENGTH_POSITION, AttributesNames.STRENGTH_PHYSICALSTRENGTH.getPosition());
-		assertEquals(STRENGTH_ENDURANCE_STRENGTH_POSITION, AttributesNames.STRENGTH_ENDURANCE.getPosition());
+		assertEquals(STRENGTH_ENDURANCE_POSITION, AttributesNames.STRENGTH_ENDURANCE.getPosition());
 		assertEquals(DEXTERITY_POSITION, AttributesNames.DEXTERITY.getPosition());
 		assertEquals(DEXTERITY_SPEED_POSITION, AttributesNames.DEXTERITY_SPEED.getPosition());
 		assertEquals(DEXTERITY_COORDINATION_POSITION, AttributesNames.DEXTERITY_COORDINATION.getPosition());

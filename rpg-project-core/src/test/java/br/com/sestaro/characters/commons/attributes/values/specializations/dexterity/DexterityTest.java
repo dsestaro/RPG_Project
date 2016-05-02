@@ -1,64 +1,99 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.dexterity;
 
 import static org.junit.Assert.assertEquals;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIFTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE_VALUE;
+
 
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
 
+/**
+ * Class to test {@link Dexterity}.
+ * 
+ * @author davidson.sestaro
+ */
 public class DexterityTest {
+  
+  /**
+   * Validate initial configuration.
+   */
 	@Test
-	public void initializationTest() {
-		Dexterity dexterity = new Dexterity(16, 14);
+  public final void initializationTest() {
+		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
 		
-		assertEquals(15, dexterity.getDexterity());
-		assertEquals(16, dexterity.getSpeed());
-		assertEquals(14, dexterity.getCoordination());
+		assertEquals(FIFTEEN_VALUE, dexterity.getDexterity());
+		assertEquals(SIXTEEN_VALUE, dexterity.getSpeed());
+		assertEquals(FOURTEEN_VALUE, dexterity.getCoordination());
 	}
 	
-	@Test(expected=NegativeAttributeValueException.class)
-	public void testNegativeSpeedValue() {
-		new Dexterity(-1, 1);
+	/**
+   * Validate negative input.
+   */
+	@Test(expected = NegativeAttributeValueException.class)
+  public final void testNegativeSpeedValue() {
+		new Dexterity(NEGATIVE_VALUE, POSITIVE_VALUE);
 	}
 	
-	@Test(expected=NegativeAttributeValueException.class)
-	public void testNegativeCoordinationValue() {
-		new Dexterity(1, -1);
+	/**
+   * Validate negative input.
+   */
+	@Test(expected = NegativeAttributeValueException.class)
+  public final void testNegativeCoordinationValue() {
+		new Dexterity(POSITIVE_VALUE, NEGATIVE_VALUE);
 	}
 	
+	/**
+   * Add a value to the speed.
+   */
 	@Test
-	public void addSpeedTest() {
-		Dexterity dexterity = new Dexterity(16, 14);
+  public final void addSpeedTest() {
+		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
 		
-		dexterity.addSpeed(2);
+		dexterity.addSpeed(POSITIVE_VALUE);
 		
-		assertEquals(18, dexterity.getSpeed());
+		assertEquals(EIGHTEEN_VALUE, dexterity.getSpeed());
 	}
 	
+	/**
+   * Remove a value to the speed.
+   */
 	@Test
-	public void removeSpeedTest() {
-		Dexterity dexterity = new Dexterity(16, 14);
+  public final void removeSpeedTest() {
+		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, SIXTEEN_VALUE);
 		
-		dexterity.addSpeed(-2);
+		dexterity.addSpeed(NEGATIVE_VALUE);
 		
-		assertEquals(14, dexterity.getSpeed());
+		assertEquals(FOURTEEN_VALUE, dexterity.getSpeed());
 	}
 	
+	/**
+   * Add a value to the coordination.
+   */
 	@Test
-	public void addCoordinationTest() {
-		Dexterity dexterity = new Dexterity(16, 14);
+  public final void addCoordinationTest() {
+		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
 		
-		dexterity.addCoordination(3);
+		dexterity.addCoordination(POSITIVE_VALUE);
 		
-		assertEquals(17, dexterity.getCoordination());
+		assertEquals(SIXTEEN_VALUE, dexterity.getCoordination());
 	}
 	
+	/**
+   * Remove a value to the coordination.
+   */
 	@Test
-	public void removeEnduranceTest() {
-		Dexterity dexterity = new Dexterity(16, 14);
+  public final void removeCoordinationTest() {
+		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
 		
-		dexterity.addCoordination(-1);
+		dexterity.addCoordination(NEGATIVE_VALUE);
 		
-		assertEquals(13, dexterity.getCoordination());
+		assertEquals(TWELVE_VALUE, dexterity.getCoordination());
 	}
 }

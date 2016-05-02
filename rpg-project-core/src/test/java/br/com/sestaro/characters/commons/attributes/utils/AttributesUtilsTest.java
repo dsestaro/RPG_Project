@@ -1,5 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.utils;
 
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_MODIFIER;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE_MODIFIER;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NINETEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SEVENTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE_VALUE;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -16,22 +25,6 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.dexte
  */
 public class AttributesUtilsTest {
   
-  private static final int FIVE_MODIFIER = -2;
-  private static final int FIVE_VALUE = 5;
-  
-  private static final int SEVENTEEN_VALUE = 17;
-  
-  private static final int TWELVE_VALUE = 12;
-  
-  private static final int FOURTEEN_VALUE = 14;
-  
-  private static final int SIXTEEN_VALUE = 14;
-
-  private static final int EIGHTEEN_MODIFIER = 4;
-  private static final int EIGHTEEN_VALUE = 18;
-  
-  private static final int NINETEEN_VALUE = 14;
-
   /**
    * Validate attributes with null value.
    */
