@@ -6,26 +6,49 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 
+/**
+ * Class to interact and manipulate the attribute values. 
+ * 
+ * @author davidson.sestaro
+ */
 public class Attributes {
 	private AttributesValues values;
 
-	public Attributes(AttributesValues values) {
-		if(values == null) {
+	/**
+	 * @param value                              - Attribute values
+	 */
+	public Attributes(final AttributesValues value) {
+		if (value == null) {
 			throw new NullAttributesException();
 		}
 		
-		this.values = values;
+		this.values = value;
 	}
 
-	public AttributesValues getValues() {
+	/**
+	 * @return                                   - Attribute values
+	 */
+	public final AttributesValues getValues() {
 		return values;
 	}
 	
-	public int getAttributeModifier (AttributesNames attributeName) {
-		return AttributesUtils.calculateModifier(AttributesValueHandler.getAttributeByPosition(this.values, attributeName));
+	/**
+	 * Given a attribute name returns its modifier.
+	 * 
+	 * @param value                              - Attribute name
+	 * @return                                   - Attribute modifier
+	 */
+	public final int getAttributeModifier(final AttributesNames value) {
+		return AttributesUtils.calculateModifier(AttributesValueHandler.getAttributeByPosition(this.values, value));
 	}
 	
-	public void addAttributeValue (AttributesNames attributeName, int value) {
-		AttributesValueHandler.addAttributeByPosition(this.values, attributeName, value);
+	/**
+	 * Given a attribute name and a value, the method sums this value to the attribute.
+	 * 
+	 * @param value1                             - Attribute name
+	 * @param value2                             - Value
+	 */
+	public final void addAttributeValue(final AttributesNames value1, final int value2) {
+		AttributesValueHandler.addAttributeByPosition(this.values, value1, value2);
 	}
 }

@@ -1,5 +1,10 @@
 package br.com.sestaro.characters.commons.info.enums;
 
+/**
+ * Class that contain all character alignments names.
+ * 
+ * @author davidson.sestaro
+ */
 public enum CharacterAlignNames {
 	LAWFUL_GOOD(1),
 	NEUTRAL_GOOD(2),
@@ -13,10 +18,18 @@ public enum CharacterAlignNames {
 	
 	private final int position;
 	
-	CharacterAlignNames(int position) {
-		this.position = position;
+	/**
+   * Enum constructor.
+   * 
+   * @param value                                    - Enum position
+   */
+	CharacterAlignNames(final int value) {
+		this.position = value;
 	}
 	
+	/**
+   * @return                                         - Enum position
+   */
 	public int getPosition() {
 		return this.position;
 	}
