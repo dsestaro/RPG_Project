@@ -5,26 +5,42 @@ import br.com.sestaro.characters.commons.savingthrows.exceptions.NullSavingThrow
 import br.com.sestaro.characters.commons.savingthrows.values.SavingThrowsValueHandler;
 import br.com.sestaro.characters.commons.savingthrows.values.SavingThrowsValues;
 
+/**
+ * Class to interact and manipulate the saving throws values. 
+ * 
+ * @author davidson.sestaro
+ */
 public class SavingThrows {
 	private SavingThrowsValues values;
 
-	public SavingThrows(SavingThrowsValues values) {
-		if(values == null) {
+	/**
+   * @param value                              - Saving throws values
+   */
+	public SavingThrows(final SavingThrowsValues value) {
+		if (value == null) {
 			throw new NullSavingThrowsException();
 		}
 		
-		this.values = values;
+		this.values = value;
 	}
 	
-	public SavingThrows() {
-		this.values = new SavingThrowsValues();
+	/**
+   * Given a saving throw name returns its value.
+   * 
+   * @param value                              - Saving throw name
+   * @return                                   - Saving throw value
+   */
+	public final int getSavingThrowTotal(final SavingThrowsNames value) {
+		return SavingThrowsValueHandler.getSavingThrowByPosition(this.values, value);
 	}
 	
-	public int getSavingThrowTotal(SavingThrowsNames savingThrowName) {
-		return SavingThrowsValueHandler.getSavingThrowByPosition(this.values, savingThrowName);
-	}
-	
-	public void setSavingThrowTotalValue (SavingThrowsNames savingThrowName, int value) {
-		SavingThrowsValueHandler.setSavingThrowByPosition(this.values, savingThrowName, value);
+	/**
+   * Given a saving throw name and a value, the method sums this value to the saving throw.
+   * 
+   * @param value1                             - Saving throw name
+   * @param value2                             - Value
+   */
+	public final void setSavingThrowTotalValue(final SavingThrowsNames value1, final int value2) {
+		SavingThrowsValueHandler.setSavingThrowByPosition(this.values, value1, value2);
 	}
 }

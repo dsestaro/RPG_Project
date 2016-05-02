@@ -14,7 +14,6 @@ public final class AttributesValueHandler {
    * Constructor to prevent class instantiation.
    */
   private AttributesValueHandler() {
-    
   }
   
   /**
@@ -55,7 +54,7 @@ public final class AttributesValueHandler {
 		}
 	}
 	
-	 /**
+	/**
    * Class that given a {@link AttributesValues} will add a value to the attribute of corresponding name.
    * 
    * @param value1                                      - Class with the attribute values  

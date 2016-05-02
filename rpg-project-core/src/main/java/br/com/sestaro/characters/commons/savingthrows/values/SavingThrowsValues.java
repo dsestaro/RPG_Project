@@ -1,38 +1,65 @@
 package br.com.sestaro.characters.commons.savingthrows.values;
 
+/**
+ * Class that group all the saving throws and give the methods to access their values.
+ * 
+ * @author davidson.sestaro
+ */
 public class SavingThrowsValues {
 	private int fortitude;
 	private int reflex;
 	private int will;
 	
-	public SavingThrowsValues(int fortitude, int reflex, int will) {
-		this.fortitude = fortitude;
-		this.reflex = reflex;
-		this.will = will;
+	/**
+	 * @param value1                                       - Fortitude
+	 * @param value2                                       - Reflex
+	 * @param value3                                       - Will
+	 */
+	public SavingThrowsValues(final int value1, final int value2, final int value3) {
+		this.fortitude = value1;
+		this.reflex = value2;
+		this.will = value3;
 	}
-	
-	public SavingThrowsValues() {
-		this.fortitude = 0;
-		this.reflex = 0;
-		this.will = 0;
-	}
-	
-	public int getFortitude() {
+
+	/**
+	 * @return                                             - Fortitude
+	 */
+	public final int getFortitude() {
 		return fortitude;
 	}
-	public void setFortitude(int fortitude) {
-		this.fortitude = fortitude;
+	
+	/**
+	 * @param value                                        - Fortitude
+	 */
+	public final void setFortitude(final int value) {
+		this.fortitude = value;
 	}
-	public int getReflex() {
+	
+	/**
+   * @return                                             - Reflex
+   */
+	public final int getReflex() {
 		return reflex;
 	}
-	public void setReflex(int reflex) {
-		this.reflex = reflex;
+	
+	/**
+   * @param value                                        - Reflex
+   */
+	public final void setReflex(final int value) {
+		this.reflex = value;
 	}
-	public int getWill() {
+	
+	/**
+   * @return                                             - Will
+   */
+	public final int getWill() {
 		return will;
 	}
-	public void setWill(int will) {
-		this.will = will;
+	
+	/**
+   * @param value                                        - Will
+   */
+	public final void setWill(final int value) {
+		this.will = value;
 	}
 }

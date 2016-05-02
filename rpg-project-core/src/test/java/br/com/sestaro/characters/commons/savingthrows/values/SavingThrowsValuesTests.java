@@ -10,7 +10,7 @@ public class SavingThrowsValuesTests {
 	
 	@Test
 	public void savingThrowConstructorTest() {
-		SavingThrowsValues values = new SavingThrowsValues();
+		SavingThrowsValues values = new SavingThrowsValues(0, 2, 4);
 		
 		assertEquals(0, values.getFortitude());
 	}

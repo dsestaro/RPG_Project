@@ -27,11 +27,6 @@ public class SavingThrowsTest {
 		new SavingThrows(this.values);
 	}
 	
-	@Test
-	public void testInitializationWithoutValues() {
-		new SavingThrows();
-	}
-	
 	@Test(expected=NullSavingThrowsException.class)
 	public void testNullSavingThrowsValueInitialization() {
 		new SavingThrows(null);
