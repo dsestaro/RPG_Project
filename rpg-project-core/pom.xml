@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RPG Project</name>
 	<description>A D&amp;D experiment using Java</description>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -15,7 +15,7 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -25,6 +25,17 @@
 				<configuration>
 					<source />
 					<target />
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<configLocation>
+						src/main/resources/checkstyle.xml
+					</configLocation>
 				</configuration>
 			</plugin>
 		</plugins>
