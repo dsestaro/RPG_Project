@@ -1,13 +1,13 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.dexterity;
 
 import static org.junit.Assert.assertEquals;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIFTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIFTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
 
 
 import org.junit.Test;
@@ -26,11 +26,11 @@ public class DexterityTest {
    */
 	@Test
   public final void initializationTest() {
-		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
+		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
-		assertEquals(FIFTEEN_VALUE, dexterity.getDexterity());
-		assertEquals(SIXTEEN_VALUE, dexterity.getSpeed());
-		assertEquals(FOURTEEN_VALUE, dexterity.getCoordination());
+		assertEquals(FIFTEEN, dexterity.getDexterity());
+		assertEquals(SIXTEEN, dexterity.getSpeed());
+		assertEquals(FOURTEEN, dexterity.getCoordination());
 	}
 	
 	/**
@@ -38,7 +38,7 @@ public class DexterityTest {
    */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeSpeedValue() {
-		new Dexterity(NEGATIVE_VALUE, POSITIVE_VALUE);
+		new Dexterity(NEGATIVE, POSITIVE);
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class DexterityTest {
    */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeCoordinationValue() {
-		new Dexterity(POSITIVE_VALUE, NEGATIVE_VALUE);
+		new Dexterity(POSITIVE, NEGATIVE);
 	}
 	
 	/**
@@ -54,11 +54,11 @@ public class DexterityTest {
    */
 	@Test
   public final void addSpeedTest() {
-		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
+		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
-		dexterity.addSpeed(POSITIVE_VALUE);
+		dexterity.addSpeed(POSITIVE);
 		
-		assertEquals(EIGHTEEN_VALUE, dexterity.getSpeed());
+		assertEquals(EIGHTEEN, dexterity.getSpeed());
 	}
 	
 	/**
@@ -66,11 +66,11 @@ public class DexterityTest {
    */
 	@Test
   public final void removeSpeedTest() {
-		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, SIXTEEN_VALUE);
+		Dexterity dexterity = new Dexterity(SIXTEEN, SIXTEEN);
 		
-		dexterity.addSpeed(NEGATIVE_VALUE);
+		dexterity.addSpeed(NEGATIVE);
 		
-		assertEquals(FOURTEEN_VALUE, dexterity.getSpeed());
+		assertEquals(FOURTEEN, dexterity.getSpeed());
 	}
 	
 	/**
@@ -78,11 +78,11 @@ public class DexterityTest {
    */
 	@Test
   public final void addCoordinationTest() {
-		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
+		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
-		dexterity.addCoordination(POSITIVE_VALUE);
+		dexterity.addCoordination(POSITIVE);
 		
-		assertEquals(SIXTEEN_VALUE, dexterity.getCoordination());
+		assertEquals(SIXTEEN, dexterity.getCoordination());
 	}
 	
 	/**
@@ -90,10 +90,10 @@ public class DexterityTest {
    */
 	@Test
   public final void removeCoordinationTest() {
-		Dexterity dexterity = new Dexterity(SIXTEEN_VALUE, FOURTEEN_VALUE);
+		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
-		dexterity.addCoordination(NEGATIVE_VALUE);
+		dexterity.addCoordination(NEGATIVE);
 		
-		assertEquals(TWELVE_VALUE, dexterity.getCoordination());
+		assertEquals(TWELVE, dexterity.getCoordination());
 	}
 }

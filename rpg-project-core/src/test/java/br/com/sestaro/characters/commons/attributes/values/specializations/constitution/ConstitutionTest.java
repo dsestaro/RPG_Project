@@ -1,12 +1,12 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.constitution;
 
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.THIRTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.THIRTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -25,11 +25,11 @@ public class ConstitutionTest {
    */
 	@Test
   public final void initializationTest() {
-		Constitution constitution = new Constitution(TWELVE_VALUE, FOURTEEN_VALUE);
+		Constitution constitution = new Constitution(TWELVE, FOURTEEN);
 		
-		assertEquals(THIRTEEN_VALUE, constitution.getConstitution());
-		assertEquals(TWELVE_VALUE, constitution.getToughness());
-		assertEquals(FOURTEEN_VALUE, constitution.getResistance());
+		assertEquals(THIRTEEN, constitution.getConstitution());
+		assertEquals(TWELVE, constitution.getToughness());
+		assertEquals(FOURTEEN, constitution.getResistance());
 	}
 	
 	/**
@@ -37,7 +37,7 @@ public class ConstitutionTest {
 	 */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeToughnessValue() {
-		new Constitution(NEGATIVE_VALUE, POSITIVE_VALUE);
+		new Constitution(NEGATIVE, POSITIVE);
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class ConstitutionTest {
    */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeResistanceValue() {
-		new Constitution(POSITIVE_VALUE, NEGATIVE_VALUE);
+		new Constitution(POSITIVE, NEGATIVE);
 	}
 	
 	/**
@@ -53,11 +53,11 @@ public class ConstitutionTest {
 	 */
 	@Test
   public final void addToughnessTest() {
-		Constitution constitution = new Constitution(SIXTEEN_VALUE, SIXTEEN_VALUE);
+		Constitution constitution = new Constitution(SIXTEEN, SIXTEEN);
 		
-		constitution.addToughness(POSITIVE_VALUE);
+		constitution.addToughness(POSITIVE);
 		
-		assertEquals(EIGHTEEN_VALUE, constitution.getToughness());
+		assertEquals(EIGHTEEN, constitution.getToughness());
 	}
 	
 	/**
@@ -65,11 +65,11 @@ public class ConstitutionTest {
    */
 	@Test
   public final void removeToughnessTest() {
-		Constitution constitution = new Constitution(SIXTEEN_VALUE, SIXTEEN_VALUE);
+		Constitution constitution = new Constitution(SIXTEEN, SIXTEEN);
 		
-		constitution.addToughness(NEGATIVE_VALUE);
+		constitution.addToughness(NEGATIVE);
 		
-		assertEquals(FOURTEEN_VALUE, constitution.getToughness());
+		assertEquals(FOURTEEN, constitution.getToughness());
 	}
 	
 	/**
@@ -77,11 +77,11 @@ public class ConstitutionTest {
    */
 	@Test
   public final void addResistanceTest() {
-		Constitution constitution = new Constitution(SIXTEEN_VALUE, FOURTEEN_VALUE);
+		Constitution constitution = new Constitution(SIXTEEN, FOURTEEN);
 		
-		constitution.addResistance(POSITIVE_VALUE);
+		constitution.addResistance(POSITIVE);
 		
-		assertEquals(SIXTEEN_VALUE, constitution.getResistance());
+		assertEquals(SIXTEEN, constitution.getResistance());
 	}
 	
 	/**
@@ -89,10 +89,10 @@ public class ConstitutionTest {
    */
 	@Test
   public final void removeEnduranceTest() {
-		Constitution constitution = new Constitution(SIXTEEN_VALUE, FOURTEEN_VALUE);
+		Constitution constitution = new Constitution(SIXTEEN, FOURTEEN);
 		
-		constitution.addResistance(NEGATIVE_VALUE);
+		constitution.addResistance(NEGATIVE);
 		
-		assertEquals(TWELVE_VALUE, constitution.getResistance());
+		assertEquals(TWELVE, constitution.getResistance());
 	}
 }

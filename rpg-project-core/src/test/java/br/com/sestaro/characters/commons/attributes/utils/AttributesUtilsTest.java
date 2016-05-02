@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.utils;
 
 import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_MODIFIER;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN;
 import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE_MODIFIER;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NINETEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SEVENTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN_VALUE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE_VALUE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NINETEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SEVENTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class AttributesUtilsTest {
 	 */
 	@Test
   public final void calculateModifierPositiveTest() {
-		assertEquals(EIGHTEEN_MODIFIER, AttributesUtils.calculateModifier(EIGHTEEN_VALUE));
+		assertEquals(EIGHTEEN_MODIFIER, AttributesUtils.calculateModifier(EIGHTEEN));
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class AttributesUtilsTest {
    */
 	@Test
   public final void calculateModifierNegativeTest() {
-		assertEquals(FIVE_MODIFIER, AttributesUtils.calculateModifier(FIVE_VALUE));
+		assertEquals(FIVE_MODIFIER, AttributesUtils.calculateModifier(FIVE));
 	}
 	
 	/**
@@ -54,8 +54,8 @@ public class AttributesUtilsTest {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void initialValidationsGreaterThan4Test() {
-		Specialization spec1 = new Speed(TWELVE_VALUE);
-		Specialization spec2 = new Speed(SEVENTEEN_VALUE);
+		Specialization spec1 = new Speed(TWELVE);
+		Specialization spec2 = new Speed(SEVENTEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -65,8 +65,8 @@ public class AttributesUtilsTest {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void initialValidationsGreaterThan4Test2() {
-		Specialization spec1 = new Speed(SEVENTEEN_VALUE);
-		Specialization spec2 = new Speed(TWELVE_VALUE);
+		Specialization spec1 = new Speed(SEVENTEEN);
+		Specialization spec2 = new Speed(TWELVE);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -76,8 +76,8 @@ public class AttributesUtilsTest {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void initialValidationsGreaterThan18Test() {
-		Specialization spec1 = new Speed(NINETEEN_VALUE);
-		Specialization spec2 = new Speed(FOURTEEN_VALUE);
+		Specialization spec1 = new Speed(NINETEEN);
+		Specialization spec2 = new Speed(FOURTEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -87,8 +87,8 @@ public class AttributesUtilsTest {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void initialValidationsGreaterThan18Test2() {
-		Specialization spec1 = new Speed(FOURTEEN_VALUE);
-		Specialization spec2 = new Speed(NINETEEN_VALUE);
+		Specialization spec1 = new Speed(FOURTEEN);
+		Specialization spec2 = new Speed(NINETEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -98,8 +98,8 @@ public class AttributesUtilsTest {
 	 */
 	@Test
 	public final void initialValidationsGreaterThan18Test3() {
-	  Specialization spec1 = new Speed(NINETEEN_VALUE);
-	  Specialization spec2 = new Speed(NINETEEN_VALUE);
+	  Specialization spec1 = new Speed(NINETEEN);
+	  Specialization spec2 = new Speed(NINETEEN);
 	  
 	  AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -109,8 +109,8 @@ public class AttributesUtilsTest {
    */
 	@Test
   public final void initialValidationsTest() {
-		Specialization spec1 = new Speed(FOURTEEN_VALUE);
-		Specialization spec2 = new Speed(SIXTEEN_VALUE);
+		Specialization spec1 = new Speed(FOURTEEN);
+		Specialization spec2 = new Speed(SIXTEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}

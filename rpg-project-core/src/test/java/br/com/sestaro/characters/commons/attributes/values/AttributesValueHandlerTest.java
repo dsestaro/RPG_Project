@@ -1,52 +1,70 @@
 package br.com.sestaro.characters.commons.attributes.values;
 
 import static org.junit.Assert.assertEquals;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIFTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHT;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.THIRTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
-import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
-import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
+/**
+ * Class to test {@link AttributesValueHandler}.
+ * 
+ * @author davidson.sestaro
+ */
 public class AttributesValueHandlerTest {
 
 	private AttributesValues values; 
 	private Strength strength;
 	private Dexterity dexterity;
 	private Constitution constitution;
-	private int intelligence = 14;
-	private int wisdom = 15;
-	private int charisma = 16;
+	private int intelligence = FOURTEEN;
+	private int wisdom = FIFTEEN;
+	private int charisma = SIXTEEN;
 	
+	/**
+	 * Initialization of variables that will be used in this class.
+	 */
 	@Before
-	public void initialize() {
-		this.strength = new Strength(12, 8);
-		this.dexterity = new Dexterity(14, 14);
-		this.constitution = new Constitution(12, 14);
+  public final void initialize() {
+		this.strength = new Strength(TWELVE, EIGHT);
+		this.dexterity = new Dexterity(FOURTEEN, FOURTEEN);
+		this.constitution = new Constitution(TWELVE, FOURTEEN);
 		
 		this.values = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
 	
+	/**
+	 * Validate if the method get is returning the correct value.
+	 */
 	@Test
-	public void getAttributeByPositionTest() {
+  public final void getAttributeByPositionTest() {
 		int attributeValue = 0;
 		
 		AttributesNames attributeName = AttributesNames.STRENGTH;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(10, attributeValue);
+		assertEquals(TEN, attributeValue);
 		
 		attributeName = AttributesNames.DEXTERITY;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(14, attributeValue);
+		assertEquals(FOURTEEN, attributeValue);
 		
 		attributeName = AttributesNames.CONSTITUTION;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(13, attributeValue);
+		assertEquals(THIRTEEN, attributeValue);
 		
 		attributeName = AttributesNames.INTELLIGENCE;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -61,58 +79,64 @@ public class AttributesValueHandlerTest {
 		assertEquals(charisma, attributeValue);
 	}
 	
+	/**
+   * Validate if the method set is calculating the correct value.
+   */
 	@Test
-	public void addAttributeByPositionTest() {
+  public final void addAttributeByPositionTest() {
 		int attributeValue = 0;
 		
 		AttributesNames attributeName = AttributesNames.STRENGTH_PHYSICALSTRENGTH;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 1);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(13, attributeValue);
+		assertEquals(FOURTEEN, attributeValue);
 		
 		attributeName = AttributesNames.STRENGTH_ENDURANCE;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 2);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(10, attributeValue);
+		assertEquals(TEN, attributeValue);
 		
 		attributeName = AttributesNames.DEXTERITY_SPEED;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 3);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(17, attributeValue);
+		assertEquals(SIXTEEN, attributeValue);
 		
 		attributeName = AttributesNames.DEXTERITY_COORDINATION;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 2);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(16, attributeValue);
+		assertEquals(SIXTEEN, attributeValue);
 		
 		attributeName = AttributesNames.CONSTITUTION_TOUGHNESS;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, -2);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, NEGATIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(10, attributeValue);
+		assertEquals(TEN, attributeValue);
 		
 		attributeName = AttributesNames.CONSTITUTION_RESISTANCE;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 2);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(16, attributeValue);
+		assertEquals(SIXTEEN, attributeValue);
 		
 		attributeName = AttributesNames.INTELLIGENCE;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 1);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(intelligence + 1, attributeValue);
+		assertEquals(intelligence + POSITIVE, attributeValue);
 		
 		attributeName = AttributesNames.WISDOM;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 7);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(wisdom + 7, attributeValue);
+		assertEquals(wisdom + POSITIVE, attributeValue);
 		
 		attributeName = AttributesNames.CHARISMA;
-		AttributesValueHandler.addAttributeByPosition(values, attributeName, 3);
+		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(charisma + 3, attributeValue);
+		assertEquals(charisma + POSITIVE, attributeValue);
 	}
 	
-	@Test(expected=InvalidAttributeNameException.class)
-	public void invalidNameTest() {
+	/**
+   * Validate invalid name input.
+   */
+	@Test(expected = InvalidAttributeNameException.class)
+  public final void invalidNameTest() {
 		AttributesNames attributeName = AttributesNames.STRENGTH;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, 1);
 	}

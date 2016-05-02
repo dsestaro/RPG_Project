@@ -1,65 +1,98 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.strength;
 
 import static org.junit.Assert.assertEquals;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIFTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.POSITIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN;
+import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
 
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
 
+/**
+ * Class to test {@link Strength}.
+ * 
+ * @author davidson.sestaro
+ */
 public class StrengthTest {
 
+  /**
+   * Validate initial configuration.
+   */
 	@Test
-	public void initializationTest() {
-		Strength strength = new Strength(16, 14);
+  public final void initializationTest() {
+		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
-		assertEquals(15, strength.getStrength());
-		assertEquals(14, strength.getEndurance());
-		assertEquals(16, strength.getPhysicalStrength());
+		assertEquals(FIFTEEN, strength.getStrength());
+		assertEquals(SIXTEEN, strength.getPhysicalStrength());
+		assertEquals(FOURTEEN, strength.getEndurance());
 	}
 	
-	@Test(expected=NegativeAttributeValueException.class)
-	public void testNegativePhysicalStrengthValue() {
-		new Strength(-1, 1);
+	/**
+   * Validate negative input.
+   */
+	@Test(expected = NegativeAttributeValueException.class)
+  public final void testNegativePhysicalStrengthValue() {
+		new Strength(NEGATIVE, POSITIVE);
 	}
 	
-	@Test(expected=NegativeAttributeValueException.class)
-	public void testNegativeEnduranceValue() {
-		new Strength(1, -1);
+	/**
+   * Validate negative input.
+   */
+	@Test(expected = NegativeAttributeValueException.class)
+  public final void testNegativeEnduranceValue() {
+		new Strength(POSITIVE, NEGATIVE);
 	}
 	
+	/**
+   * Add a value to the physical strength.
+   */
 	@Test
-	public void addPhysicalStrengthTest() {
-		Strength strength = new Strength(16, 14);
+  public final void addPhysicalStrengthTest() {
+		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
-		strength.addPhysicalStrength(2);
+		strength.addPhysicalStrength(POSITIVE);
 		
-		assertEquals(18, strength.getPhysicalStrength());
+		assertEquals(EIGHTEEN, strength.getPhysicalStrength());
 	}
 	
+	/**
+   * Remove a value to the physical strength.
+   */
 	@Test
-	public void removePhysicalStrengthTest() {
-		Strength strength = new Strength(16, 14);
+  public final void removePhysicalStrengthTest() {
+		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
-		strength.addPhysicalStrength(-2);
+		strength.addPhysicalStrength(NEGATIVE);
 		
-		assertEquals(14, strength.getPhysicalStrength());
+		assertEquals(FOURTEEN, strength.getPhysicalStrength());
 	}
 	
+	/**
+   * Add a value to the endurance.
+   */
 	@Test
-	public void addEnduranceTest() {
-		Strength strength = new Strength(16, 14);
+  public final void addEnduranceTest() {
+		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
-		strength.addEndurance(3);
+		strength.addEndurance(POSITIVE);
 		
-		assertEquals(17, strength.getEndurance());
+		assertEquals(SIXTEEN, strength.getEndurance());
 	}
 	
+	/**
+   * Remove a value to the physical strength.
+   */
 	@Test
-	public void removeEnduranceTest() {
-		Strength strength = new Strength(16, 14);
+  public final void removeEnduranceTest() {
+		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
-		strength.addEndurance(-1);
+		strength.addEndurance(NEGATIVE);
 		
-		assertEquals(13, strength.getEndurance());
+		assertEquals(TWELVE, strength.getEndurance());
 	}
 }
