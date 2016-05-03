@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Resistance implements Specialization {
 
 	private int resistance;
-	private final String name = "Resistance";
+	private static final String NAME = "Resistance";
 	
 	/**
 	 * @param value                              - Resistence value
@@ -39,6 +39,6 @@ public class Resistance implements Specialization {
 	 * @return                                   - Return the specialization name
 	 */
 	public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }

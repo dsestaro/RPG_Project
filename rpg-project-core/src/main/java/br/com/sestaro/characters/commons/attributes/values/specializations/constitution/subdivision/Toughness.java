@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Toughness implements Specialization {
 
 	private int health;
-	private final String name = "Toughness";
+	private static final String NAME = "Toughness";
 	
 	/**
    * @param value                              - Toughness value
@@ -39,6 +39,6 @@ public class Toughness implements Specialization {
    * @return                                   - Return the specialization name
    */
   public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }

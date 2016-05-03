@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Speed implements Specialization {
 
 	private int speed;
-	private final String name = "Speed";
+	private static final String NAME = "Speed";
 	
 	/**
    * @param value                              - Speed value
@@ -39,6 +39,6 @@ public class Speed implements Specialization {
    * @return                                   - Return the specialization name
    */
 	public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }

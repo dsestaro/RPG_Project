@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Logic implements Specialization {
 
 	private int logic;
-	private final String name = "Logic";
+	private static final String NAME = "Logic";
 	
 	/**
    * @param value                              - Logic value
@@ -39,6 +39,6 @@ public class Logic implements Specialization {
    * @return                                   - Return the specialization name
    */
 	public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }

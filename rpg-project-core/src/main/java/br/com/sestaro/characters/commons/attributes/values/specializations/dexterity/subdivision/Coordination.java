@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Coordination implements Specialization {
 
 	private int coordination;
-	private final String name = "Coordination";
+	private static final String NAME = "Coordination";
 	
 	/**
    * @param value                              - Coordination value
@@ -39,6 +39,6 @@ public class Coordination implements Specialization {
    * @return                                   - Return the specialization name
    */
 	public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }

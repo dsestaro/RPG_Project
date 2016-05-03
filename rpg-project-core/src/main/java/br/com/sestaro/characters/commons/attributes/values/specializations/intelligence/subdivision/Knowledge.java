@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class Knowledge implements Specialization {
 
 	private int knowledge;
-	private final String name = "Knowledge";
+	private static final String NAME = "Knowledge";
 	
 	/**
    * @param value                              - Knowledge value
@@ -39,6 +39,6 @@ public class Knowledge implements Specialization {
    * @return                                   - Return the specialization name
    */
 	public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }

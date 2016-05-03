@@ -65,7 +65,7 @@ public class AttributesTests {
    */
 	@Test
   public final void testInitializationWithoutValues() {
-		new Attributes(this.attributesValues).getValues();
+		new Attributes(this.attributesValues);
 	}
 	
 	/**

@@ -11,7 +11,7 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 public class PhysicalStrength implements Specialization {
 
 	private int physicalStrength;
-	private final String name = "Physical Strength";
+	private static final String NAME = "Physical Strength";
 	
 	/**
    * @param value                              - Physical strength value
@@ -39,6 +39,6 @@ public class PhysicalStrength implements Specialization {
    * @return                                   - Return the specialization name
    */
 	public final String getName() {
-		return this.name;
+		return NAME;
 	}
 }
