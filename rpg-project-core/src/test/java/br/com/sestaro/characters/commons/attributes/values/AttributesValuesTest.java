@@ -1,15 +1,15 @@
 package br.com.sestaro.characters.commons.attributes.values;
 
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIFTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOUR;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.NEGATIVE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIX;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.THIRTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TWELVE;
 import static org.junit.Assert.assertEquals;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOUR;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIX;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.THIRTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIFTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NEGATIVE;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -69,7 +69,7 @@ public class AttributesValuesTest {
    */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeConstitutionValue() {
-		attributes.getConstitution().addToughness(NEGATIVE);
+		attributes.getConstitution().addToughness(-FOURTEEN);
 	}
 	
 	/**

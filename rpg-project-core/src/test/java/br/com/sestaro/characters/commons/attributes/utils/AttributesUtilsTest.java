@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.utils;
 
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN_MODIFIER;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.EIGHTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE_MODIFIER;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FIVE;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.FOURTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.NINETEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SEVENTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.SIXTEEN;
-import static br.com.sestaro.characters.commons.attributes.values.constants.NumericValuesConstantValues.TWELVE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.EIGHTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.EIGHTEEN_MODIFIER;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE_MODIFIER;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.NINETEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SEVENTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TWELVE;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;

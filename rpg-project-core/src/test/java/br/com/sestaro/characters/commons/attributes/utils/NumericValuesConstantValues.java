@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.values.constants;
+package br.com.sestaro.characters.commons.attributes.utils;
 
 /**
  * Class with constant values for the test classes.
@@ -9,6 +9,10 @@ public final class NumericValuesConstantValues {
   public static final int NEGATIVE = -2;
   public static final int POSITIVE = 2;
   
+  public static final int ZERO = 0;
+  public static final int ONE = 1;
+  public static final int TWO = 2;
+  public static final int THREE = 3;
   public static final int FOUR = 4;
   public static final int FIVE = 5;
   public static final int SIX = 6;

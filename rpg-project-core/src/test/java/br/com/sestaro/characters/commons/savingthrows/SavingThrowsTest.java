@@ -1,49 +1,71 @@
 package br.com.sestaro.characters.commons.savingthrows;
 
-import static org.junit.Assert.*;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.THREE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TWO;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOUR;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.savingthrows.SavingThrows;
 import br.com.sestaro.characters.commons.savingthrows.enums.SavingThrowsNames;
 import br.com.sestaro.characters.commons.savingthrows.exceptions.NullSavingThrowsException;
 import br.com.sestaro.characters.commons.savingthrows.values.SavingThrowsValues;
 
+/**
+ * Class to test {@link SavingThrows}.
+ * 
+ * @author davidson.sestaro
+ */
 public class SavingThrowsTest {
 	
 	private SavingThrowsValues values;
-	int fortitude = 2;
-	int reflex = 3;
-	int will = 2;
+	private static final int FORTITUDE = TWO;
+  private static final int REFLEX = THREE;
+  private static final int WILL = TWO;
 	
+  /**
+   * Initialization of variables that will be used in this class.
+   */
 	@Before
-	public void initialContext() {
-		this.values = new SavingThrowsValues(fortitude, reflex, will);
+  public final void initialContext() {
+		this.values = new SavingThrowsValues(FORTITUDE, REFLEX, WILL);
 	}
 	
+	/**
+	 * Validate initial configuration.
+	 */
 	@Test
-	public void testInitializationWithValues() {
+  public final void testInitializationWithValues() {
 		new SavingThrows(this.values);
 	}
 	
-	@Test(expected=NullSavingThrowsException.class)
-	public void testNullSavingThrowsValueInitialization() {
+	/**
+	 * Validate null configuration.
+	 */
+	@Test(expected = NullSavingThrowsException.class)
+  public final void testNullSavingThrowsValueInitialization() {
 		new SavingThrows(null);
 	}
 	
+	/**
+	 * Validate information retrieve.
+	 */
 	@Test
-	public void getSavingThrowValueTest() {
+  public final void getSavingThrowValueTest() {
 		SavingThrows savings = new SavingThrows(values);
 		
-		assertEquals(will, savings.getSavingThrowTotal(SavingThrowsNames.WILL));
+		assertEquals(WILL, savings.getSavingThrowTotal(SavingThrowsNames.WILL));
 	}
 	
+	/**
+   * Validate information input.
+   */
 	@Test
-	public void setSavingThrowValueTest() {
+  public final void setSavingThrowValueTest() {
 		SavingThrows savings = new SavingThrows(values);
 		
-		savings.setSavingThrowTotalValue(SavingThrowsNames.WILL, 4);
-		assertEquals(4, savings.getSavingThrowTotal(SavingThrowsNames.WILL));
+		savings.setSavingThrowTotalValue(SavingThrowsNames.WILL, FOUR);
+		assertEquals(FOUR, savings.getSavingThrowTotal(SavingThrowsNames.WILL));
 	}
 }
