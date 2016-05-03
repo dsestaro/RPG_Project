@@ -3,17 +3,27 @@ package br.com.sestaro.characters.commons.info.utils;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationException;
-import br.com.sestaro.characters.commons.info.utils.CharacterInformationUtils;
 
+/**
+ * Class to test {@link CharacterInformationUtils}.
+ * 
+ * @author davidson.sestaro
+ */
 public class CharacterInformationUtilsTest {
 
-	@Test(expected=InvalidInformationException.class)
-	public void emptyInformationTest() {
+  /**
+   * Validate if a information is empty.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void emptyInformationTest() {
 		CharacterInformationUtils.validateInformation("");
 	}
 	
-	@Test(expected=InvalidInformationException.class)
-	public void nullInformationTest() {
+	/**
+   * Validate if a information is null.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void nullInformationTest() {
 		CharacterInformationUtils.validateInformation(null);
 	}
 }

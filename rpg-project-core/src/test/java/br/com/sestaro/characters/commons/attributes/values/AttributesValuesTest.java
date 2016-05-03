@@ -35,7 +35,7 @@ public class AttributesValuesTest {
 	private int charisma = SIX;
 	
 	/**
-   * Validate initial configuration.
+   * Initial configuration.
    */
 	@Before
   public final void initialization() {

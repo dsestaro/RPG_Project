@@ -1,16 +1,24 @@
 package br.com.sestaro.characters.commons.info.enums;
 
+import static br.com.sestaro.characters.commons.info.enums.constants.GenderNamesPositionConstants.MAN;
+import static br.com.sestaro.characters.commons.info.enums.constants.GenderNamesPositionConstants.WOMAN;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.info.enums.GenderNames;
-
+/**
+ * Class to test {@link GenderNames}.
+ * 
+ * @author davidson.sestaro
+ */
 public class GenderNamesTest {
 
+  /**
+   * Test enum position.
+   */
 	@Test
-	public void enumTest() {
-		assertEquals(1, GenderNames.MAN.getPosition());
-		assertEquals(2, GenderNames.WOMAN.getPosition());
+  public final void enumTest() {
+		assertEquals(MAN, GenderNames.MAN.getPosition());
+		assertEquals(WOMAN, GenderNames.WOMAN.getPosition());
 	}
 }

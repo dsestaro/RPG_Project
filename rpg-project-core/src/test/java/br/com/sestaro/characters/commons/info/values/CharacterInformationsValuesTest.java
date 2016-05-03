@@ -5,49 +5,70 @@ import org.junit.Test;
 import br.com.sestaro.characters.commons.info.enums.CharacterAlignNames;
 import br.com.sestaro.characters.commons.info.enums.GenderNames;
 import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationException;
-import br.com.sestaro.characters.commons.info.values.CharacterInformationsValues;
 
+/**
+ * Class to test {@link CharacterInformationsValues}.
+ * 
+ * @author davidson.sestaro
+ */
 public class CharacterInformationsValuesTest {
 
-	String name = "Dahlion";
-	CharacterAlignNames align = CharacterAlignNames.NEUTRAL;
-	String deity = "Va'al";
-	String homeland = "Kazzad";
-	GenderNames gender = GenderNames.MAN;
-	int age = 180;
-	int height = 90;
-	int weight = 190;
-	String hairColor = "black";
-	String eyesColor = "green";
-	CharacterInformationsValues values;
-	
+	private static final String NAME = "Dahlion";
+	private static final CharacterAlignNames ALIGN = CharacterAlignNames.NEUTRAL;
+	private static final String DEITY = "Va'al";
+	private static final String HOMELAND = "Kazzad";
+	private static final GenderNames GENDER = GenderNames.MAN;
+	private static final int AGE = 180;
+	private static final int HEIGHT = 90;
+	private static final int WEIGHT = 190;
+	private static final String HAIR_COLOR = "black";
+	private static final String EYES_COLOR = "green";
+
+	/**
+   * Initial configuration.
+   */
 	@Test
-	public void initializationTest() {
-		new CharacterInformationsValues(name, align, deity, homeland, gender, age, height, weight, hairColor, eyesColor);
+  public final void initializationTest() {
+		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
-	@Test(expected=InvalidInformationException.class)
-	public void nullOrEmptyName() {
-		new CharacterInformationsValues("", align, deity, homeland, gender, age, height, weight, hairColor, eyesColor);
+	/**
+   * Validate initial configuration with null/empty name.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void nullOrEmptyName() {
+		new CharacterInformationsValues("", ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
-	@Test(expected=InvalidInformationException.class)
-	public void nullOrEmptyDeity() {
-		new CharacterInformationsValues(name, align, null, homeland, gender, age, height, weight, hairColor, eyesColor);
+	/**
+   * Validate initial configuration with null/empty deity.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void nullOrEmptyDeity() {
+		new CharacterInformationsValues(NAME, ALIGN, null, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
-	@Test(expected=InvalidInformationException.class)
-	public void nullOrEmptyHomeland() {
-		new CharacterInformationsValues(name, align, deity, "", gender, age, height, weight, hairColor, eyesColor);
+	/**
+   * Validate initial configuration with null/empty deity.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void nullOrEmptyHomeland() {
+		new CharacterInformationsValues(NAME, ALIGN, DEITY, "", GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
-	@Test(expected=InvalidInformationException.class)
-	public void nullOrEmptyHairColor() {
-		new CharacterInformationsValues(name, align, deity, homeland, gender, age, height, weight, "", eyesColor);
+	/**
+   * Validate initial configuration with null/empty homeland.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void nullOrEmptyHairColor() {
+		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, "", EYES_COLOR);
 	}
 	
-	@Test(expected=InvalidInformationException.class)
-	public void nullOrEmptyEyesColor() {
-		new CharacterInformationsValues(name, align, deity, homeland, gender, age, height, weight, hairColor, null);
+	/**
+   * Validate initial configuration with null/empty eyes color.
+   */
+	@Test(expected = InvalidInformationException.class)
+  public final void nullOrEmptyEyesColor() {
+		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, null);
 	}
 }
