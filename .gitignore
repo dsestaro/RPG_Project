@@ -28,3 +28,6 @@
 /rpg-project-controller/.settings/org.eclipse.core.resources.prefs
 /rpg-project-core/.checkstyle
 /rpg-project-core/.settings/org.eclipse.jdt.ui.prefs
+/rpg-project-controller/.pmd
+/rpg-project-core/.pmd
+/rpg-project-view/.pmd

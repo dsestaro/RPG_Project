@@ -27,7 +27,7 @@ public class Strength {
 	/**
    * Calculate the strength based on the mean of the 2 specializations.
    * 
-   * @return                                      - Returns the constitution value
+   * @return                                      - Returns the strength value
    */
 	public final int getStrength() {
 		return (physicalStrength.getValue() + endurance.getValue()) / 2;
