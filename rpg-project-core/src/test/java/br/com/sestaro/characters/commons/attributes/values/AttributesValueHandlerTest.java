@@ -18,6 +18,7 @@ import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
+import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 /**
@@ -31,7 +32,7 @@ public class AttributesValueHandlerTest {
 	private Strength strength;
 	private Dexterity dexterity;
 	private Constitution constitution;
-	private int intelligence = FOURTEEN;
+	private Intelligence intelligence;
 	private int wisdom = FIFTEEN;
 	private int charisma = SIXTEEN;
 	
@@ -43,6 +44,7 @@ public class AttributesValueHandlerTest {
 		this.strength = new Strength(TWELVE, EIGHT);
 		this.dexterity = new Dexterity(FOURTEEN, FOURTEEN);
 		this.constitution = new Constitution(TWELVE, FOURTEEN);
+		this.intelligence = new Intelligence(FOURTEEN, FOURTEEN);
 		
 		this.values = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
@@ -68,7 +70,7 @@ public class AttributesValueHandlerTest {
 		
 		attributeName = AttributesNames.INTELLIGENCE;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(intelligence, attributeValue);
+		assertEquals(FOURTEEN, attributeValue);
 		
 		attributeName = AttributesNames.WISDOM;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -116,10 +118,15 @@ public class AttributesValueHandlerTest {
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(SIXTEEN, attributeValue);
 		
-		attributeName = AttributesNames.INTELLIGENCE;
+		attributeName = AttributesNames.INTELLIGENCE_KNOWLEDGE;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(intelligence + POSITIVE, attributeValue);
+		assertEquals(SIXTEEN, attributeValue);
+		
+		attributeName = AttributesNames.INTELLIGENCE_LOGIC;
+    AttributesValueHandler.addAttributeByPosition(values, attributeName, NEGATIVE);
+    attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
+    assertEquals(TWELVE, attributeValue);
 		
 		attributeName = AttributesNames.WISDOM;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);

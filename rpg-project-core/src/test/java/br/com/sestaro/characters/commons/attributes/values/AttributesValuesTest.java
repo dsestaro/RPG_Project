@@ -2,7 +2,6 @@ package br.com.sestaro.characters.commons.attributes.values;
 
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIFTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE;
-import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOUR;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.NEGATIVE;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIX;
@@ -17,6 +16,7 @@ import org.junit.Test;
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
+import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 /**
@@ -30,7 +30,7 @@ public class AttributesValuesTest {
 	private Strength strength;
 	private Dexterity dexterity;
 	private Constitution constitution;
-	private int intelligence = FOUR;
+	private Intelligence intelligence;
 	private int wisdom = FIVE;
 	private int charisma = SIX;
 	
@@ -42,6 +42,8 @@ public class AttributesValuesTest {
 		this.strength = new Strength(TWELVE, SIXTEEN);
 		this.dexterity = new Dexterity(SIXTEEN, THIRTEEN);
 		this.constitution = new Constitution(THIRTEEN, FIFTEEN);
+		this.intelligence = new Intelligence(TWELVE, SIXTEEN);
+		
 		this.attributes = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
 	
@@ -53,13 +55,19 @@ public class AttributesValuesTest {
 		assertEquals(FOURTEEN, this.attributes.getStrength().getStrength());
 		assertEquals(TWELVE, this.attributes.getStrength().getPhysicalStrength());
 		assertEquals(SIXTEEN, this.attributes.getStrength().getEndurance());
+		
 		assertEquals(FOURTEEN, this.attributes.getDexterity().getDexterity());
 		assertEquals(SIXTEEN, this.attributes.getDexterity().getSpeed());
 		assertEquals(THIRTEEN, this.attributes.getDexterity().getCoordination());
+		
 		assertEquals(FOURTEEN, this.attributes.getConstitution().getConstitution());
 		assertEquals(THIRTEEN, this.attributes.getConstitution().getToughness());
 		assertEquals(FIFTEEN, this.attributes.getConstitution().getResistance());
-		assertEquals(this.intelligence, this.attributes.getIntelligence());
+		
+		assertEquals(FOURTEEN, this.attributes.getIntelligence().getIntelligence());
+		assertEquals(TWELVE, this.attributes.getIntelligence().getKnowledge());
+		assertEquals(SIXTEEN, this.attributes.getIntelligence().getLogic());
+		
 		assertEquals(this.wisdom, this.attributes.getWisdom());
 		assertEquals(this.charisma, this.attributes.getCharisma());
 	}
@@ -70,14 +78,6 @@ public class AttributesValuesTest {
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeConstitutionValue() {
 		attributes.getConstitution().addToughness(-FOURTEEN);
-	}
-	
-	/**
-   * Validate negative input.
-   */
-	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeIntelligenceValue() {
-		attributes.setIntelligence(NEGATIVE);
 	}
 	
 	/**

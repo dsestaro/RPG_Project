@@ -44,7 +44,11 @@ public final class AttributesValueHandler {
 			case CONSTITUTION_RESISTANCE:
 				return value1.getConstitution().getResistance();
 			case INTELLIGENCE:
-				return value1.getIntelligence();
+				return value1.getIntelligence().getIntelligence();
+			case INTELLIGENCE_KNOWLEDGE:
+        return value1.getIntelligence().getKnowledge();
+			case INTELLIGENCE_LOGIC:
+        return value1.getIntelligence().getLogic();
 			case WISDOM:
 				return value1.getWisdom();
 			case CHARISMA:
@@ -81,9 +85,12 @@ public final class AttributesValueHandler {
 			case CONSTITUTION_RESISTANCE:
 				value1.getConstitution().addResistance(value3);
 				return;
-			case INTELLIGENCE:
-				value1.setIntelligence(getAttributeByPosition(value1, value2) + value3);
+			case INTELLIGENCE_KNOWLEDGE:
+				value1.getIntelligence().addKnowledge(value3);
 				return;
+			case INTELLIGENCE_LOGIC:
+			  value1.getIntelligence().addLogic(value3);
+        return;
 			case WISDOM:
 				value1.setWisdom(getAttributeByPosition(value1, value2) + value3);
 				return;

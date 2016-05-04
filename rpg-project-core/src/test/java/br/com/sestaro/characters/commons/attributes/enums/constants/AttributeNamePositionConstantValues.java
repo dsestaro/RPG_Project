@@ -15,7 +15,9 @@ public final class AttributeNamePositionConstantValues {
   public static final int CONSTITUTION_POSITION = 30;
   public static final int CONSTITUTION_TOUGHNESS_POSITION = 31;
   public static final int CONSTITUTION_RESISTANCE_POSITION = 32;
-  public static final int INTELLIGENCE_POSITION = 4;
+  public static final int INTELLIGENCE_POSITION = 40;
+  public static final int INTELLIGENCE_KNOWLEDGE_POSITION = 41;
+  public static final int INTELLIGENCE_LOGIC_POSITION = 42;
   public static final int WISDOM_POSITION = 5;
   public static final int CHARISMA_POSITION = 6;
   

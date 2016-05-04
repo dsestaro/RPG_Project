@@ -28,6 +28,7 @@ public final class NumericValuesConstantValues {
   public static final int NINETEEN = 19;
   
   public static final int FIVE_MODIFIER = -2;
+  public static final int SIXTEEN_MODIFIER = 3;
   public static final int EIGHTEEN_MODIFIER = 4;
   
   /**

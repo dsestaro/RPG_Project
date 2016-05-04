@@ -3,6 +3,7 @@ package br.com.sestaro.characters.commons.attributes.values;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
+import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 /**
@@ -14,7 +15,7 @@ public class AttributesValues {
 	private Strength strength;
 	private Dexterity dexterity;
 	private Constitution constitution;
-	private int intelligence;
+	private Intelligence intelligence;
 	private int wisdom;
 	private int charisma;
 	
@@ -27,11 +28,11 @@ public class AttributesValues {
 	 * @param value6                                         - Charisma
 	 */
 	public AttributesValues(final Strength value1, final Dexterity value2, final Constitution value3, 
-	    final int value4, final int value5, final int value6) {
+	    final Intelligence value4, final int value5, final int value6) {
 		this.strength = value1;
 		this.dexterity = value2;
 		this.constitution = value3;
-		this.setIntelligence(value4);
+		this.intelligence = value4;
 		this.setWisdom(value5);
 		this.setCharisma(value6);
 	}
@@ -60,16 +61,8 @@ public class AttributesValues {
 	/**
    * @return                                               - Return the intelligence
    */
-	public final int getIntelligence() {
+	public final Intelligence getIntelligence() {
 		return intelligence;
-	}
-	
-	/**
-	 * @param value                                          - Value to add
-	 */
-	public final void setIntelligence(final int value) {
-		AttributesUtils.validateAttributeValue(value);
-		this.intelligence = value;
 	}
 	
 	/**

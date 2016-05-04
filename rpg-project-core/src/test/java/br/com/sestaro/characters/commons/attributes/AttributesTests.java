@@ -3,8 +3,9 @@ package br.com.sestaro.characters.commons.attributes;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE_MODIFIER;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
-import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIX;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.POSITIVE;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN_MODIFIER;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.THIRTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TWELVE;
@@ -18,6 +19,7 @@ import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesExc
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
+import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 
 /**
@@ -37,7 +39,7 @@ public class AttributesTests {
 		Strength strength = new Strength(TEN, FOURTEEN);
 		Dexterity dexterity = new Dexterity(TWELVE, FOURTEEN);
 		Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
-		int intelligence = FOURTEEN;
+		Intelligence intelligence = new Intelligence(FOURTEEN, FOURTEEN);
 		int wisdom = FIVE;
 		int charisma = SIXTEEN;
 		
@@ -95,8 +97,8 @@ public class AttributesTests {
   public final void addAttributeValueTest() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
-		attributes.addAttributeValue(AttributesNames.INTELLIGENCE, SIX);
+		attributes.addAttributeValue(AttributesNames.INTELLIGENCE_LOGIC, POSITIVE);
 		
-		assertEquals(FIVE, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE));
+		assertEquals(SIXTEEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE_LOGIC));
 	}
 }
