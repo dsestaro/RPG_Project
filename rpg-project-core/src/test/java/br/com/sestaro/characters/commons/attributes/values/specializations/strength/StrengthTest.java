@@ -85,7 +85,7 @@ public class StrengthTest {
 	}
 	
 	/**
-   * Remove a value to the physical strength.
+   * Remove a value to the endurance.
    */
 	@Test
   public final void removeEnduranceTest() {
