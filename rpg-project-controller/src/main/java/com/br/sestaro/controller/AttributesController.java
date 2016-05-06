@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.br.sestaro.endpoint.EndpointConfiguration;
 import com.google.gson.Gson;
 
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
@@ -17,9 +18,10 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom;
 
 @RestController
-public class ApplicationStatusController {
+@RequestMapping(value = EndpointConfiguration.ATTRIBUTE_ROOT)
+public class AttributesController {
 
-	@RequestMapping(value="/getNames", method=RequestMethod.GET)
+	@RequestMapping(value="/getAttributeNames", method=RequestMethod.GET)
 	public String showStatus() {
 		List<String> attributeNames = new ArrayList<String>();
 		
