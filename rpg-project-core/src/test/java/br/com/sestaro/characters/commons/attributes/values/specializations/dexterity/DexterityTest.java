@@ -95,4 +95,12 @@ public class DexterityTest {
 		
 		assertEquals(TWELVE, dexterity.getCoordination());
 	}
+	
+	/**
+   * Test attribute name.
+   */
+  @Test
+  public final void testName() {
+    assertEquals("DEX", Dexterity.getName());
+  }
 }

@@ -95,4 +95,12 @@ public class ConstitutionTest {
 		
 		assertEquals(TWELVE, constitution.getResistance());
 	}
+	
+	/**
+   * Test attribute name.
+   */
+  @Test
+	public final void testName() {
+	  assertEquals("CON", Constitution.getName());
+	}
 }

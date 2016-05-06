@@ -94,4 +94,12 @@ public class IntelligenceTest {
     
     assertEquals(TWELVE, intelligence.getLogic());
   }
+  
+  /**
+   * Test attribute name.
+   */
+  @Test
+  public final void testName() {
+    assertEquals("INT", Intelligence.getName());
+  }
 }

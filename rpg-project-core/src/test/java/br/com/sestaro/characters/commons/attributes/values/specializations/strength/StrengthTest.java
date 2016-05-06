@@ -95,4 +95,12 @@ public class StrengthTest {
 		
 		assertEquals(TWELVE, strength.getEndurance());
 	}
+	
+	/**
+   * Test attribute name.
+   */
+  @Test
+  public final void testName() {
+    assertEquals("STR", Strength.getName());
+  }
 }

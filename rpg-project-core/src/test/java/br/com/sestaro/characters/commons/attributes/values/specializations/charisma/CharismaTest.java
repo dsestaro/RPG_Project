@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.values.specializations.wisdom;
+package br.com.sestaro.characters.commons.attributes.values.specializations.charisma;
 
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.EIGHTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIFTEEN;
@@ -12,88 +12,89 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom;
 
 /**
- * Class to test {@link Wisdom}.
+ * Class to test {@link Charisma}.
  * 
  * @author davidson.sestaro
  */
-public class WisdomTest {
+public class CharismaTest {
   
   /**
    * Validate initial configuration.
    */
   @Test
   public final void initializationTest() {
-    Wisdom strength = new Wisdom(SIXTEEN, FOURTEEN);
+    Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
-    assertEquals(FIFTEEN, strength.getWisdom());
-    assertEquals(SIXTEEN, strength.getInstinct());
-    assertEquals(FOURTEEN, strength.getIntuition());
+    assertEquals(FIFTEEN, charisma.getCharisma());
+    assertEquals(SIXTEEN, charisma.getAppearance());
+    assertEquals(FOURTEEN, charisma.getCharm());
   }
   
   /**
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeInstinctValue() {
-    new Wisdom(NEGATIVE, POSITIVE);
+  public final void testNegativeAppearanceValue() {
+    new Charisma(NEGATIVE, POSITIVE);
   }
   
   /**
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeIntuitionValue() {
+  public final void testNegativeCharmValue() {
     new Wisdom(POSITIVE, NEGATIVE);
   }
   
   /**
-   * Add a value to the instinct.
+   * Add a value to the appearance.
    */
   @Test
-  public final void addInstinctTest() {
-    Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
+  public final void addAppearanceTest() {
+    Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
-    wisdom.addInstinct(POSITIVE);
+    charisma.addAppearance(POSITIVE);
     
-    assertEquals(EIGHTEEN, wisdom.getInstinct());
+    assertEquals(EIGHTEEN, charisma.getAppearance());
   }
   
   /**
-   * Remove a value to the instinct.
+   * Remove a value to the appearance.
    */
   @Test
-  public final void removeInstinctTest() {
-    Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
+  public final void removeAppearanceTest() {
+    Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
-    wisdom.addInstinct(NEGATIVE);
+    charisma.addAppearance(NEGATIVE);
     
-    assertEquals(FOURTEEN, wisdom.getInstinct());
+    assertEquals(FOURTEEN, charisma.getAppearance());
   }
   
   /**
-   * Add a value to the intuition.
+   * Add a value to the charm.
    */
   @Test
-  public final void addIntuitionTest() {
-    Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
+  public final void addCharmTest() {
+    Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
-    wisdom.addIntuition(POSITIVE);
+    charisma.addCharm(POSITIVE);
     
-    assertEquals(SIXTEEN, wisdom.getIntuition());
+    assertEquals(SIXTEEN, charisma.getCharm());
   }
   
   /**
-   * Remove a value to the intuition.
+   * Remove a value to the charm.
    */
   @Test
   public final void removeIntuitionTest() {
-    Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
+    Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
-    wisdom.addIntuition(NEGATIVE);
+    charisma.addCharm(NEGATIVE);
     
-    assertEquals(TWELVE, wisdom.getIntuition());
+    assertEquals(TWELVE, charisma.getCharm());
   }
   
   /**
@@ -101,6 +102,6 @@ public class WisdomTest {
    */
   @Test
   public final void testName() {
-    assertEquals("WIS", Wisdom.getName());
+    assertEquals("CHA", Charisma.getName());
   }
 }
