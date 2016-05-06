@@ -19,7 +19,7 @@ import com.jayway.restassured.RestAssured;
 @SpringApplicationConfiguration(classes = SpringInit.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class ApplicationStatusControllerTest {
+public class AttributesControllerTest {
 	@Value("${local.server.port}")
 	private int port;
 	
@@ -32,8 +32,8 @@ public class ApplicationStatusControllerTest {
 	public void isAliveTest() {
 		given().
 		expect().
-		         body(is("live")).
+		         body(is("[\"STR\",\"DEX\",\"CON\",\"INT\",\"WIS\",\"CHA\"]")).
 		when().
-		         get("/showStatus");
+		         get("/attributes/getAttributeNames");
 	}
 }
