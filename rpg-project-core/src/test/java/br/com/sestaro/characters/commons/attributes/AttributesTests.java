@@ -1,7 +1,6 @@
 package br.com.sestaro.characters.commons.attributes;
 
-import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE;
-import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE_MODIFIER;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.ELEVEN_MODIFIER;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.POSITIVE;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN;
@@ -21,6 +20,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.const
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
+import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom;
 
 /**
  * Class to test {@link Attributes}.
@@ -40,7 +40,7 @@ public class AttributesTests {
 		Dexterity dexterity = new Dexterity(TWELVE, FOURTEEN);
 		Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
 		Intelligence intelligence = new Intelligence(FOURTEEN, FOURTEEN);
-		int wisdom = FIVE;
+		Wisdom wisdom = new Wisdom(TEN, THIRTEEN);
 		int charisma = SIXTEEN;
 		
 		this.attributesValues = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
@@ -87,7 +87,7 @@ public class AttributesTests {
   public final void negativeAttributeModifierTest() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
-		assertEquals(FIVE_MODIFIER, attributes.getAttributeModifier(AttributesNames.WISDOM));
+		assertEquals(ELEVEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.WISDOM));
 	}
 	
 	/**

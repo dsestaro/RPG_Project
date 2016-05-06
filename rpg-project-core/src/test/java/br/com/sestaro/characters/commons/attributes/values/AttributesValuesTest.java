@@ -1,13 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values;
 
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIFTEEN;
-import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FIVE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.NEGATIVE;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIX;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.THIRTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TWELVE;
+import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.EIGHT;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -18,6 +19,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.const
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
+import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom;
 
 /**
  * Class to test {@link AttributesValues}.
@@ -31,7 +33,7 @@ public class AttributesValuesTest {
 	private Dexterity dexterity;
 	private Constitution constitution;
 	private Intelligence intelligence;
-	private int wisdom = FIVE;
+	private Wisdom wisdom;
 	private int charisma = SIX;
 	
 	/**
@@ -43,6 +45,7 @@ public class AttributesValuesTest {
 		this.dexterity = new Dexterity(SIXTEEN, THIRTEEN);
 		this.constitution = new Constitution(THIRTEEN, FIFTEEN);
 		this.intelligence = new Intelligence(TWELVE, SIXTEEN);
+		this.wisdom = new Wisdom(EIGHT, TWELVE);
 		
 		this.attributes = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
@@ -68,7 +71,10 @@ public class AttributesValuesTest {
 		assertEquals(TWELVE, this.attributes.getIntelligence().getKnowledge());
 		assertEquals(SIXTEEN, this.attributes.getIntelligence().getLogic());
 		
-		assertEquals(this.wisdom, this.attributes.getWisdom());
+		assertEquals(TEN, this.attributes.getWisdom().getWisdom());
+		assertEquals(EIGHT, this.attributes.getWisdom().getInstinct());
+		assertEquals(TWELVE, this.attributes.getWisdom().getIntuition());
+		
 		assertEquals(this.charisma, this.attributes.getCharisma());
 	}
 	
@@ -85,7 +91,7 @@ public class AttributesValuesTest {
    */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeWisdomValue() {
-		attributes.setWisdom(NEGATIVE);
+		attributes.getWisdom().addIntuition(-SIXTEEN);
 	}
 	
 	/**
