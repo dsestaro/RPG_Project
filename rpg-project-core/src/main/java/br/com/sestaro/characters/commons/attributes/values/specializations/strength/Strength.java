@@ -10,7 +10,8 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
  * @author davidson.sestaro
  */
 public class Strength {
-	private PhysicalStrength physicalStrength;
+	
+  private PhysicalStrength physicalStrength;
 	private Endurance endurance;
 	
 	/**
