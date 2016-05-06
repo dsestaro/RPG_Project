@@ -1,6 +1,7 @@
 package br.com.sestaro.characters.commons.info.values;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 import br.com.sestaro.characters.commons.info.enums.CharacterAlignNames;
 import br.com.sestaro.characters.commons.info.enums.GenderNames;
@@ -31,6 +32,27 @@ public class CharacterInformationsValuesTest {
   public final void initializationTest() {
 		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
+	
+	/**
+   * Retrieve configuration.
+   */
+  @Test
+  public final void retrieveInformationTest() {
+    CharacterInformationsValues character =  new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, 
+        HAIR_COLOR, EYES_COLOR);
+    
+    assertEquals(NAME, character.getName());
+    assertEquals(ALIGN, character.getAlignment());
+    assertEquals(DEITY, character.getDeity());
+    assertEquals(HOMELAND, character.getHomeland());
+    assertEquals(GENDER, character.getGender());
+    assertEquals(AGE, character.getAge());
+    assertEquals(HEIGHT, character.getHeight());
+    assertEquals(WEIGHT, character.getWeight());
+    assertEquals(HAIR_COLOR, character.getHairColor());
+    assertEquals(EYES_COLOR, character.getEyesColor());
+    
+  }
 	
 	/**
    * Validate initial configuration with null/empty name.
