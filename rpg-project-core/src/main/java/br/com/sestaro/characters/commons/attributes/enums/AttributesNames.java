@@ -21,7 +21,9 @@ public enum AttributesNames {
 	WISDOM(50),
 	WISDOM_INSTINCT(51),
 	WISDOM_INTUITION(52),
-	CHARISMA(6);
+	CHARISMA(60),
+  CHARISMA_APPEARANCE(61),
+  CHARISMA_CHARM(62);
 	
 	private final int position;
 	

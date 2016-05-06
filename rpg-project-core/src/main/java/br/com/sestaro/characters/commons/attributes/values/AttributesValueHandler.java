@@ -56,7 +56,11 @@ public final class AttributesValueHandler {
 			case WISDOM_INTUITION:
         return value1.getWisdom().getIntuition();
 			case CHARISMA:
-				return value1.getCharisma();
+				return value1.getCharisma().getCharisma();
+			case CHARISMA_APPEARANCE:
+        return value1.getCharisma().getAppearance();
+			case CHARISMA_CHARM:
+        return value1.getCharisma().getCharm();
 			default:
 			  throw new InvalidAttributeNameException();
 		}
@@ -101,9 +105,12 @@ public final class AttributesValueHandler {
 			case WISDOM_INTUITION:
 			  value1.getWisdom().addIntuition(value3);
         return;
-			case CHARISMA:
-				value1.setCharisma(getAttributeByPosition(value1, value2) + value3);
+			case CHARISMA_APPEARANCE:
+				value1.getCharisma().addAppearance(value3);
 				return;
+			case CHARISMA_CHARM:
+			  value1.getCharisma().addCharm(value3);
+        return;
 			default:
 				throw new InvalidAttributeNameException();
 		}
