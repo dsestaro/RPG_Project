@@ -1,5 +1,7 @@
 package com.br.sestaro.controller.attributes;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,8 +17,8 @@ public class AttributesController {
     @Autowired
     AttributesService attributesService;
     
-    @RequestMapping(value = "/getAttributeNames", method = RequestMethod.GET)
-    public String showStatus() {
+    @RequestMapping(value = "/getAttributeNames", method = RequestMethod.GET, produces="application/json")
+    public List<String> showStatus() {
 	return attributesService.getAttributeNames();
     }
 }

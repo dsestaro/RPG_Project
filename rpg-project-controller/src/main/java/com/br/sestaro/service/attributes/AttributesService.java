@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.google.gson.Gson;
-
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
@@ -17,13 +15,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
 @Service
 public class AttributesService {
     
-    private Gson gson;
-    
-    public AttributesService() {
-	this.gson = new Gson();
-    }
-    
-    public final String getAttributeNames() {
+    public final List<String> getAttributeNames() {
 	List<String> attributeNames = new ArrayList<String>();
 
 	attributeNames.add(Strength.getName());
@@ -33,6 +25,6 @@ public class AttributesService {
 	attributeNames.add(Wisdom.getName());
 	attributeNames.add(Charisma.getName());
 
-	return this.gson.toJson(attributeNames);
+	return attributeNames;
     }
 }

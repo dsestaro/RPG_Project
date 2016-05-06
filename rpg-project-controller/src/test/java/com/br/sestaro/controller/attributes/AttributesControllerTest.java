@@ -29,7 +29,7 @@ public class AttributesControllerTest {
 	}
 	
 	@Test
-	public void isAliveTest() {
+	public void getAttributesNamesTest() {
 		given().
 		expect().
 		         body(is("[\"STR\",\"DEX\",\"CON\",\"INT\",\"WIS\",\"CHA\"]")).
