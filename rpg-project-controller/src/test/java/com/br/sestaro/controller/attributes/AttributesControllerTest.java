@@ -1,4 +1,4 @@
-package com.br.sestaro.controller;
+package com.br.sestaro.controller.attributes;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;

@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages="com.br.sestaro.controller")
+@ComponentScan(basePackages="com.br.sestaro")
 public class SpringInit {
 	public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(SpringInit.class, args);
