@@ -1,27 +1,8 @@
-.attributename {
-	background-color: #000000;
-	color: #FFFFFF;
-	text-align: center;
-	border: 1px solid black;
-}
-
 .attributetitle {
 	text-align: center;
-	font-size: 80%;
 	font-weight: bold;
 	display: inline-block;
-    vertical-align: middle;
-    float: none;
     padding: 0px;
-}
-
-.attributevalues {
-	text-align: center;
-	border: 1px solid black;
-}
-
-.attributebox {
-	padding-top: 5px;
 }
 
 .attributetitlebox {
