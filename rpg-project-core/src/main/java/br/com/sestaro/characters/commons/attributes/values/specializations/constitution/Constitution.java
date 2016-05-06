@@ -69,7 +69,7 @@ public class Constitution {
 	/**
    * @return                                      - Return the specialization name
    */
-  public final String getName() {
+  public static final String getName() {
     return NAME;
   }
 }
