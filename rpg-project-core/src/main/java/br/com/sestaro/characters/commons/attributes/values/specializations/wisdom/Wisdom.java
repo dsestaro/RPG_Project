@@ -39,7 +39,7 @@ public class Wisdom {
    * 
    * @param value                                 - Increment value
    */
-  public final void addPhysicalStrength(final int value) {
+  public final void addInstinct(final int value) {
     this.instinct.setValue(instinct.getValue() + value);
   }
   
@@ -48,7 +48,7 @@ public class Wisdom {
    * 
    * @param value                                 - Increment value
    */
-  public final void addEndurance(final int value) {
+  public final void addIntuition(final int value) {
     this.intuition.setValue(intuition.getValue() + value);
   }
 

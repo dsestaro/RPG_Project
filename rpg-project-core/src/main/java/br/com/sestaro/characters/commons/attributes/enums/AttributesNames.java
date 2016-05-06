@@ -18,7 +18,9 @@ public enum AttributesNames {
 	INTELLIGENCE(40),
 	INTELLIGENCE_KNOWLEDGE(41),
 	INTELLIGENCE_LOGIC(42),
-	WISDOM(5),
+	WISDOM(50),
+	WISDOM_INSTINCT(51),
+	WISDOM_INTUITION(52),
 	CHARISMA(6);
 	
 	private final int position;

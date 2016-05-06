@@ -50,7 +50,11 @@ public final class AttributesValueHandler {
 			case INTELLIGENCE_LOGIC:
         return value1.getIntelligence().getLogic();
 			case WISDOM:
-				return value1.getWisdom();
+				return value1.getWisdom().getWisdom();
+			case WISDOM_INSTINCT:
+        return value1.getWisdom().getInstinct();
+			case WISDOM_INTUITION:
+        return value1.getWisdom().getIntuition();
 			case CHARISMA:
 				return value1.getCharisma();
 			default:
@@ -91,9 +95,12 @@ public final class AttributesValueHandler {
 			case INTELLIGENCE_LOGIC:
 			  value1.getIntelligence().addLogic(value3);
         return;
-			case WISDOM:
-				value1.setWisdom(getAttributeByPosition(value1, value2) + value3);
+			case WISDOM_INSTINCT:
+				value1.getWisdom().addInstinct(value3);
 				return;
+			case WISDOM_INTUITION:
+			  value1.getWisdom().addIntuition(value3);
+        return;
 			case CHARISMA:
 				value1.setCharisma(getAttributeByPosition(value1, value2) + value3);
 				return;
