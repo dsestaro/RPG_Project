@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
+import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
@@ -34,7 +35,7 @@ public class AttributesValuesTest {
 	private Constitution constitution;
 	private Intelligence intelligence;
 	private Wisdom wisdom;
-	private int charisma = SIX;
+	private Charisma charisma;
 	
 	/**
    * Initial configuration.
@@ -46,6 +47,7 @@ public class AttributesValuesTest {
 		this.constitution = new Constitution(THIRTEEN, FIFTEEN);
 		this.intelligence = new Intelligence(TWELVE, SIXTEEN);
 		this.wisdom = new Wisdom(EIGHT, TWELVE);
+		this.charisma = new Charisma(TWELVE, TWELVE);
 		
 		this.attributes = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
@@ -75,6 +77,10 @@ public class AttributesValuesTest {
 		assertEquals(EIGHT, this.attributes.getWisdom().getInstinct());
 		assertEquals(TWELVE, this.attributes.getWisdom().getIntuition());
 		
+		assertEquals(TWELVE, this.attributes.getCharisma().getCharisma());
+    assertEquals(TWELVE, this.attributes.getCharisma().getAppearance());
+    assertEquals(TWELVE, this.attributes.getCharisma().getCharm());
+		
 		assertEquals(this.charisma, this.attributes.getCharisma());
 	}
 	
@@ -99,6 +105,6 @@ public class AttributesValuesTest {
    */
 	@Test(expected = NegativeAttributeValueException.class)
   public final void testNegativeCharismaValue() {
-		attributes.setCharisma(NEGATIVE);
+		attributes.getCharisma().addCharm(-SIXTEEN);
 	}
 }

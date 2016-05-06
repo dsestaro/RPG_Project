@@ -3,7 +3,6 @@ package br.com.sestaro.characters.commons.attributes;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.ELEVEN_MODIFIER;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.FOURTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.POSITIVE;
-import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.SIXTEEN_MODIFIER;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TEN;
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.THIRTEEN;
@@ -16,6 +15,7 @@ import org.junit.Test;
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
+import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
@@ -41,7 +41,7 @@ public class AttributesTests {
 		Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
 		Intelligence intelligence = new Intelligence(FOURTEEN, FOURTEEN);
 		Wisdom wisdom = new Wisdom(TEN, THIRTEEN);
-		int charisma = SIXTEEN;
+		Charisma charisma = new Charisma(TWELVE, TWELVE);
 		
 		this.attributesValues = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}

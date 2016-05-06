@@ -21,7 +21,9 @@ public final class AttributeNamePositionConstantValues {
   public static final int WISDOM_POSITION = 50;
   public static final int WISDOM_INSTINCT_POSITION = 51;
   public static final int WISDOM_INTUITION_POSITION = 52;
-  public static final int CHARISMA_POSITION = 6;
+  public static final int CHARISMA_POSITION = 60;
+  public static final int CHARISMA_APPEARANCE_POSITION = 61;
+  public static final int CHARISMA_CHARM_POSITION = 62;
   
   /**
    * Constructor to prevent class instantiation.

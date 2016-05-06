@@ -17,6 +17,8 @@ import static br.com.sestaro.characters.commons.attributes.enums.constants.Attri
 import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.WISDOM_INSTINCT_POSITION;
 import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.WISDOM_INTUITION_POSITION;
 import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CHARISMA_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CHARISMA_APPEARANCE_POSITION;
+import static br.com.sestaro.characters.commons.attributes.enums.constants.AttributeNamePositionConstantValues.CHARISMA_CHARM_POSITION;
 
 
 import org.junit.Test;
@@ -54,5 +56,7 @@ public class AttributesNamesTest {
 		assertEquals(WISDOM_INTUITION_POSITION, AttributesNames.WISDOM_INTUITION.getPosition());
 		
 		assertEquals(CHARISMA_POSITION, AttributesNames.CHARISMA.getPosition());
+		assertEquals(CHARISMA_APPEARANCE_POSITION, AttributesNames.CHARISMA_APPEARANCE.getPosition());
+		assertEquals(CHARISMA_CHARM_POSITION, AttributesNames.CHARISMA_CHARM.getPosition());
 	}
 }

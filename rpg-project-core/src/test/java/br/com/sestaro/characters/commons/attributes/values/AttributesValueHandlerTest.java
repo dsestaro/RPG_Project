@@ -16,6 +16,7 @@ import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
+import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence;
@@ -35,7 +36,7 @@ public class AttributesValueHandlerTest {
 	private Constitution constitution;
 	private Intelligence intelligence;
 	private Wisdom wisdom;
-	private int charisma = SIXTEEN;
+	private Charisma charisma;
 	
 	/**
 	 * Initialization of variables that will be used in this class.
@@ -47,6 +48,7 @@ public class AttributesValueHandlerTest {
 		this.constitution = new Constitution(TWELVE, FOURTEEN);
 		this.intelligence = new Intelligence(FOURTEEN, FOURTEEN);
 		this.wisdom = new Wisdom(FIFTEEN, SIXTEEN);
+		this.charisma = new Charisma(TWELVE, TWELVE);
 		
 		this.values = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
 	}
@@ -80,7 +82,7 @@ public class AttributesValueHandlerTest {
 		
 		attributeName = AttributesNames.CHARISMA;
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(charisma, attributeValue);
+		assertEquals(TWELVE, attributeValue);
 	}
 	
 	/**
@@ -100,6 +102,7 @@ public class AttributesValueHandlerTest {
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(TEN, attributeValue);
 		
+		
 		attributeName = AttributesNames.DEXTERITY_SPEED;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -109,6 +112,7 @@ public class AttributesValueHandlerTest {
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(SIXTEEN, attributeValue);
+		
 		
 		attributeName = AttributesNames.CONSTITUTION_TOUGHNESS;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, NEGATIVE);
@@ -120,6 +124,7 @@ public class AttributesValueHandlerTest {
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(SIXTEEN, attributeValue);
 		
+		
 		attributeName = AttributesNames.INTELLIGENCE_KNOWLEDGE;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
@@ -130,7 +135,8 @@ public class AttributesValueHandlerTest {
     attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
     assertEquals(TWELVE, attributeValue);
 		
-		attributeName = AttributesNames.WISDOM_INSTINCT;
+		
+    attributeName = AttributesNames.WISDOM_INSTINCT;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, NEGATIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
 		assertEquals(THIRTEEN, attributeValue);
@@ -140,10 +146,16 @@ public class AttributesValueHandlerTest {
     attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
     assertEquals(FOURTEEN, attributeValue);
 		
-		attributeName = AttributesNames.CHARISMA;
+		
+    attributeName = AttributesNames.CHARISMA_APPEARANCE;
+    AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
+    attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
+    assertEquals(FOURTEEN, attributeValue);
+    
+    attributeName = AttributesNames.CHARISMA_CHARM;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, POSITIVE);
 		attributeValue = AttributesValueHandler.getAttributeByPosition(values, attributeName);
-		assertEquals(charisma + POSITIVE, attributeValue);
+		assertEquals(FOURTEEN, attributeValue);
 	}
 	
 	/**
