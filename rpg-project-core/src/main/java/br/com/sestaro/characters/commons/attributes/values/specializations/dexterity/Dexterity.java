@@ -12,6 +12,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.dexte
 public class Dexterity {
 	private Speed speed;
 	private Coordination coordination;
+	private static final String NAME = "DEX"; 
 	
 	/**
    * @param value1                                - Thoughness value
@@ -64,4 +65,11 @@ public class Dexterity {
 	public final int getCoordination() {
 		return coordination.getValue();
 	}
+	
+	/**
+   * @return                                      - Return the specialization name
+   */
+  public final String getName() {
+    return NAME;
+  }
 }

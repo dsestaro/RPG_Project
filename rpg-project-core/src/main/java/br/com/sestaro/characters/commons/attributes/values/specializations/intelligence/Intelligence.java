@@ -12,6 +12,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.intel
 public class Intelligence {
   private Knowledge knowledge;
   private Logic logic;
+  private static final String NAME = "INT";
   
   /**
    * @param value1                                - Physical strength value
@@ -63,5 +64,12 @@ public class Intelligence {
    */
   public final int getLogic() {
     return logic.getValue();
+  }
+  
+  /**
+   * @return                                      - Return the specialization name
+   */
+  public final String getName() {
+    return NAME;
   }
 }

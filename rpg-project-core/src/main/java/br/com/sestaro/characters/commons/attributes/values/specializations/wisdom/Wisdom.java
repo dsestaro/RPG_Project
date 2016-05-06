@@ -13,6 +13,7 @@ public class Wisdom {
 
   private Instinct instinct;
   private Intuition intuition;
+  private static final String NAME = "WIS";
   
   /**
    * @param value1                                - Instinct value
@@ -64,6 +65,13 @@ public class Wisdom {
    */
   public final int getIntuition() {
     return intuition.getValue();
+  }
+  
+  /**
+   * @return                                      - Return the specialization name
+   */
+  public final String getName() {
+    return NAME;
   }
 }
 

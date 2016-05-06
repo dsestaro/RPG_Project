@@ -13,6 +13,7 @@ public class Strength {
 	
   private PhysicalStrength physicalStrength;
 	private Endurance endurance;
+	private static final String NAME = "STR";
 	
 	/**
    * @param value1                                - Physical strength value
@@ -65,4 +66,11 @@ public class Strength {
 	public final int getEndurance() {
 		return endurance.getValue();
 	}
+	
+	/**
+   * @return                                      - Return the specialization name
+   */
+  public final String getName() {
+    return NAME;
+  }
 }

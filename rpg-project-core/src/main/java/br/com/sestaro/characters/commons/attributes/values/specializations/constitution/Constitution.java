@@ -12,6 +12,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.const
 public class Constitution {
 	private Toughness toughness;
 	private Resistance resistance;
+	private static final String NAME = "CON";
 	
 	/**
 	 * @param value1                               - Thoughness value
@@ -64,4 +65,11 @@ public class Constitution {
 	public final int getResistance() {
 		return resistance.getValue();
 	}
+	
+	/**
+   * @return                                      - Return the specialization name
+   */
+  public final String getName() {
+    return NAME;
+  }
 }
