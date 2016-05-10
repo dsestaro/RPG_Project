@@ -15,6 +15,11 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.br.sestaro.configuration.start.SpringInit;
 import com.jayway.restassured.RestAssured;
 
+/**
+ * Class to test {@link AttributesController}.
+ * 
+ * @author davidson.sestaro
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringInit.class)
 @WebAppConfiguration
@@ -23,13 +28,19 @@ public class AttributesControllerTest {
 	@Value("${local.server.port}")
 	private int port;
 	
+	/**
+	 * Initial configuration of test class.
+	 */
 	@Before
-	public void setUp() {
+	public final void setUp() {
 		RestAssured.port = port;
 	}
 	
+	/**
+	 * Attributes names test.
+	 */
 	@Test
-	public void getAttributesNamesTest() {
+	public final void getAttributesNamesTest() {
 		given().
 		expect().
 		         body(is("[\"STR\",\"DEX\",\"CON\",\"INT\",\"WIS\",\"CHA\"]")).

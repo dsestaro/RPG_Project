@@ -10,15 +10,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.br.sestaro.endpoint.EndpointConfiguration;
 import com.br.sestaro.service.attributes.AttributesService;
 
+/**
+ * Class to control attributes related REST methods.
+ * 
+ * @author davidson.sestaro
+ */
 @RestController
 @RequestMapping(value = EndpointConfiguration.ATTRIBUTE_ROOT)
 public class AttributesController {
 
     @Autowired
-    AttributesService attributesService;
+    private AttributesService attributesService;
     
-    @RequestMapping(value = "/getAttributeNames", method = RequestMethod.GET, produces="application/json")
-    public List<String> showStatus() {
+    /**
+     * Get attributes names.
+     * 
+     * @return						- List with attributes names
+     */
+    @RequestMapping(value = "/getAttributeNames", method = RequestMethod.GET, produces = "application/json")
+    public final List<String> getAttributeNames() {
 	return attributesService.getAttributeNames();
     }
 }

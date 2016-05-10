@@ -31,3 +31,4 @@
 /rpg-project-controller/.pmd
 /rpg-project-core/.pmd
 /rpg-project-view/.pmd
+/rpg-project-controller/.checkstyle

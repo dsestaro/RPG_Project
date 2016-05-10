@@ -12,9 +12,19 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.intel
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom;
 
+/**
+ * Class service to handle with atributtes values.
+ * 
+ * @author davidson.sestaro
+ */
 @Service
 public class AttributesService {
     
+    /**
+     * Get all the attributes names.
+     * 
+     * @return						- List of attributes names
+     */
     public final List<String> getAttributeNames() {
 	List<String> attributeNames = new ArrayList<String>();
 
