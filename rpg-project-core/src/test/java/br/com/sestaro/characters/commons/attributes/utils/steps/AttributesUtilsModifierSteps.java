@@ -14,7 +14,6 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
  */
 public class AttributesUtilsModifierSteps {
   
-
   private int attribute;
   private int modifier;
   

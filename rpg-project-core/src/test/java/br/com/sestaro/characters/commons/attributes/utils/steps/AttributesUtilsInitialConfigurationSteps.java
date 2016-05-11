@@ -11,6 +11,11 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
 
+/**
+ * Steps to test attributes initials configurations.
+ * 
+ * @author davidson.sestaro
+ */
 public class AttributesUtilsInitialConfigurationSteps {
   
   private Specialization attribute1;
@@ -30,7 +35,7 @@ public class AttributesUtilsInitialConfigurationSteps {
   }
   
   /**
-   * Method to calculate the modifier.
+   * Method to compare the values.
    */
   @When("comparing the attributes values")
   public final void whenComparingTheValues() {
@@ -47,10 +52,10 @@ public class AttributesUtilsInitialConfigurationSteps {
    * 
    * @param value                         - Value to test
    */
-  @Then("the result should be $value")
+  @Then("the attribute result should be $value")
   public final void thenResultShouldBe(@Named("value") final String value) {
     if (!value.equals(result)) {
-      throw new RuntimeException("The test failed!");
+      throw new RuntimeException("The value should be " + value + ", but it was " + result);
     }
   }
 }
