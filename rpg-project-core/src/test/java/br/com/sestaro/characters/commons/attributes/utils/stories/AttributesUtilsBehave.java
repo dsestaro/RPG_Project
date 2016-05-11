@@ -13,25 +13,35 @@ import br.com.sestaro.characters.commons.attributes.utils.steps.AttributesUtilsS
 import br.com.sestaro.characters.commons.jbehave.JBehaveConfigurationFactory;
 import de.codecentric.jbehave.junit.monitoring.JUnitReportingRunner;
 
+/**
+ * Class to test the behave of class Attributes Utils.
+ * 
+ * @author davidson.sestaro
+ */
 @RunWith(JUnitReportingRunner.class)
 public class AttributesUtilsBehave extends JUnitStories {
 
-  public AttributesUtilsBehave() {
-    super();
-  }
-  
+  /**
+   * Path to the stories.
+   */
   @Override
-  protected List<String> storyPaths() {
+  protected final List<String> storyPaths() {
     return Arrays.asList("characters/commons/attributes/utils/AttributeModifier.story");
   }
 
+  /**
+   * Instantiation of steps class.
+   */
   @Override
-  public InjectableStepsFactory stepsFactory() {
+  public final InjectableStepsFactory stepsFactory() {
     return new InstanceStepsFactory(configuration(), new AttributesUtilsSteps());
   }
   
+  /**
+   * Method to get the configuration from the factory.
+   */
   @Override
-  public Configuration configuration() {
+  public final Configuration configuration() {
     return JBehaveConfigurationFactory.getConfiguration();
   }
 }
