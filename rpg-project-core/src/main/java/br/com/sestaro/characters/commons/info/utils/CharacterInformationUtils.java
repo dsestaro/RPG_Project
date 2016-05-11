@@ -9,6 +9,8 @@ import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationExcep
 */
 public final class CharacterInformationUtils {
 
+  private static final int MIN_LENTH = 3;
+  
   /**
    * Constructor to prevent class instantiation.
    */
@@ -19,7 +21,7 @@ public final class CharacterInformationUtils {
    * @param value                                         - validate if the value is null or empty
    */
 	public static void validateInformation(final String value) {
-		if (value == null || value.isEmpty()) {
+		if (value == null || value.isEmpty() || value.length() < MIN_LENTH) {
 			throw new InvalidInformationException();
 		}
 	}
