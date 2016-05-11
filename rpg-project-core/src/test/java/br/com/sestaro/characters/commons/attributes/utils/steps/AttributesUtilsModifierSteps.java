@@ -12,10 +12,10 @@ import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
  * 
  * @author davidson.sestaro
  */
-public class AttributesUtilsSteps {
+public class AttributesUtilsModifierSteps {
   
 
-  private int x;
+  private int attribute;
   private int modifier;
   
   /**
@@ -25,7 +25,7 @@ public class AttributesUtilsSteps {
    */
   @Given("an attribute with value $value")
   public final void givenAttributeValue(@Named("value") final int value) {
-    this.x = value;
+    this.attribute = value;
   }
   
   /**
@@ -46,7 +46,7 @@ public class AttributesUtilsSteps {
   @Then("modifier should be $value")
   public final void thenModifierShouldBe(@Named("value") final int value) {
     if (value != modifier) {
-      throw new RuntimeException("x is " + x + ", but should be " + value);
+      throw new RuntimeException("x is " + attribute + ", but should be " + value);
     }
   }
 }

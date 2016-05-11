@@ -9,7 +9,8 @@ import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 import org.junit.runner.RunWith;
 
-import br.com.sestaro.characters.commons.attributes.utils.steps.AttributesUtilsSteps;
+import br.com.sestaro.characters.commons.attributes.utils.steps.AttributesUtilsInitialConfigurationSteps;
+import br.com.sestaro.characters.commons.attributes.utils.steps.AttributesUtilsModifierSteps;
 import br.com.sestaro.characters.commons.jbehave.JBehaveConfigurationFactory;
 import de.codecentric.jbehave.junit.monitoring.JUnitReportingRunner;
 
@@ -26,7 +27,9 @@ public class AttributesUtilsBehave extends JUnitStories {
    */
   @Override
   protected final List<String> storyPaths() {
-    return Arrays.asList("characters/commons/attributes/utils/AttributeModifier.story");
+    return Arrays.asList(
+        "characters/commons/attributes/utils/AttributeModifier.story",
+        "characters/commons/attributes/utils/InitialAttributesValidations.story");
   }
 
   /**
@@ -34,9 +37,11 @@ public class AttributesUtilsBehave extends JUnitStories {
    */
   @Override
   public final InjectableStepsFactory stepsFactory() {
-    return new InstanceStepsFactory(configuration(), new AttributesUtilsSteps());
+    return new InstanceStepsFactory(configuration(),
+        new AttributesUtilsModifierSteps(),
+        new AttributesUtilsInitialConfigurationSteps());
   }
-  
+
   /**
    * Method to get the configuration from the factory.
    */
