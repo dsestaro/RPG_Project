@@ -100,7 +100,7 @@ public class CharismaTests {
    * Test attribute name.
    */
   @Test
-  public final void testName() {
+  public final void testShouldValidateClassName() {
     assertEquals("CHA", Charisma.getName());
   }
 }
