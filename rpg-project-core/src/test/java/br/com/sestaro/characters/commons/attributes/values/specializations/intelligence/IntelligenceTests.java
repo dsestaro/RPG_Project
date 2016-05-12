@@ -18,12 +18,12 @@ import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttribute
  * 
  * @author davidson.sestaro
  */
-public class IntelligenceTest {
+public class IntelligenceTests {
   /**
    * Validate initial configuration.
    */
   @Test
-  public final void initializationTest() {
+  public final void testShouldValidateInitialSpecializationValues() {
     Intelligence intelligence = new Intelligence(SIXTEEN, FOURTEEN);
     
     assertEquals(FIFTEEN, intelligence.getIntelligence());
@@ -35,7 +35,7 @@ public class IntelligenceTest {
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativePhysicalIntelligenceValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathOne() {
     new Intelligence(NEGATIVE, POSITIVE);
   }
   
@@ -43,7 +43,7 @@ public class IntelligenceTest {
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeEnduranceValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathTwo() {
     new Intelligence(POSITIVE, NEGATIVE);
   }
   
@@ -51,7 +51,7 @@ public class IntelligenceTest {
    * Add a value to the physical Intelligence.
    */
   @Test
-  public final void addPhysicalIntelligenceTest() {
+  public final void testShouldValidateSumOfValueToTheKnowledge() {
     Intelligence intelligence = new Intelligence(SIXTEEN, FOURTEEN);
     
     intelligence.addKnowledge(POSITIVE);
@@ -63,7 +63,7 @@ public class IntelligenceTest {
    * Remove a value to the physical Intelligence.
    */
   @Test
-  public final void removePhysicalIntelligenceTest() {
+  public final void testShouldValidateSubtractionOfValueToTheKnowledge() {
     Intelligence intelligence = new Intelligence(SIXTEEN, FOURTEEN);
     
     intelligence.addKnowledge(NEGATIVE);
@@ -75,7 +75,7 @@ public class IntelligenceTest {
    * Add a value to the endurance.
    */
   @Test
-  public final void addEnduranceTest() {
+  public final void testShouldValidateSumOfValueToTheLogic() {
     Intelligence intelligence = new Intelligence(SIXTEEN, FOURTEEN);
     
     intelligence.addLogic(POSITIVE);
@@ -87,7 +87,7 @@ public class IntelligenceTest {
    * Remove a value to the physical Intelligence.
    */
   @Test
-  public final void removeEnduranceTest() {
+  public final void testShouldValidateSubtractionOfValueToTheLogic() {
     Intelligence intelligence = new Intelligence(SIXTEEN, FOURTEEN);
     
     intelligence.addLogic(NEGATIVE);
@@ -99,7 +99,7 @@ public class IntelligenceTest {
    * Test attribute name.
    */
   @Test
-  public final void testName() {
+  public final void testShouldValidateClassName() {
     assertEquals("INT", Intelligence.getName());
   }
 }

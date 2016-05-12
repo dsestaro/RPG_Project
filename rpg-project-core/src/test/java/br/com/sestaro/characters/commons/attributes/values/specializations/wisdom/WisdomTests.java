@@ -18,13 +18,13 @@ import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttribute
  * 
  * @author davidson.sestaro
  */
-public class WisdomTest {
+public class WisdomTests {
   
   /**
    * Validate initial configuration.
    */
   @Test
-  public final void initializationTest() {
+  public final void testShouldValidateInitialSpecializationValues() {
     Wisdom strength = new Wisdom(SIXTEEN, FOURTEEN);
     
     assertEquals(FIFTEEN, strength.getWisdom());
@@ -36,7 +36,7 @@ public class WisdomTest {
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeInstinctValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathOne() {
     new Wisdom(NEGATIVE, POSITIVE);
   }
   
@@ -44,7 +44,7 @@ public class WisdomTest {
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeIntuitionValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathTwo() {
     new Wisdom(POSITIVE, NEGATIVE);
   }
   
@@ -52,7 +52,7 @@ public class WisdomTest {
    * Add a value to the instinct.
    */
   @Test
-  public final void addInstinctTest() {
+  public final void testShouldValidateSumOfValueToTheInstinct() {
     Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
     
     wisdom.addInstinct(POSITIVE);
@@ -64,7 +64,7 @@ public class WisdomTest {
    * Remove a value to the instinct.
    */
   @Test
-  public final void removeInstinctTest() {
+  public final void testShouldValidateSubtractionOfValueToTheInstinct() {
     Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
     
     wisdom.addInstinct(NEGATIVE);
@@ -76,7 +76,7 @@ public class WisdomTest {
    * Add a value to the intuition.
    */
   @Test
-  public final void addIntuitionTest() {
+  public final void testShouldValidateSumOfValueToTheIntuition() {
     Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
     
     wisdom.addIntuition(POSITIVE);
@@ -88,7 +88,7 @@ public class WisdomTest {
    * Remove a value to the intuition.
    */
   @Test
-  public final void removeIntuitionTest() {
+  public final void testShouldValidateSubtractionOfValueToTheIntuition() {
     Wisdom wisdom = new Wisdom(SIXTEEN, FOURTEEN);
     
     wisdom.addIntuition(NEGATIVE);
@@ -100,7 +100,7 @@ public class WisdomTest {
    * Test attribute name.
    */
   @Test
-  public final void testName() {
+  public final void testShouldValidateClassName() {
     assertEquals("WIS", Wisdom.getName());
   }
 }

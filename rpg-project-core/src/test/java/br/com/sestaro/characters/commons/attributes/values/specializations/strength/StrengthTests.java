@@ -18,13 +18,13 @@ import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttribute
  * 
  * @author davidson.sestaro
  */
-public class StrengthTest {
+public class StrengthTests {
 
   /**
    * Validate initial configuration.
    */
 	@Test
-  public final void initializationTest() {
+  public final void testShouldValidateInitialSpecializationValues() {
 		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
 		assertEquals(FIFTEEN, strength.getStrength());
@@ -36,7 +36,7 @@ public class StrengthTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativePhysicalStrengthValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathOne() {
 		new Strength(NEGATIVE, POSITIVE);
 	}
 	
@@ -44,7 +44,7 @@ public class StrengthTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeEnduranceValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathTwo() {
 		new Strength(POSITIVE, NEGATIVE);
 	}
 	
@@ -52,7 +52,7 @@ public class StrengthTest {
    * Add a value to the physical strength.
    */
 	@Test
-  public final void addPhysicalStrengthTest() {
+  public final void testShouldValidateSumOfValueToThePhysicalStrength() {
 		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
 		strength.addPhysicalStrength(POSITIVE);
@@ -64,7 +64,7 @@ public class StrengthTest {
    * Remove a value to the physical strength.
    */
 	@Test
-  public final void removePhysicalStrengthTest() {
+  public final void testShouldValidateSubtractionOfValueToThePhysicalStrength() {
 		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
 		strength.addPhysicalStrength(NEGATIVE);
@@ -76,7 +76,7 @@ public class StrengthTest {
    * Add a value to the endurance.
    */
 	@Test
-  public final void addEnduranceTest() {
+  public final void testShouldValidateSumOfValueToTheEndurance() {
 		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
 		strength.addEndurance(POSITIVE);
@@ -88,7 +88,7 @@ public class StrengthTest {
    * Remove a value to the endurance.
    */
 	@Test
-  public final void removeEnduranceTest() {
+  public final void testShouldValidateSubtractionOfValueToTheEndurance() {
 		Strength strength = new Strength(SIXTEEN, FOURTEEN);
 		
 		strength.addEndurance(NEGATIVE);
@@ -100,7 +100,7 @@ public class StrengthTest {
    * Test attribute name.
    */
   @Test
-  public final void testName() {
+  public final void testShouldValidateClassName() {
     assertEquals("STR", Strength.getName());
   }
 }
