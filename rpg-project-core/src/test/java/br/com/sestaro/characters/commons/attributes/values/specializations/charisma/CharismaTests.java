@@ -12,7 +12,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
-import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom;
 
 /**
  * Class to test {@link Charisma}.
@@ -25,7 +24,7 @@ public class CharismaTests {
    * Validate initial configuration.
    */
   @Test
-  public final void initializationTest() {
+  public final void testShouldValidateInitialSpecializationValues() {
     Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
     assertEquals(FIFTEEN, charisma.getCharisma());
@@ -37,7 +36,7 @@ public class CharismaTests {
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeAppearanceValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathOne() {
     new Charisma(NEGATIVE, POSITIVE);
   }
   
@@ -45,15 +44,15 @@ public class CharismaTests {
    * Validate negative input.
    */
   @Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeCharmValue() {
-    new Wisdom(POSITIVE, NEGATIVE);
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathTwo() {
+    new Charisma(POSITIVE, NEGATIVE);
   }
   
   /**
    * Add a value to the appearance.
    */
   @Test
-  public final void addAppearanceTest() {
+  public final void testShouldValidateSumOfValueToTheAppearance() {
     Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
     charisma.addAppearance(POSITIVE);
@@ -65,7 +64,7 @@ public class CharismaTests {
    * Remove a value to the appearance.
    */
   @Test
-  public final void removeAppearanceTest() {
+  public final void testShouldValidateSubtractionOfValueToTheAppearance() {
     Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
     charisma.addAppearance(NEGATIVE);
@@ -77,7 +76,7 @@ public class CharismaTests {
    * Add a value to the charm.
    */
   @Test
-  public final void addCharmTest() {
+  public final void testShouldValidateSumOfValueToTheCharm() {
     Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
     charisma.addCharm(POSITIVE);
@@ -89,7 +88,7 @@ public class CharismaTests {
    * Remove a value to the charm.
    */
   @Test
-  public final void removeIntuitionTest() {
+  public final void testShouldValidateSubtractionOfValueToTheCharm() {
     Charisma charisma = new Charisma(SIXTEEN, FOURTEEN);
     
     charisma.addCharm(NEGATIVE);
