@@ -28,7 +28,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  * 
  * @author davidson.sestaro
  */
-public class AttributesValueHandlerTest {
+public class AttributesValueHandlerTests {
 
 	private AttributesValues values; 
 	private Strength strength;
@@ -42,7 +42,7 @@ public class AttributesValueHandlerTest {
 	 * Initialization of variables that will be used in this class.
 	 */
 	@Before
-  public final void initialize() {
+  public final void testShouldValidateInitialAttributesValues() {
 		this.strength = new Strength(TWELVE, EIGHT);
 		this.dexterity = new Dexterity(FOURTEEN, FOURTEEN);
 		this.constitution = new Constitution(TWELVE, FOURTEEN);
@@ -57,7 +57,7 @@ public class AttributesValueHandlerTest {
 	 * Validate if the method get is returning the correct value.
 	 */
 	@Test
-  public final void getAttributeByPositionTest() {
+  public final void testShouldValidateRetrieveOfAttributesValues() {
 		int attributeValue = 0;
 		
 		AttributesNames attributeName = AttributesNames.STRENGTH;
@@ -89,7 +89,7 @@ public class AttributesValueHandlerTest {
    * Validate if the method set is calculating the correct value.
    */
 	@Test
-  public final void addAttributeByPositionTest() {
+  public final void testShouldValidateSumOfAValueWithAnAttributeSpecialization() {
 		int attributeValue = 0;
 		
 		AttributesNames attributeName = AttributesNames.STRENGTH_PHYSICALSTRENGTH;
@@ -162,7 +162,7 @@ public class AttributesValueHandlerTest {
    * Validate invalid name input.
    */
 	@Test(expected = InvalidAttributeNameException.class)
-  public final void invalidNameTest() {
+  public final void testShouldFailWhenValidatingInvalidSpecializationNames() {
 		AttributesNames attributeName = AttributesNames.STRENGTH;
 		AttributesValueHandler.addAttributeByPosition(values, attributeName, 1);
 	}

@@ -25,7 +25,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  * 
  * @author davidson.sestaro
  */
-public class AttributesValuesTest {
+public class AttributesValuesTests {
 
 	private AttributesValues attributes; 
 	private Strength strength;
@@ -39,7 +39,7 @@ public class AttributesValuesTest {
    * Initial configuration.
    */
 	@Before
-  public final void initialization() {
+  public final void beforeInitialTestsConfiguration() {
 		this.strength = new Strength(TWELVE, SIXTEEN);
 		this.dexterity = new Dexterity(SIXTEEN, THIRTEEN);
 		this.constitution = new Constitution(THIRTEEN, FIFTEEN);
@@ -54,7 +54,7 @@ public class AttributesValuesTest {
    * Validate if the method get is returning the correct value.
    */
 	@Test
-  public final void testInitializationWithValues() {
+  public final void testShouldValidateRetrieveOfAttributesAndSpecializarionsValues() {
 		assertEquals(FOURTEEN, this.attributes.getStrength().getStrength());
 		assertEquals(TWELVE, this.attributes.getStrength().getPhysicalStrength());
 		assertEquals(SIXTEEN, this.attributes.getStrength().getEndurance());
@@ -86,7 +86,7 @@ public class AttributesValuesTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeConstitutionValue() {
+  public final void testShouldFailWhenAttributeSpecializationBecameNegativePathOne() {
 		attributes.getConstitution().addToughness(-FOURTEEN);
 	}
 	
@@ -94,7 +94,7 @@ public class AttributesValuesTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeWisdomValue() {
+  public final void testShouldFailWhenAttributeSpecializationBecameNegativePathTwo() {
 		attributes.getWisdom().addIntuition(-SIXTEEN);
 	}
 	
@@ -102,7 +102,7 @@ public class AttributesValuesTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeCharismaValue() {
+  public final void testShouldFailWhenAttributeSpecializationBecameNegativePathThree() {
 		attributes.getCharisma().addCharm(-SIXTEEN);
 	}
 }
