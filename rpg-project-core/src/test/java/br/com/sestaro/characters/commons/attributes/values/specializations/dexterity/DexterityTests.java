@@ -18,13 +18,13 @@ import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttribute
  * 
  * @author davidson.sestaro
  */
-public class DexterityTest {
+public class DexterityTests {
   
   /**
    * Validate initial configuration.
    */
 	@Test
-  public final void initializationTest() {
+  public final void testShouldValidateInitialSpecializationValues() {
 		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
 		assertEquals(FIFTEEN, dexterity.getDexterity());
@@ -36,7 +36,7 @@ public class DexterityTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeSpeedValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathOne() {
 		new Dexterity(NEGATIVE, POSITIVE);
 	}
 	
@@ -44,7 +44,7 @@ public class DexterityTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeCoordinationValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathTwo() {
 		new Dexterity(POSITIVE, NEGATIVE);
 	}
 	
@@ -52,7 +52,7 @@ public class DexterityTest {
    * Add a value to the speed.
    */
 	@Test
-  public final void addSpeedTest() {
+  public final void testShouldValidateSumOfValueToTheSpeed() {
 		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
 		dexterity.addSpeed(POSITIVE);
@@ -64,7 +64,7 @@ public class DexterityTest {
    * Remove a value to the speed.
    */
 	@Test
-  public final void removeSpeedTest() {
+  public final void testShouldValidateSubtractionOfValueToTheSpeed() {
 		Dexterity dexterity = new Dexterity(SIXTEEN, SIXTEEN);
 		
 		dexterity.addSpeed(NEGATIVE);
@@ -76,7 +76,7 @@ public class DexterityTest {
    * Add a value to the coordination.
    */
 	@Test
-  public final void addCoordinationTest() {
+  public final void testShouldValidateSumOfValueToTheCoordination() {
 		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
 		dexterity.addCoordination(POSITIVE);
@@ -88,7 +88,7 @@ public class DexterityTest {
    * Remove a value to the coordination.
    */
 	@Test
-  public final void removeCoordinationTest() {
+  public final void testShouldValidateSubtractionOfValueToTheCoordination() {
 		Dexterity dexterity = new Dexterity(SIXTEEN, FOURTEEN);
 		
 		dexterity.addCoordination(NEGATIVE);
@@ -100,7 +100,7 @@ public class DexterityTest {
    * Test attribute name.
    */
   @Test
-  public final void testName() {
+  public final void testShouldValidateClassName() {
     assertEquals("DEX", Dexterity.getName());
   }
 }

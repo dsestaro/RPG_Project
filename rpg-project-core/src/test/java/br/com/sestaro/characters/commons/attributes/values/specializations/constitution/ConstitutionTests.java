@@ -18,13 +18,13 @@ import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttribute
  * 
  * @author davidson.sestaro
  */
-public class ConstitutionTest {
+public class ConstitutionTests {
 
   /**
    * Validate initial configuration.
    */
 	@Test
-  public final void initializationTest() {
+  public final void testShouldValidateInitialSpecializationValues() {
 		Constitution constitution = new Constitution(TWELVE, FOURTEEN);
 		
 		assertEquals(THIRTEEN, constitution.getConstitution());
@@ -36,7 +36,7 @@ public class ConstitutionTest {
 	 * Validate negative input.
 	 */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeToughnessValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathOne() {
 		new Constitution(NEGATIVE, POSITIVE);
 	}
 	
@@ -44,7 +44,7 @@ public class ConstitutionTest {
    * Validate negative input.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void testNegativeResistanceValue() {
+  public final void testShouldFailWhenValidatingNegativeValueSpecializationPathTwo() {
 		new Constitution(POSITIVE, NEGATIVE);
 	}
 	
@@ -52,7 +52,7 @@ public class ConstitutionTest {
 	 * Add a value to the toughness.
 	 */
 	@Test
-  public final void addToughnessTest() {
+  public final void testShouldValidateSumOfValueToTheAppearanceToughness() {
 		Constitution constitution = new Constitution(SIXTEEN, SIXTEEN);
 		
 		constitution.addToughness(POSITIVE);
@@ -64,7 +64,7 @@ public class ConstitutionTest {
    * Remove a value to the toughness.
    */
 	@Test
-  public final void removeToughnessTest() {
+  public final void testShouldValidateSubtractionOfValueToTheAppearanceToughness() {
 		Constitution constitution = new Constitution(SIXTEEN, SIXTEEN);
 		
 		constitution.addToughness(NEGATIVE);
@@ -76,7 +76,7 @@ public class ConstitutionTest {
    * Add a value to the resistance.
    */
 	@Test
-  public final void addResistanceTest() {
+  public final void testShouldValidateSumOfValueToTheResistance() {
 		Constitution constitution = new Constitution(SIXTEEN, FOURTEEN);
 		
 		constitution.addResistance(POSITIVE);
@@ -88,7 +88,7 @@ public class ConstitutionTest {
    * Remove a value to the resistance.
    */
 	@Test
-  public final void removeEnduranceTest() {
+  public final void testShouldValidateSubtractionOfValueToTheResistance() {
 		Constitution constitution = new Constitution(SIXTEEN, FOURTEEN);
 		
 		constitution.addResistance(NEGATIVE);
@@ -100,7 +100,7 @@ public class ConstitutionTest {
    * Test attribute name.
    */
   @Test
-	public final void testName() {
+	public final void testShouldValidateClassName() {
 	  assertEquals("CON", Constitution.getName());
 	}
 }
