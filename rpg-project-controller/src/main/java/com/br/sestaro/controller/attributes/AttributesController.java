@@ -3,6 +3,7 @@ package com.br.sestaro.controller.attributes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,7 @@ public class AttributesController {
      * @return						- List with attributes names
      */
     @RequestMapping(value = "/getAttributeNames", method = RequestMethod.GET, produces = "application/json")
+    @CrossOrigin(origins = "http://localhost:9080")
     public final List<String> getAttributeNames() {
 	return attributesService.getAttributeNames();
     }
