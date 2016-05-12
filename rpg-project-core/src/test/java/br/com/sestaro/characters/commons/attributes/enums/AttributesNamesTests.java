@@ -28,13 +28,13 @@ import org.junit.Test;
  * 
  * @author davidson.sestaro
  */
-public class AttributesNamesTest {
+public class AttributesNamesTests {
 	
   /**
    * Test enum position.
    */
 	@Test
-  public final void enumTest() {
+  public final void testShouldFailForWrongEnumPosition() {
 		assertEquals(STRENGTH_POSITION, AttributesNames.STRENGTH.getPosition());
 		assertEquals(STRENGTH_PHYSICAL_STRENGTH_POSITION, AttributesNames.STRENGTH_PHYSICALSTRENGTH.getPosition());
 		assertEquals(STRENGTH_ENDURANCE_POSITION, AttributesNames.STRENGTH_ENDURANCE.getPosition());

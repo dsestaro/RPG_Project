@@ -23,13 +23,13 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.dexte
  * 
  * @author davidson.sestaro
  */
-public class AttributesUtilsTest {
+public class AttributesUtilsTests {
   
   /**
    * Validate attributes with null value.
    */
 	@Test(expected = NegativeAttributeValueException.class)
-  public final void validateAttributeTest() {
+  public final void testShouldFailWhenAttributeIsNegative() {
 		AttributesUtils.validateAttributeValue(-1);
 	}
 	
@@ -37,7 +37,7 @@ public class AttributesUtilsTest {
 	 * Validate positive modifier calc.
 	 */
 	@Test
-  public final void calculateModifierPositiveTest() {
+  public final void testShouldCalculateAttributeModifier() {
 		assertEquals(EIGHTEEN_MODIFIER, AttributesUtils.calculateModifier(EIGHTEEN));
 	}
 	
@@ -45,7 +45,7 @@ public class AttributesUtilsTest {
    * Validate negative modifier calc.
    */
 	@Test
-  public final void calculateModifierNegativeTest() {
+  public final void testShouldCalculateNegativeAttributeModifier() {
 		assertEquals(FIVE_MODIFIER, AttributesUtils.calculateModifier(FIVE));
 	}
 	
@@ -53,7 +53,7 @@ public class AttributesUtilsTest {
    * Validate difference between attributes.
    */
 	@Test(expected = InvalidAttributeValueException.class)
-  public final void initialValidationsGreaterThan4Test() {
+  public final void testShouldFailWhenAttributeDifferenceIsGreaterThanFourPathOne() {
 		Specialization spec1 = new Speed(TWELVE);
 		Specialization spec2 = new Speed(SEVENTEEN);
 		
@@ -64,7 +64,7 @@ public class AttributesUtilsTest {
    * Validate difference between attributes.
    */
 	@Test(expected = InvalidAttributeValueException.class)
-  public final void initialValidationsGreaterThan4Test2() {
+  public final void testShouldFailWhenAttributeDifferenceIsGreaterThanFourPathTwo() {
 		Specialization spec1 = new Speed(SEVENTEEN);
 		Specialization spec2 = new Speed(TWELVE);
 		
@@ -75,7 +75,7 @@ public class AttributesUtilsTest {
    * Validate difference between attributes with an attribute greater then 18.
    */
 	@Test(expected = InvalidAttributeValueException.class)
-  public final void initialValidationsGreaterThan18Test() {
+  public final void testShouldFailWhenAttributesAreDifferentAndBiggerThanEighteenPathOne() {
 		Specialization spec1 = new Speed(NINETEEN);
 		Specialization spec2 = new Speed(FOURTEEN);
 		
@@ -86,7 +86,7 @@ public class AttributesUtilsTest {
    * Validate difference between attributes with an attribute greater then 18.
    */
 	@Test(expected = InvalidAttributeValueException.class)
-  public final void initialValidationsGreaterThan18Test2() {
+  public final void testShouldFailWhenAttributesAreDifferentAndBiggerThanEighteenPathTwo() {
 		Specialization spec1 = new Speed(FOURTEEN);
 		Specialization spec2 = new Speed(NINETEEN);
 		
@@ -97,7 +97,7 @@ public class AttributesUtilsTest {
 	 * Validate difference between attributes with an attribute greater then 18.
 	 */
 	@Test
-	public final void initialValidationsGreaterThan18Test3() {
+	public final void testShouldValidateAttributesEqualsAndBiggerThanEighteen() {
 	  Specialization spec1 = new Speed(NINETEEN);
 	  Specialization spec2 = new Speed(NINETEEN);
 	  
@@ -108,7 +108,7 @@ public class AttributesUtilsTest {
    * Validate initial configuration.
    */
 	@Test
-  public final void initialValidationsTest() {
+  public final void testShouldValidateAttributesSmallerThanEighteen() {
 		Specialization spec1 = new Speed(FOURTEEN);
 		Specialization spec2 = new Speed(SIXTEEN);
 		

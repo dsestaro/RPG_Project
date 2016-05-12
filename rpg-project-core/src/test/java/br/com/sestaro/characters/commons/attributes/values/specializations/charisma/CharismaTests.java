@@ -19,7 +19,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  * 
  * @author davidson.sestaro
  */
-public class CharismaTest {
+public class CharismaTests {
   
   /**
    * Validate initial configuration.
