@@ -1,1 +1,1 @@
-angular.module('character.sheet.app', ['ngAnimate', 'ui.bootstrap']);
+angular.module('character.sheet.app', ['ngAnimate', 'ui.bootstrap', 'ngResource']);
