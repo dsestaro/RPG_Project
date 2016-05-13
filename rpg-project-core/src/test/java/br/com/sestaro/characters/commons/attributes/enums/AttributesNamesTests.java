@@ -34,7 +34,7 @@ public class AttributesNamesTests {
    * Test enum position.
    */
 	@Test
-  public final void testShouldFailForWrongEnumPosition() {
+  public final void testShouldValidateEnumPosition() {
 		assertEquals(STRENGTH_POSITION, AttributesNames.STRENGTH.getPosition());
 		assertEquals(STRENGTH_PHYSICAL_STRENGTH_POSITION, AttributesNames.STRENGTH_PHYSICALSTRENGTH.getPosition());
 		assertEquals(STRENGTH_ENDURANCE_POSITION, AttributesNames.STRENGTH_ENDURANCE.getPosition());

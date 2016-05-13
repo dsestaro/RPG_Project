@@ -18,13 +18,13 @@ import org.junit.Test;
  * 
  * @author davidson.sestaro
  */
-public class CharacterAlignNamesTest {
+public class CharacterAlignNamesTests {
 	
   /**
    * Test enum position.
    */
 	@Test
-  public final void enumTest() {
+  public final void testShouldValidateEnumPosition() {
 		assertEquals(LAWFUL_GOOD, CharacterAlignNames.LAWFUL_GOOD.getPosition());
 		assertEquals(NEUTRAL_GOOD, CharacterAlignNames.NEUTRAL_GOOD.getPosition());
 		assertEquals(CHAOTIC_GOOD, CharacterAlignNames.CHAOTIC_GOOD.getPosition());

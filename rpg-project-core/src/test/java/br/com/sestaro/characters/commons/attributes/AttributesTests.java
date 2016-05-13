@@ -35,7 +35,7 @@ public class AttributesTests {
    * Initial configuration.
    */
 	@Before
-  public final void initialContext() {
+  public final void beforeInitialTestsConfiguration() {
 		Strength strength = new Strength(TEN, FOURTEEN);
 		Dexterity dexterity = new Dexterity(TWELVE, FOURTEEN);
 		Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
@@ -50,7 +50,7 @@ public class AttributesTests {
    * Validate initial configuration.
    */
 	@Test
-  public final void testInitializationWithValues() {
+  public final void testShouldValidateInstantiationWithAllAttributes() {
 		new Attributes(this.attributesValues);
 	}
 	
@@ -58,23 +58,15 @@ public class AttributesTests {
    * Validate null values.
    */
 	@Test(expected = NullAttributesException.class)
-  public final void testNullAttributesValueInitialization() {
+  public final void testShouldFailWhenAttributesAreNull() {
 		new Attributes(null);
-	}
-	
-	/**
-   * Validate blank values.
-   */
-	@Test
-  public final void testInitializationWithoutValues() {
-		new Attributes(this.attributesValues);
 	}
 	
 	/**
 	 * Validate positive attributes.
 	 */
 	@Test
-  public final void positiveAttributeModifierTest() {
+  public final void testShouldValidateGetPositiveAttributeModifier() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
 		assertEquals(1, attributes.getAttributeModifier(AttributesNames.CONSTITUTION));
@@ -84,7 +76,7 @@ public class AttributesTests {
    * Validate negative attributes.
    */
 	@Test
-  public final void negativeAttributeModifierTest() {
+  public final void testShouldValidateGetNegativeAttributeModifier() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
 		assertEquals(ELEVEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.WISDOM));
@@ -94,7 +86,7 @@ public class AttributesTests {
 	 * Validate addiction of value.
 	 */
 	@Test
-  public final void addAttributeValueTest() {
+  public final void testShouldValidateSumOfValueToAttributeSpecialization() {
 		Attributes attributes = new Attributes(this.attributesValues);
 		
 		attributes.addAttributeValue(AttributesNames.INTELLIGENCE_LOGIC, POSITIVE);
