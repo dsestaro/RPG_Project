@@ -12,7 +12,7 @@ import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationExcep
  * 
  * @author davidson.sestaro
  */
-public class CharacterInformationsValuesTest {
+public class CharacterInformationsValuesTests {
 
 	private static final String NAME = "Dahlion";
 	private static final CharacterAlignNames ALIGN = CharacterAlignNames.NEUTRAL;
@@ -29,7 +29,7 @@ public class CharacterInformationsValuesTest {
    * Initial configuration.
    */
 	@Test
-  public final void initializationTest() {
+  public final void testShouldValidateInstantiationWithAllParameters() {
 		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
@@ -37,7 +37,7 @@ public class CharacterInformationsValuesTest {
    * Retrieve configuration.
    */
   @Test
-  public final void retrieveInformationTest() {
+  public final void testShouldValidateInformationRetrieve() {
     CharacterInformationsValues character =  new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, 
         HAIR_COLOR, EYES_COLOR);
     
@@ -58,7 +58,7 @@ public class CharacterInformationsValuesTest {
    * Validate initial configuration with null/empty name.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void nullOrEmptyName() {
+  public final void testShoulValidateNullOrEmptyFristParameter() {
 		new CharacterInformationsValues("", ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
@@ -66,7 +66,7 @@ public class CharacterInformationsValuesTest {
    * Validate initial configuration with null/empty deity.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void nullOrEmptyDeity() {
+  public final void testShoulValidateNullOrEmptyThirdParameter() {
 		new CharacterInformationsValues(NAME, ALIGN, null, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
@@ -74,7 +74,7 @@ public class CharacterInformationsValuesTest {
    * Validate initial configuration with null/empty deity.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void nullOrEmptyHomeland() {
+  public final void testShoulValidateNullOrEmptyFourthParameter() {
 		new CharacterInformationsValues(NAME, ALIGN, DEITY, "", GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
@@ -82,7 +82,7 @@ public class CharacterInformationsValuesTest {
    * Validate initial configuration with null/empty homeland.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void nullOrEmptyHairColor() {
+  public final void testShoulValidateNullOrEmptyNinethParameter() {
 		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, "", EYES_COLOR);
 	}
 	
@@ -90,7 +90,7 @@ public class CharacterInformationsValuesTest {
    * Validate initial configuration with null/empty eyes color.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void nullOrEmptyEyesColor() {
+  public final void testShoulValidateNullOrEmptyTenthParameter() {
 		new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, null);
 	}
 }

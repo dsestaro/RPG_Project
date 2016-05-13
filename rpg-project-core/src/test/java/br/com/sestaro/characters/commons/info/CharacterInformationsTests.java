@@ -15,7 +15,7 @@ import br.com.sestaro.characters.commons.info.values.CharacterInformationsValues
  * 
  * @author davidson.sestaro
  */
-public class CharacterInformationsTest {
+public class CharacterInformationsTests {
 
   private static final String NAME = "Dahlion";
   private static final CharacterAlignNames ALIGN = CharacterAlignNames.NEUTRAL;
@@ -33,7 +33,7 @@ public class CharacterInformationsTest {
    * Initial configuration.
    */
 	@Before
-  public final void initialization() {
+  public final void beforeInitialTestsConfiguration() {
 		values = new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER, AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
 	}
 	
@@ -41,7 +41,7 @@ public class CharacterInformationsTest {
    * Validate initial configuration.
    */
 	@Test
-  public final void initializationWithValueTest() {
+  public final void testShouldValidateInstantiationWithValidParameter() {
 		new CharacterInformations(this.values);
 	}
 	
@@ -49,7 +49,7 @@ public class CharacterInformationsTest {
    * Validate null initial configuration.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void initializationWithoutValueTest() {
+  public final void testShouldFailWithNullParameter() {
 		new CharacterInformations(null);
 	}
 	
@@ -57,7 +57,7 @@ public class CharacterInformationsTest {
    * Validate if a retrieved informantion was not changed.
    */
 	@Test
-  public final void retreaveInformationTest() {
+  public final void testShouldValidateInformationRetrieve() {
 		CharacterInformations character = new CharacterInformations(this.values);
 		
 		assertEquals(AGE, character.getValues().getAge());

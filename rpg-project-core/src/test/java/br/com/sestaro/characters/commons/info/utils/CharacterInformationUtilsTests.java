@@ -9,13 +9,13 @@ import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationExcep
  * 
  * @author davidson.sestaro
  */
-public class CharacterInformationUtilsTest {
+public class CharacterInformationUtilsTests {
 
   /**
    * Validate if a information is empty.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void emptyInformationTest() {
+  public final void testShouldFailWhenStringIsEmpty() {
 		CharacterInformationUtils.validateInformation("");
 	}
 	
@@ -23,7 +23,15 @@ public class CharacterInformationUtilsTest {
    * Validate if a information is null.
    */
 	@Test(expected = InvalidInformationException.class)
-  public final void nullInformationTest() {
+  public final void testShouldFailWhenStringIsNull() {
 		CharacterInformationUtils.validateInformation(null);
 	}
+	
+	/**
+   * Validate if a information is null.
+   */
+  @Test(expected = InvalidInformationException.class)
+  public final void testShouldFailWhenStringIsTooShort() {
+    CharacterInformationUtils.validateInformation("a");
+  }
 }
