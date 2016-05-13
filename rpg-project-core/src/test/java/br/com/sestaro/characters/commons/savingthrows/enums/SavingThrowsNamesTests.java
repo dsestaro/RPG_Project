@@ -12,13 +12,13 @@ import org.junit.Test;
  * 
  * @author davidson.sestaro
  */
-public class SavingThrowsNamesTest {
+public class SavingThrowsNamesTests {
 	
   /**
    * Test enum position.
    */
   @Test
-  public final void enumTest() {
+  public final void testShouldValidateEnumPosition() {
 		assertEquals(FORTITUDE, SavingThrowsNames.FORTITUDE.getPosition());
 		assertEquals(REFLEX, SavingThrowsNames.REFLEX.getPosition());
 		assertEquals(WILL, SavingThrowsNames.WILL.getPosition());

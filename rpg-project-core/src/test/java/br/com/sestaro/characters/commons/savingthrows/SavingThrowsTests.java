@@ -17,7 +17,7 @@ import br.com.sestaro.characters.commons.savingthrows.values.SavingThrowsValues;
  * 
  * @author davidson.sestaro
  */
-public class SavingThrowsTest {
+public class SavingThrowsTests {
 	
 	private SavingThrowsValues values;
 	private static final int FORTITUDE = TWO;
@@ -28,7 +28,7 @@ public class SavingThrowsTest {
    * Initialization of variables that will be used in this class.
    */
 	@Before
-  public final void initialContext() {
+  public final void beforeInitialTestsConfiguration() {
 		this.values = new SavingThrowsValues(FORTITUDE, REFLEX, WILL);
 	}
 	
@@ -36,7 +36,7 @@ public class SavingThrowsTest {
 	 * Validate initial configuration.
 	 */
 	@Test
-  public final void testInitializationWithValues() {
+  public final void testShouldValidateInstantiationWithValues() {
 		new SavingThrows(this.values);
 	}
 	
@@ -44,7 +44,7 @@ public class SavingThrowsTest {
 	 * Validate null configuration.
 	 */
 	@Test(expected = NullSavingThrowsException.class)
-  public final void testNullSavingThrowsValueInitialization() {
+  public final void testShouldFailWhenInstantiationWithNull() {
 		new SavingThrows(null);
 	}
 	
@@ -52,7 +52,7 @@ public class SavingThrowsTest {
 	 * Validate information retrieve.
 	 */
 	@Test
-  public final void getSavingThrowValueTest() {
+  public final void testShouldValidateRetrivingValue() {
 		SavingThrows savings = new SavingThrows(values);
 		
 		assertEquals(WILL, savings.getSavingThrowTotal(SavingThrowsNames.WILL));
@@ -62,7 +62,7 @@ public class SavingThrowsTest {
    * Validate information input.
    */
 	@Test
-  public final void setSavingThrowValueTest() {
+  public final void testShouldValidateSumOfValueToSavingThrow() {
 		SavingThrows savings = new SavingThrows(values);
 		
 		savings.setSavingThrowTotalValue(SavingThrowsNames.WILL, FOUR);

@@ -18,7 +18,7 @@ public class SavingThrowsValuesTests {
    * Testing instantiation and information retrieve.
    */
 	@Test
-  public final void savingThrowConstructorTest() {
+  public final void testShouldValidateInformationRetrieve() {
 		SavingThrowsValues values = new SavingThrowsValues(ZERO, TWO, FOUR);
 		
 		assertEquals(0, values.getFortitude());

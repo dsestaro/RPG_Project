@@ -14,7 +14,7 @@ import br.com.sestaro.characters.commons.savingthrows.enums.SavingThrowsNames;
  * 
  * @author davidson.sestaro
  */
-public class SavingThorwsValueHandlerTest {
+public class SavingThorwsValueHandlerTests {
 
 	private SavingThrowsValues values;
 	private static final int FORTITUDE = TWO;
@@ -25,7 +25,7 @@ public class SavingThorwsValueHandlerTest {
    * Initialization of variables that will be used in this class.
    */
 	@Before
-  public final void initialContext() {
+  public final void beforeInitialTestsConfiguration() {
 		this.values = new SavingThrowsValues(FORTITUDE, REFLEX, WILL);
 	}
 	
@@ -33,7 +33,7 @@ public class SavingThorwsValueHandlerTest {
 	 * Retrieve saving throws information.
 	 */
 	@Test
-  public final void getSavingThrowByPositionTest() {
+  public final void testShouldValidateSavingThrowValuesRetriever() {
 		int attributeValue = 0;
 		
 		SavingThrowsNames name = SavingThrowsNames.FORTITUDE;
@@ -53,7 +53,7 @@ public class SavingThorwsValueHandlerTest {
    * Adding saving throws information.
    */
 	@Test
-	public final void addSavingThrowByPositionTest() {
+	public final void testShouldValidateSumOfValueToSavingThrow() {
 		int attributeValue = 0;
 		
 		SavingThrowsNames name = SavingThrowsNames.FORTITUDE;
