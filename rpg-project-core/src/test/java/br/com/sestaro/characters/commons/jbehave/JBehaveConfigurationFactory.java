@@ -10,6 +10,8 @@ import org.jbehave.core.configuration.MostUsefulConfiguration;
  */
 public final class JBehaveConfigurationFactory {
   
+  private static Configuration configuration;
+  
   /**
    * Constructor to prevent class instantiation.
    */
@@ -20,6 +22,10 @@ public final class JBehaveConfigurationFactory {
    * @return                          - An instance of the jbehave configuration.
    */
   public static Configuration getConfiguration() {
-    return new MostUsefulConfiguration();
+    if (configuration == null) {
+      configuration = new MostUsefulConfiguration();
+    }
+    
+    return configuration;
   }
 }
