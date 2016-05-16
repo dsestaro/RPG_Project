@@ -2,6 +2,8 @@ package com.br.sestaro.service.attributes;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,11 +30,13 @@ public class AttributesServiceTest {
      */
     @Test
     public final void getNamesTest() {
-	assertEquals(EXIST, attributesService.getAttributeNames().contains("STR"));
-	assertEquals(EXIST, attributesService.getAttributeNames().contains("DEX"));
-	assertEquals(EXIST, attributesService.getAttributeNames().contains("CON"));
-	assertEquals(EXIST, attributesService.getAttributeNames().contains("INT"));
-	assertEquals(EXIST, attributesService.getAttributeNames().contains("WIS"));
-	assertEquals(EXIST, attributesService.getAttributeNames().contains("CHA"));
+	List<String> names = attributesService.getAttributeNames();
+	
+	assertEquals(EXIST, names.contains("STR"));
+	assertEquals(EXIST, names.contains("DEX"));
+	assertEquals(EXIST, names.contains("CON"));
+	assertEquals(EXIST, names.contains("INT"));
+	assertEquals(EXIST, names.contains("WIS"));
+	assertEquals(EXIST, names.contains("CHA"));
     }
 }
