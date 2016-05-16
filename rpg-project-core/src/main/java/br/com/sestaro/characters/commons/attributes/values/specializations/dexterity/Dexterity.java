@@ -15,8 +15,8 @@ public class Dexterity {
 	private static final String NAME = "DEX"; 
 	
 	/**
-   * @param value1                                - Thoughness value
-   * @param value2                                - Resistence value 
+   * @param value1                                - Speed value
+   * @param value2                                - Coordination value 
    */
 	public Dexterity(final int value1, final int value2) {
 		this.speed = new Speed(value1);

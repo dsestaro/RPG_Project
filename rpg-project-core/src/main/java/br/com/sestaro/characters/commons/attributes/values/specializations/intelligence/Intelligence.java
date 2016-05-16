@@ -15,8 +15,8 @@ public class Intelligence {
   private static final String NAME = "INT";
   
   /**
-   * @param value1                                - Physical strength value
-   * @param value2                                - Endurance value 
+   * @param value1                                - Knowledge value
+   * @param value2                                - Logic value 
    */
   public Intelligence(final int value1, final int value2) {
     this.knowledge = new Knowledge(value1);
