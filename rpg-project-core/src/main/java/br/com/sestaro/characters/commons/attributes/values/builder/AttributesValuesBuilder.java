@@ -53,7 +53,7 @@ public class AttributesValuesBuilder {
         Set<String> names = results.getPropertyNames();
 
         for (String name : names) {
-          if (!((Boolean) results.getValidatorResult(name).getResult("required"))) {
+          if ((Boolean) results.getValidatorResult(name).getResult("required")) {
             throw new NullAttributeValueException(name);
           }
         }
