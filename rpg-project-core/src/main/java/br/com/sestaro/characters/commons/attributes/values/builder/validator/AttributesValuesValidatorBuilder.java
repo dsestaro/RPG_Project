@@ -1,6 +1,5 @@
 package br.com.sestaro.characters.commons.attributes.values.builder.validator;
 
-import org.apache.commons.validator.Arg;
 import org.apache.commons.validator.Field;
 import org.apache.commons.validator.Form;
 import org.apache.commons.validator.FormSet;
@@ -18,11 +17,6 @@ public class AttributesValuesValidatorBuilder {
     Field strength = new Field();
     strength.setDepends(REQUIRED);
     strength.setProperty("strength");
-    
-    Arg argStrength = new Arg();
-    argStrength.setKey("attributes.strength.displayname");
-    
-    strength.addArg(argStrength);
     
     Field dexterity = new Field();
     dexterity.setDepends(REQUIRED);

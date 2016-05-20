@@ -15,7 +15,6 @@ import org.junit.Test;
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
-import br.com.sestaro.characters.commons.attributes.values.builder.AttributesValuesBuilder;
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;

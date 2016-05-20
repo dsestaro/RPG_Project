@@ -1,6 +1,9 @@
 package br.com.sestaro.characters.commons.attributes.values.builder;
 
+import java.util.Set;
+
 import org.apache.commons.validator.ValidatorException;
+import org.apache.commons.validator.ValidatorResult;
 import org.apache.commons.validator.ValidatorResults;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributeValueException;
@@ -47,7 +50,14 @@ public class AttributesValuesBuilder {
       ValidatorResults results = AttributesValuesValidatorBuilder.buildValidator(this).validate();
       
       if (results.getPropertyNames().size() > 0) {
-        throw new NullAttributeValueException(results); 
+        @SuppressWarnings("unchecked")
+        Set<String> names = results.getPropertyNames();
+
+        for (String name : names) {
+          if (!((Boolean) results.getValidatorResult(name).getResult("required"))) {
+            throw new NullAttributeValueException(name);
+          }
+        }
       }
     } catch (ValidatorException e) {
       throw new NullAttributesException(); 
@@ -134,32 +144,32 @@ public class AttributesValuesBuilder {
     return this;
   }
 
-  public Strength getStrength() {
+  public final Strength getStrength() {
     return strength;
   }
 
 
-  public Dexterity getDexterity() {
+  public final Dexterity getDexterity() {
     return dexterity;
   }
 
 
-  public Constitution getConstitution() {
+  public final Constitution getConstitution() {
     return constitution;
   }
 
 
-  public Intelligence getIntelligence() {
+  public final Intelligence getIntelligence() {
     return intelligence;
   }
 
 
-  public Wisdom getWisdom() {
+  public final Wisdom getWisdom() {
     return wisdom;
   }
 
 
-  public Charisma getCharisma() {
+  public final Charisma getCharisma() {
     return charisma;
   }
 }

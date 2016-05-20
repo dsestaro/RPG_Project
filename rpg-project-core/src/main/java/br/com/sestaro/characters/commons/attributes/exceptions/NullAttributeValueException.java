@@ -1,28 +1,19 @@
 package br.com.sestaro.characters.commons.attributes.exceptions;
 
-import java.util.Set;
-
-import org.apache.commons.validator.ValidatorResults;
-
+/**
+ * Exception to handle invalid attribute values. 
+ * 
+ * @author davidson.sestaro
+ */
 public class NullAttributeValueException extends RuntimeException {
   private static final long serialVersionUID = 1L;
 
   /**
    * Default constructor.
+   * 
+   * @param name                                - Name of the attribute.
    */
-  public NullAttributeValueException(final ValidatorResults results) {
-    super(formatResult(results));
-  }
-
-  private static String formatResult(final ValidatorResults results) {
-    Set<String> names = results.getPropertyNames();
-
-    String error = "The following attributes cannot be null: ";
-
-    for (String name : names) {
-      error = error.concat(name + " ");
-    }
-    
-    return error;
+  public NullAttributeValueException(final String name) {
+    super("The following attributes cannot be null: " + name);
   }
 }
