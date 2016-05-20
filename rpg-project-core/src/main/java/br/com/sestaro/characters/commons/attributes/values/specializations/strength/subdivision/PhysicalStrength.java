@@ -1,7 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision;
 
-import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.specializations.interfaces.Specialization;
 
 /**
  * Strength subdivision. 

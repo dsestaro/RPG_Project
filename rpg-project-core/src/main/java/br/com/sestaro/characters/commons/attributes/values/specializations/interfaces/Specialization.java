@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.interfaces;
+package br.com.sestaro.characters.commons.attributes.values.specializations.interfaces;
 
 /**
  * Interface to attributes specialization.

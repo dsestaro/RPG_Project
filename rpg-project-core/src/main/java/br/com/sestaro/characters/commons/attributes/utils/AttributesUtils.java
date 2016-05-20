@@ -1,13 +1,13 @@
 package br.com.sestaro.characters.commons.attributes.utils;
 
 import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtilsConstantValues.ATTRIBUTE_DEFAULT;
-import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtilsConstantValues.NEGATIVE_LIMIAR;
-import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtilsConstantValues.MAX_INITIAL_VALUE;
 import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtilsConstantValues.MAX_INITIAL_DIF;
+import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtilsConstantValues.MAX_INITIAL_VALUE;
+import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtilsConstantValues.NEGATIVE_LIMIAR;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
-import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.interfaces.Specialization;
 
 /**
  * Class with generic methods to hadle attributes values.
