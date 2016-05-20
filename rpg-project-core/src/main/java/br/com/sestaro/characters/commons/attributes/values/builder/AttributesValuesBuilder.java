@@ -48,21 +48,31 @@ public class AttributesValuesBuilder {
     try {
       ValidatorResults results = AttributesValuesValidatorFactory.buildValidator(this).validate();
       
-      if (results.getPropertyNames().size() > 0) {
-        @SuppressWarnings("unchecked")
-        Set<String> names = results.getPropertyNames();
-
-        for (String name : names) {
-          if ((Boolean) results.getValidatorResult(name).getResult("required")) {
-            throw new NullAttributeValueException(name);
-          }
-        }
-      }
+      verifyValidationsErrors(results);
     } catch (ValidatorException e) {
       throw new NullAttributesException(); 
     }
     
     return new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
+  }
+
+
+  /**
+   * Method to verify if a attribute returned from the validation with error.
+   * 
+   * @param results                               - Results from the validation
+   */
+  private void verifyValidationsErrors(final ValidatorResults results) {
+    if (results.getPropertyNames().size() > 0) {
+      @SuppressWarnings("unchecked")
+      Set<String> names = results.getPropertyNames();
+
+      for (String name : names) {
+        if ((Boolean) results.getValidatorResult(name).getResult("required")) {
+          throw new NullAttributeValueException(name);
+        }
+      }
+    }
   }
   
   /**
@@ -143,31 +153,56 @@ public class AttributesValuesBuilder {
     return this;
   }
 
+  /**
+   * Get the strength object.
+   * 
+   * @return                                          - Value
+   */
   public final Strength getStrength() {
     return strength;
   }
 
-
+  /**
+   * Get the dexterity object.
+   * 
+   * @return                                          - Value
+   */
   public final Dexterity getDexterity() {
     return dexterity;
   }
 
-
+  /**
+   * Get the constitution object.
+   * 
+   * @return                                          - Value
+   */
   public final Constitution getConstitution() {
     return constitution;
   }
 
-
+  /**
+   * Get the intelligence object.
+   * 
+   * @return                                          - Value
+   */
   public final Intelligence getIntelligence() {
     return intelligence;
   }
 
-
+  /**
+   * Get the wisdom object.
+   * 
+   * @return                                          - Value
+   */
   public final Wisdom getWisdom() {
     return wisdom;
   }
 
-
+  /**
+   * Get the charisma object.
+   * 
+   * @return                                          - Value
+   */
   public final Charisma getCharisma() {
     return charisma;
   }
