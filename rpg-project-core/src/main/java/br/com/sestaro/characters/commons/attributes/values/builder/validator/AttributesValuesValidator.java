@@ -6,7 +6,7 @@ import org.apache.commons.validator.util.ValidatorUtils;
 
 public class AttributesValuesValidator {
   
-  public final static boolean validateRequired(Object bean, Field field) {
+  public static final boolean validateRequired(Object bean, Field field) {
     String value = ValidatorUtils.getValueAsString(bean, field.getProperty());
     return !GenericValidator.isBlankOrNull(value);
   }

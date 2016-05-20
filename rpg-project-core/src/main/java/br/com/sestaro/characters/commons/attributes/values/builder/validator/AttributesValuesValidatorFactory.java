@@ -9,11 +9,30 @@ import org.apache.commons.validator.ValidatorResources;
 
 import br.com.sestaro.characters.commons.attributes.values.builder.AttributesValuesBuilder;
 
-public class AttributesValuesValidatorBuilder {
+/**
+ * Class to build new instances of the apache validator.
+ * 
+ * @author davidson.sestaro
+ */
+public final class AttributesValuesValidatorFactory {
   
   private static final String REQUIRED = "required";
   
-  public final static Validator buildValidator(AttributesValuesBuilder builder) {
+  /**
+   * Default constructor to prevent class instantiation.
+   */
+  private AttributesValuesValidatorFactory() {
+    
+  }
+  
+  /**
+   * Class to creation a instance of the Apache Validator.
+   * 
+   * @param builder                                   - Instance of the class calling the builder
+   * 
+   * @return                                          - Apache validator
+   */
+  public static Validator buildValidator(final AttributesValuesBuilder builder) {
     Field strength = new Field();
     strength.setDepends(REQUIRED);
     strength.setProperty("strength");

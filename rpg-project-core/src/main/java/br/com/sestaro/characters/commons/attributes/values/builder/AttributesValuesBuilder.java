@@ -3,13 +3,12 @@ package br.com.sestaro.characters.commons.attributes.values.builder;
 import java.util.Set;
 
 import org.apache.commons.validator.ValidatorException;
-import org.apache.commons.validator.ValidatorResult;
 import org.apache.commons.validator.ValidatorResults;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
-import br.com.sestaro.characters.commons.attributes.values.builder.validator.AttributesValuesValidatorBuilder;
+import br.com.sestaro.characters.commons.attributes.values.builder.validator.AttributesValuesValidatorFactory;
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
@@ -47,7 +46,7 @@ public class AttributesValuesBuilder {
    */
   public final AttributesValues generateAttributesValues() {
     try {
-      ValidatorResults results = AttributesValuesValidatorBuilder.buildValidator(this).validate();
+      ValidatorResults results = AttributesValuesValidatorFactory.buildValidator(this).validate();
       
       if (results.getPropertyNames().size() > 0) {
         @SuppressWarnings("unchecked")
