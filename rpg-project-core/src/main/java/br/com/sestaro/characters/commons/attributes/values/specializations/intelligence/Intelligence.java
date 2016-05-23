@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.intelligence;
 
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Knowledge;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Logic;
 
@@ -9,7 +9,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.intel
  *  
  * @author davidson.sestaro
  */
-public class Intelligence extends Attribute {
+public class Intelligence extends AttributeAbstract {
   private Knowledge knowledge;
   private Logic logic;
   private static final String NAME = "INT";

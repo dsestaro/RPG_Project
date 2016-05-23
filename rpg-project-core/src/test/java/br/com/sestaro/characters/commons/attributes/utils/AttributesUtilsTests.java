@@ -54,8 +54,8 @@ public class AttributesUtilsTests {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void testShouldFailWhenAttributeDifferenceIsGreaterThanFourPathOne() {
-		Specialization spec1 = new Speed(TWELVE);
-		Specialization spec2 = new Speed(SEVENTEEN);
+		ISpecialization spec1 = new Speed(TWELVE);
+		ISpecialization spec2 = new Speed(SEVENTEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -65,8 +65,8 @@ public class AttributesUtilsTests {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void testShouldFailWhenAttributeDifferenceIsGreaterThanFourPathTwo() {
-		Specialization spec1 = new Speed(SEVENTEEN);
-		Specialization spec2 = new Speed(TWELVE);
+		ISpecialization spec1 = new Speed(SEVENTEEN);
+		ISpecialization spec2 = new Speed(TWELVE);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -76,8 +76,8 @@ public class AttributesUtilsTests {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void testShouldFailWhenAttributesAreDifferentAndBiggerThanEighteenPathOne() {
-		Specialization spec1 = new Speed(NINETEEN);
-		Specialization spec2 = new Speed(FOURTEEN);
+		ISpecialization spec1 = new Speed(NINETEEN);
+		ISpecialization spec2 = new Speed(FOURTEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -87,8 +87,8 @@ public class AttributesUtilsTests {
    */
 	@Test(expected = InvalidAttributeValueException.class)
   public final void testShouldFailWhenAttributesAreDifferentAndBiggerThanEighteenPathTwo() {
-		Specialization spec1 = new Speed(FOURTEEN);
-		Specialization spec2 = new Speed(NINETEEN);
+		ISpecialization spec1 = new Speed(FOURTEEN);
+		ISpecialization spec2 = new Speed(NINETEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -98,8 +98,8 @@ public class AttributesUtilsTests {
 	 */
 	@Test
 	public final void testShouldValidateAttributesEqualsAndBiggerThanEighteen() {
-	  Specialization spec1 = new Speed(NINETEEN);
-	  Specialization spec2 = new Speed(NINETEEN);
+	  ISpecialization spec1 = new Speed(NINETEEN);
+	  ISpecialization spec2 = new Speed(NINETEEN);
 	  
 	  AttributesUtils.initialValidations(spec1, spec2);
 	}
@@ -109,8 +109,8 @@ public class AttributesUtilsTests {
    */
 	@Test
   public final void testShouldValidateAttributesSmallerThanEighteen() {
-		Specialization spec1 = new Speed(FOURTEEN);
-		Specialization spec2 = new Speed(SIXTEEN);
+		ISpecialization spec1 = new Speed(FOURTEEN);
+		ISpecialization spec2 = new Speed(SIXTEEN);
 		
 		AttributesUtils.initialValidations(spec1, spec2);
 	}

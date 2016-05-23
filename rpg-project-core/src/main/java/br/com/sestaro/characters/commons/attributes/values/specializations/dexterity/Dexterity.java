@@ -2,14 +2,14 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.dext
 
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Coordination;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Speed;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 
 /**
  * Attribute dexterity class.
  *  
  * @author davidson.sestaro
  */
-public class Dexterity extends Attribute {
+public class Dexterity extends AttributeAbstract {
 	private Speed speed;
 	private Coordination coordination;
 	private static final String NAME = "DEX"; 

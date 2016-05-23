@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.wisdom;
 
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Instinct;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Intuition;
 
@@ -9,7 +9,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  *  
  * @author davidson.sestaro
  */
-public class Wisdom extends Attribute {
+public class Wisdom extends AttributeAbstract {
 
   private Instinct instinct;
   private Intuition intuition;

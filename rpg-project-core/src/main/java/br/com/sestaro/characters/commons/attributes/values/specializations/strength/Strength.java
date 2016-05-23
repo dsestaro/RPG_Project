@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.strength;
 
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength;
 
@@ -9,7 +9,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
  *  
  * @author davidson.sestaro
  */
-public class Strength extends Attribute {
+public class Strength extends AttributeAbstract {
 	
   private PhysicalStrength physicalStrength;
 	private Endurance endurance;

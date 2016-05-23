@@ -2,14 +2,14 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.char
 
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Appearance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Charm;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 
 /**
  * Attribute charisma class.
  *  
  * @author davidson.sestaro
  */
-public class Charisma extends Attribute {
+public class Charisma extends AttributeAbstract {
   
   private Appearance appearance;
   private Charm charm;

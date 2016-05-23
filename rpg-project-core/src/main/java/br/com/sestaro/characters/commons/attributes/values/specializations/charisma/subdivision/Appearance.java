@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Charisma subdivision. 
  * 
  * @author davidson.sestaro
  */
-public class Appearance implements Specialization {
+public class Appearance implements ISpecialization {
   
   private int appearance;
   private static final String NAME = "Appearance";

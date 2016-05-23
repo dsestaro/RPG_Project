@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Constituion subdivion. 
  * 
  * @author davidson.sestaro
  */
-public class Toughness implements Specialization {
+public class Toughness implements ISpecialization {
 
 	private int health;
 	private static final String NAME = "Toughness";

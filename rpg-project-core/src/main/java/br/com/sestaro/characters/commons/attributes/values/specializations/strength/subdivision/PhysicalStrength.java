@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Strength subdivision. 
  * 
  * @author davidson.sestaro
  */
-public class PhysicalStrength implements Specialization {
+public class PhysicalStrength implements ISpecialization {
 
 	private int physicalStrength;
 	private static final String NAME = "Physical Strength";

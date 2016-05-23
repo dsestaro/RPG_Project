@@ -2,14 +2,14 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.cons
 
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 
 /**
  * Attribute constitution class.
  *  
  * @author davidson.sestaro
  */
-public class Constitution extends Attribute {
+public class Constitution extends AttributeAbstract {
 	private Toughness toughness;
 	private Resistance resistance;
 	private static final String NAME = "CON";

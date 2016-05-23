@@ -7,7 +7,7 @@ import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtils
 
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Class with generic methods to hadle attributes values.
@@ -50,7 +50,7 @@ public final class AttributesUtils {
 	 * @param value1                                   - Attribute specialization
 	 * @param value2                                   - Attribute specialization
 	 */
-	public static void initialValidations(final Specialization value1, final Specialization value2) {
+	public static void initialValidations(final ISpecialization value1, final ISpecialization value2) {
 		
 		if (value1.getValue() > MAX_INITIAL_VALUE && value1.getValue() != value2.getValue()) {
 			throw new InvalidAttributeValueException(value1.getName());

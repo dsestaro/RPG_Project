@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Intelligence subdivion. 
  * 
  * @author davidson.sestaro
  */
-public class Knowledge implements Specialization {
+public class Knowledge implements ISpecialization {
 
 	private int knowledge;
 	private static final String NAME = "Knowledge";

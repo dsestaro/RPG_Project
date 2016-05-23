@@ -1,14 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
-import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Wisdom subdivision. 
  * 
  * @author davidson.sestaro
  */
-public class Instinct implements Specialization {
+public class Instinct implements ISpecialization {
   
   private int instinct;
   private static final String NAME = "Instinct";

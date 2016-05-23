@@ -5,7 +5,7 @@ package br.com.sestaro.characters.commons.attributes.values.specializations.gene
  * 
  * @author davidson.sestaro
  */
-public interface Specialization {
+public interface ISpecialization {
   /**
    * @return                                  - Specialization value
    */

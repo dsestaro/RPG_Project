@@ -18,8 +18,8 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.const
  */
 public class AttributesUtilsInitialConfigurationSteps {
   
-  private Specialization attribute1;
-  private Specialization attribute2;
+  private ISpecialization attribute1;
+  private ISpecialization attribute2;
   private String result; 
   
   /**
