@@ -32,3 +32,5 @@
 /rpg-project-core/.pmd
 /rpg-project-view/.pmd
 /rpg-project-controller/.checkstyle
+/rpg-project-controller/.settings/org.hibernate.eclipse.console.prefs
+/rpg-project-core/.settings/org.hibernate.eclipse.console.prefs
