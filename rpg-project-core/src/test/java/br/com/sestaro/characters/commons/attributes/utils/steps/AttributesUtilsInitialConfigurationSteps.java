@@ -6,10 +6,10 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeValueException;
-import br.com.sestaro.characters.commons.attributes.interfaces.Specialization;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
  * Steps to test attributes initials configurations.
