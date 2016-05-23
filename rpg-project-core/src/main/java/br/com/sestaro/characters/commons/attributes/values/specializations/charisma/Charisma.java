@@ -1,15 +1,15 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.charisma;
 
-import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Appearance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Charm;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
 
 /**
  * Attribute charisma class.
  *  
  * @author davidson.sestaro
  */
-public class Charisma {
+public class Charisma extends Attribute {
   
   private Appearance appearance;
   private Charm charm;
@@ -20,10 +20,10 @@ public class Charisma {
    * @param value2                                - Charm value 
    */
   public Charisma(final int value1, final int value2) {
+    super(new Appearance(value1), new Charm(value2));
+    
     this.appearance = new Appearance(value1);
     this.charm = new Charm(value2);
-
-    AttributesUtils.initialValidations(this.appearance, this.charm);
   }
   
   /**

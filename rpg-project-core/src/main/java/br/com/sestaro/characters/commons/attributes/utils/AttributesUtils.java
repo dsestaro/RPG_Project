@@ -7,7 +7,7 @@ import static br.com.sestaro.characters.commons.attributes.utils.AttributesUtils
 
 import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeValueException;
 import br.com.sestaro.characters.commons.attributes.exceptions.NegativeAttributeValueException;
-import br.com.sestaro.characters.commons.attributes.values.specializations.interfaces.Specialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.Specialization;
 
 /**
  * Class with generic methods to hadle attributes values.

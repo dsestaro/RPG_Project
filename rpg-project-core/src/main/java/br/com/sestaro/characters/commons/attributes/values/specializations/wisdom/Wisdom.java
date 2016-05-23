@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.wisdom;
 
-import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Instinct;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Intuition;
 
@@ -9,7 +9,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  *  
  * @author davidson.sestaro
  */
-public class Wisdom {
+public class Wisdom extends Attribute {
 
   private Instinct instinct;
   private Intuition intuition;
@@ -20,10 +20,10 @@ public class Wisdom {
    * @param value2                                - Intuition value 
    */
   public Wisdom(final int value1, final int value2) {
+    super(new Instinct(value1), new Intuition(value2));
+    
     this.instinct = new Instinct(value1);
     this.intuition = new Intuition(value2);
-
-    AttributesUtils.initialValidations(this.instinct, this.intuition);
   }
   
   /**
@@ -70,7 +70,7 @@ public class Wisdom {
   /**
    * @return                                      - Return the specialization name
    */
-  public  static final String getName() {
+  public static final String getName() {
     return NAME;
   }
 }

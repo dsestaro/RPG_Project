@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.strength;
 
-import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength;
 
@@ -9,7 +9,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
  *  
  * @author davidson.sestaro
  */
-public class Strength {
+public class Strength extends Attribute {
 	
   private PhysicalStrength physicalStrength;
 	private Endurance endurance;
@@ -20,10 +20,10 @@ public class Strength {
    * @param value2                                - Endurance value 
    */
 	public Strength(final int value1, final int value2) {
+	  super(new PhysicalStrength(value1), new Endurance(value2));
+	  
 		this.physicalStrength = new PhysicalStrength(value1);
 		this.endurance = new Endurance(value2);
-
-		AttributesUtils.initialValidations(this.physicalStrength, this.endurance);
 	}
 	
 	/**
@@ -70,7 +70,7 @@ public class Strength {
 	/**
    * @return                                      - Return the specialization name
    */
-  public  static final String getName() {
+  public static final String getName() {
     return NAME;
   }
 }

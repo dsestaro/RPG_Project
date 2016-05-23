@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.intelligence;
 
-import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Knowledge;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Logic;
 
@@ -9,7 +9,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.intel
  *  
  * @author davidson.sestaro
  */
-public class Intelligence {
+public class Intelligence extends Attribute {
   private Knowledge knowledge;
   private Logic logic;
   private static final String NAME = "INT";
@@ -19,10 +19,10 @@ public class Intelligence {
    * @param value2                                - Logic value 
    */
   public Intelligence(final int value1, final int value2) {
+    super(new Knowledge(value1), new Logic(value2));
+    
     this.knowledge = new Knowledge(value1);
     this.logic = new Logic(value2);
-
-    AttributesUtils.initialValidations(this.knowledge, this.logic);
   }
   
   /**
@@ -69,7 +69,7 @@ public class Intelligence {
   /**
    * @return                                      - Return the specialization name
    */
-  public  static final String getName() {
+  public static final String getName() {
     return NAME;
   }
 }

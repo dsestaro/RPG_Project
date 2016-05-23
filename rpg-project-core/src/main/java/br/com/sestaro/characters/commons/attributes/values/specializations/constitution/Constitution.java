@@ -1,15 +1,15 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.constitution;
 
-import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
-import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
+import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
 
 /**
  * Attribute constitution class.
  *  
  * @author davidson.sestaro
  */
-public class Constitution {
+public class Constitution extends Attribute {
 	private Toughness toughness;
 	private Resistance resistance;
 	private static final String NAME = "CON";
@@ -19,10 +19,10 @@ public class Constitution {
 	 * @param value2                               - Resistence value 
 	 */
 	public Constitution(final int value1, final int value2) {
+	  super(new Toughness(value1), new Resistance(value2));
+	  
 		this.toughness = new Toughness(value1);
 		this.resistance = new Resistance(value2);
-
-		AttributesUtils.initialValidations(this.toughness, this.resistance);
 	}
 	
 	/**

@@ -1,15 +1,15 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.dexterity;
 
-import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Coordination;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Speed;
+import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.Attribute;
 
 /**
  * Attribute dexterity class.
  *  
  * @author davidson.sestaro
  */
-public class Dexterity {
+public class Dexterity extends Attribute {
 	private Speed speed;
 	private Coordination coordination;
 	private static final String NAME = "DEX"; 
@@ -19,10 +19,10 @@ public class Dexterity {
    * @param value2                                - Coordination value 
    */
 	public Dexterity(final int value1, final int value2) {
+	  super(new Speed(value1), new Coordination(value2));
+	  
 		this.speed = new Speed(value1);
 		this.coordination = new Coordination(value2);
-
-		AttributesUtils.initialValidations(this.speed, this.coordination);
 	}
 	
 	/**
