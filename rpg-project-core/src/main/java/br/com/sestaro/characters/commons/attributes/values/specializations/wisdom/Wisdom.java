@@ -11,8 +11,6 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  */
 public class Wisdom extends AttributeAbstract {
 
-  private Instinct instinct;
-  private Intuition intuition;
   private static final String NAME = "WIS";
   
   /**
@@ -21,9 +19,6 @@ public class Wisdom extends AttributeAbstract {
    */
   public Wisdom(final int value1, final int value2) {
     super(new Instinct(value1), new Intuition(value2));
-    
-    this.instinct = new Instinct(value1);
-    this.intuition = new Intuition(value2);
   }
   
   /**
@@ -32,7 +27,7 @@ public class Wisdom extends AttributeAbstract {
    * @return                                      - Returns the wisdom value
    */
   public final int getWisdom() {
-    return (instinct.getValue() + intuition.getValue()) / 2;
+    return this.getAttributeValue();
   }
 
   /**
@@ -41,7 +36,7 @@ public class Wisdom extends AttributeAbstract {
    * @param value                                 - Increment value
    */
   public final void addInstinct(final int value) {
-    this.instinct.setValue(instinct.getValue() + value);
+    this.addValueSpecialization(getSpecialization1(), value);
   }
   
   /**
@@ -50,21 +45,21 @@ public class Wisdom extends AttributeAbstract {
    * @param value                                 - Increment value
    */
   public final void addIntuition(final int value) {
-    this.intuition.setValue(intuition.getValue() + value);
+    this.addValueSpecialization(getSpecialization2(), value);
   }
 
   /**
-   * @return                                     - Instinct value
+   * @return                                      - Instinct value
    */
   public final int getInstinct() {
-    return instinct.getValue();
+    return this.getSpecialization1().getValue();
   }
 
   /**
-   * @return                                     - Intuition value
+   * @return                                      - Intuition value
    */
   public final int getIntuition() {
-    return intuition.getValue();
+    return this.getSpecialization2().getValue();
   }
   
   /**
