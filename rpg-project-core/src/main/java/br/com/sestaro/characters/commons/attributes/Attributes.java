@@ -2,6 +2,7 @@ package br.com.sestaro.characters.commons.attributes;
 
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
+import br.com.sestaro.characters.commons.attributes.generalization.AttributesAbstract;
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValueHandler;
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
@@ -11,9 +12,8 @@ import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
  * 
  * @author davidson.sestaro
  */
-public class Attributes {
-	private AttributesValues values;
-
+public class Attributes extends AttributesAbstract {
+  
 	/**
 	 * @param value                              - Attribute values
 	 */
@@ -22,16 +22,9 @@ public class Attributes {
 			throw new NullAttributesException();
 		}
 		
-		this.values = value;
+		this.setValues(value);
 	}
 
-	/**
-	 * @return                                   - Attribute values
-	 */
-	public final AttributesValues getValues() {
-		return values;
-	}
-	
 	/**
 	 * Given a attribute name returns its modifier.
 	 * 
@@ -39,7 +32,7 @@ public class Attributes {
 	 * @return                                   - Attribute modifier
 	 */
 	public final int getAttributeModifier(final AttributesNames value) {
-		return AttributesUtils.calculateModifier(AttributesValueHandler.getAttributeByPosition(this.values, value));
+		return AttributesUtils.calculateModifier(AttributesValueHandler.getAttributeByPosition(this.getValues(), value));
 	}
 	
 	/**
@@ -49,6 +42,6 @@ public class Attributes {
 	 * @param value2                             - Value
 	 */
 	public final void addAttributeValue(final AttributesNames value1, final int value2) {
-		AttributesValueHandler.addAttributeByPosition(this.values, value1, value2);
+		AttributesValueHandler.addAttributeByPosition(this.getValues(), value1, value2);
 	}
 }

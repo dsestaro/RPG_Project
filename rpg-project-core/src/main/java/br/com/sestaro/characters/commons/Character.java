@@ -6,5 +6,5 @@ package br.com.sestaro.characters.commons;
  * @author davidson.sestaro
  */
 public class Character {
-	
+
 }
