@@ -14,3 +14,14 @@
 	padding-right: 7px;
 	padding-left: 7px;
 }
+
+.attributenamebox {
+	background-color: #000000;
+	color: #FFFFFF;
+	padding: 0px;
+	text-align: center;
+}
+
+.rowsAttributes{
+	padding: 2px !important;
+}

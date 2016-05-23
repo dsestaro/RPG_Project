@@ -8,6 +8,17 @@
 		</div>
 	</div>
 	
-	<div ng-repeat="attributeName in attributesNames">
-		{{attributeName}}
+	<table class="table table-hover">
+		<tr ng-repeat="attributeName in attributesNames">
+			<td class="rowsAttributes">
+				<div>
+					<div class="col-md-6">
+						<div class="attributenamebox col-md-1">
+							{{attributeName}}
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
 </div>
