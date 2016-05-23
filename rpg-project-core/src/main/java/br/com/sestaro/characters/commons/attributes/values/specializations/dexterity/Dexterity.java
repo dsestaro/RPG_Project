@@ -10,9 +10,8 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.gener
  * @author davidson.sestaro
  */
 public class Dexterity extends AttributeAbstract {
-	private Speed speed;
-	private Coordination coordination;
-	private static final String NAME = "DEX"; 
+
+  private static final String NAME = "DEX"; 
 	
 	/**
    * @param value1                                - Speed value
@@ -20,9 +19,6 @@ public class Dexterity extends AttributeAbstract {
    */
 	public Dexterity(final int value1, final int value2) {
 	  super(new Speed(value1), new Coordination(value2));
-	  
-		this.speed = new Speed(value1);
-		this.coordination = new Coordination(value2);
 	}
 	
 	/**
@@ -31,7 +27,7 @@ public class Dexterity extends AttributeAbstract {
    * @return                                      - Returns the dexterity value
    */
 	public final int getDexterity() {
-		return (speed.getValue() + coordination.getValue()) / 2;
+	  return this.getAttributeValue();
 	}
 
 	/**
@@ -40,7 +36,7 @@ public class Dexterity extends AttributeAbstract {
    * @param value                                 - Increment value
    */
 	public final void addSpeed(final int value) {
-		this.speed.setValue(speed.getValue() + value);
+	  this.addValueSpecialization(getSpecialization1(), value);
 	}
 	
 	/**
@@ -49,21 +45,21 @@ public class Dexterity extends AttributeAbstract {
    * @param value                                 - Increment value
    */
 	public final void addCoordination(final int value) {
-		this.coordination.setValue(coordination.getValue() + value);
+	  this.addValueSpecialization(getSpecialization2(), value);
 	}
 
 	/**
    * @return                                     - Speed value
    */
 	public final int getSpeed() {
-		return speed.getValue();
+	  return this.getSpecialization1().getValue();
 	}
 
 	/**
    * @return                                     - Coordination value
    */
 	public final int getCoordination() {
-		return coordination.getValue();
+	  return this.getSpecialization2().getValue();
 	}
 	
 	/**

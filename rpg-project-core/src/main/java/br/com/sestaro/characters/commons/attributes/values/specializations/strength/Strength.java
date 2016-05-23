@@ -11,8 +11,6 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
  */
 public class Strength extends AttributeAbstract {
 	
-  private PhysicalStrength physicalStrength;
-	private Endurance endurance;
 	private static final String NAME = "STR";
 	
 	/**
@@ -21,9 +19,6 @@ public class Strength extends AttributeAbstract {
    */
 	public Strength(final int value1, final int value2) {
 	  super(new PhysicalStrength(value1), new Endurance(value2));
-	  
-		this.physicalStrength = new PhysicalStrength(value1);
-		this.endurance = new Endurance(value2);
 	}
 	
 	/**
@@ -32,7 +27,7 @@ public class Strength extends AttributeAbstract {
    * @return                                      - Returns the strength value
    */
 	public final int getStrength() {
-		return (physicalStrength.getValue() + endurance.getValue()) / 2;
+	  return this.getAttributeValue();
 	}
 
 	/**
@@ -41,7 +36,7 @@ public class Strength extends AttributeAbstract {
    * @param value                                 - Increment value
    */
 	public final void addPhysicalStrength(final int value) {
-		this.physicalStrength.setValue(physicalStrength.getValue() + value);
+	  this.addValueSpecialization(getSpecialization1(), value);
 	}
 	
 	/**
@@ -50,21 +45,21 @@ public class Strength extends AttributeAbstract {
    * @param value                                 - Increment value
    */
 	public final void addEndurance(final int value) {
-		this.endurance.setValue(endurance.getValue() + value);
+	  this.addValueSpecialization(getSpecialization2(), value);
 	}
 
 	/**
    * @return                                     - Physical strength value
    */
 	public final int getPhysicalStrength() {
-		return physicalStrength.getValue();
+	  return this.getSpecialization1().getValue();
 	}
 
 	/**
    * @return                                     - Endurance value
    */
 	public final int getEndurance() {
-		return endurance.getValue();
+	  return this.getSpecialization2().getValue();
 	}
 	
 	/**

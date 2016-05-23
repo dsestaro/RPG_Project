@@ -10,8 +10,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.intel
  * @author davidson.sestaro
  */
 public class Intelligence extends AttributeAbstract {
-  private Knowledge knowledge;
-  private Logic logic;
+
   private static final String NAME = "INT";
   
   /**
@@ -20,9 +19,6 @@ public class Intelligence extends AttributeAbstract {
    */
   public Intelligence(final int value1, final int value2) {
     super(new Knowledge(value1), new Logic(value2));
-    
-    this.knowledge = new Knowledge(value1);
-    this.logic = new Logic(value2);
   }
   
   /**
@@ -31,7 +27,7 @@ public class Intelligence extends AttributeAbstract {
    * @return                                      - Returns the intelligence value
    */
   public final int getIntelligence() {
-    return (knowledge.getValue() + logic.getValue()) / 2;
+    return this.getAttributeValue();
   }
 
   /**
@@ -40,7 +36,7 @@ public class Intelligence extends AttributeAbstract {
    * @param value                                 - Increment value
    */
   public final void addKnowledge(final int value) {
-    this.knowledge.setValue(knowledge.getValue() + value);
+    this.addValueSpecialization(getSpecialization1(), value);
   }
   
   /**
@@ -49,21 +45,21 @@ public class Intelligence extends AttributeAbstract {
    * @param value                                 - Increment value
    */
   public final void addLogic(final int value) {
-    this.logic.setValue(logic.getValue() + value);
+    this.addValueSpecialization(getSpecialization2(), value);
   }
 
   /**
    * @return                                     - Knowledge value
    */
   public final int getKnowledge() {
-    return knowledge.getValue();
+    return this.getSpecialization1().getValue();
   }
 
   /**
    * @return                                     - Logic value
    */
   public final int getLogic() {
-    return logic.getValue();
+    return this.getSpecialization2().getValue();
   }
   
   /**

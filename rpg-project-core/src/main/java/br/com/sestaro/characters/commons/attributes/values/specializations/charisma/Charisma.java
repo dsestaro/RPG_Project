@@ -11,8 +11,6 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.gener
  */
 public class Charisma extends AttributeAbstract {
   
-  private Appearance appearance;
-  private Charm charm;
   private static final String NAME = "CHA";
   
   /**
@@ -21,9 +19,6 @@ public class Charisma extends AttributeAbstract {
    */
   public Charisma(final int value1, final int value2) {
     super(new Appearance(value1), new Charm(value2));
-    
-    this.appearance = new Appearance(value1);
-    this.charm = new Charm(value2);
   }
   
   /**
@@ -32,7 +27,7 @@ public class Charisma extends AttributeAbstract {
    * @return                                      - Returns the charisma value
    */
   public final int getCharisma() {
-    return (appearance.getValue() + charm.getValue()) / 2;
+    return this.getAttributeValue();
   }
 
   /**
@@ -41,7 +36,7 @@ public class Charisma extends AttributeAbstract {
    * @param value                                 - Increment value
    */
   public final void addAppearance(final int value) {
-    this.appearance.setValue(appearance.getValue() + value);
+    this.addValueSpecialization(getSpecialization1(), value);
   }
   
   /**
@@ -50,21 +45,21 @@ public class Charisma extends AttributeAbstract {
    * @param value                                 - Increment value
    */
   public final void addCharm(final int value) {
-    this.charm.setValue(charm.getValue() + value);
+    this.addValueSpecialization(getSpecialization2(), value);
   }
 
   /**
    * @return                                      - Appearance value
    */
   public final int getAppearance() {
-    return appearance.getValue();
+    return this.getSpecialization1().getValue();
   }
 
   /**
    * @return                                      - Charm value
    */
   public final int getCharm() {
-    return charm.getValue();
+    return this.getSpecialization2().getValue();
   }
   
   /**

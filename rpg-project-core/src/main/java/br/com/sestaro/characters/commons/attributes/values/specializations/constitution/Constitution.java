@@ -10,9 +10,8 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.gener
  * @author davidson.sestaro
  */
 public class Constitution extends AttributeAbstract {
-	private Toughness toughness;
-	private Resistance resistance;
-	private static final String NAME = "CON";
+
+  private static final String NAME = "CON";
 	
 	/**
 	 * @param value1                               - Thoughness value
@@ -20,9 +19,6 @@ public class Constitution extends AttributeAbstract {
 	 */
 	public Constitution(final int value1, final int value2) {
 	  super(new Toughness(value1), new Resistance(value2));
-	  
-		this.toughness = new Toughness(value1);
-		this.resistance = new Resistance(value2);
 	}
 	
 	/**
@@ -31,7 +27,7 @@ public class Constitution extends AttributeAbstract {
 	 * @return                                     - Returns the constitution value
 	 */
 	public final int getConstitution() {
-		return (toughness.getValue() + resistance.getValue()) / 2;
+	  return this.getAttributeValue();
 	}
 
 	/**
@@ -40,7 +36,7 @@ public class Constitution extends AttributeAbstract {
 	 * @param value                                 - Increment value
 	 */
 	public final void addToughness(final int value) {
-		this.toughness.setValue(toughness.getValue() + value);
+	  this.addValueSpecialization(getSpecialization1(), value);
 	}
 	
 	/**
@@ -49,21 +45,21 @@ public class Constitution extends AttributeAbstract {
    * @param value                                 - Increment value
    */
 	public final void addResistance(final int value) {
-		this.resistance.setValue(resistance.getValue() + value);
+	  this.addValueSpecialization(getSpecialization2(), value);
 	}
 
 	/**
 	 * @return                                     - Toughness value
 	 */
 	public final int getToughness() {
-		return toughness.getValue();
+	  return this.getSpecialization1().getValue();
 	}
 
 	/**
 	 * @return                                     - Resistence value
 	 */
 	public final int getResistance() {
-		return resistance.getValue();
+	  return this.getSpecialization2().getValue();
 	}
 	
 	/**
