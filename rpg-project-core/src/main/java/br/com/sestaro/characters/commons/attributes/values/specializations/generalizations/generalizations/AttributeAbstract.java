@@ -9,6 +9,8 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.Any;
 import org.hibernate.annotations.AnyMetaDef;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.MetaValue;
 
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
@@ -51,6 +53,7 @@ public abstract class AttributeAbstract {
   @MetaValue(targetEntity = Instinct.class, value = "INST"),
   @MetaValue(targetEntity = Intuition.class, value = "INTU") })
   @JoinColumn(name = "SPEC1_ID")
+  @Cascade(CascadeType.ALL)
   private ISpecialization specialization1;
   
   @Any(metaColumn = @Column(name = "specialization2_type"))
@@ -67,6 +70,7 @@ public abstract class AttributeAbstract {
   @MetaValue(targetEntity = Instinct.class, value = "INST"),
   @MetaValue(targetEntity = Intuition.class, value = "INTU") })
   @JoinColumn(name = "SPEC2_ID")
+  @Cascade(CascadeType.ALL)
   private ISpecialization specialization2;
   
   /**

@@ -2,6 +2,10 @@ package br.com.sestaro.characters.commons.attributes;
 
 import javax.persistence.Entity;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.generalization.AttributesAbstract;

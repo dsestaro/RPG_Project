@@ -29,11 +29,28 @@
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization"/>
 		
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Appearance"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Charm"/>
+		
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness"/>
+		
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Coordination"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Speed"/>
+		
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Knowledge"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Logic"/>
+		
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength"/>
+		
 		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Instinct"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Intuition"/>
 
 	</session-factory>
 </hibernate-configuration>
