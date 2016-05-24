@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.strength;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength;
@@ -9,6 +11,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.stren
  *  
  * @author davidson.sestaro
  */
+@Entity
 public class Strength extends AttributeAbstract {
 	
 	private static final String NAME = "STR";

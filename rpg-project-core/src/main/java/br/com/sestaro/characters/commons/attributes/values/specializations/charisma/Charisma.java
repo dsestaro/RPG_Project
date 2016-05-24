@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.charisma;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Appearance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Charm;
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
@@ -9,6 +11,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.gener
  *  
  * @author davidson.sestaro
  */
+@Entity
 public class Charisma extends AttributeAbstract {
   
   private static final String NAME = "CHA";

@@ -1,27 +1,83 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MappedSuperclass;
+
+import org.hibernate.annotations.Any;
+import org.hibernate.annotations.AnyMetaDef;
+import org.hibernate.annotations.MetaValue;
+
 import br.com.sestaro.characters.commons.attributes.utils.AttributesUtils;
+import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Appearance;
+import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.subdivision.Charm;
+import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
+import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
+import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Coordination;
+import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Speed;
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization;
+import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Knowledge;
+import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.Endurance;
+import br.com.sestaro.characters.commons.attributes.values.specializations.strength.subdivision.PhysicalStrength;
+import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Instinct;
+import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Intuition;
 
 /**
  * Class to define common attributes methods.
  *  
  * @author davidson.sestaro
  */
+@MappedSuperclass
 public abstract class AttributeAbstract {
   
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  
+  @Any(metaColumn = @Column(name = "specialization1_type"))
+  @AnyMetaDef(idType = "long", metaType = "string", metaValues = {
+  @MetaValue(targetEntity = Appearance.class, value = "APPE"),
+  @MetaValue(targetEntity = Charm.class, value = "CHAR"),
+  @MetaValue(targetEntity = Resistance.class, value = "RESI"),
+  @MetaValue(targetEntity = Toughness.class, value = "TOUG"),
+  @MetaValue(targetEntity = Coordination.class, value = "COOR"),
+  @MetaValue(targetEntity = Speed.class, value = "SPEE"),
+  @MetaValue(targetEntity = Knowledge.class, value = "KNOW"),
+  @MetaValue(targetEntity = Endurance.class, value = "ENDU"),
+  @MetaValue(targetEntity = PhysicalStrength.class, value = "PHST"),
+  @MetaValue(targetEntity = Instinct.class, value = "INST"),
+  @MetaValue(targetEntity = Intuition.class, value = "INTU") })
+  @JoinColumn(name = "SPEC1_ID")
   private ISpecialization specialization1;
+  
+  @Any(metaColumn = @Column(name = "specialization2_type"))
+  @AnyMetaDef(idType = "long", metaType = "string", metaValues = {
+  @MetaValue(targetEntity = Appearance.class, value = "APPE"),
+  @MetaValue(targetEntity = Charm.class, value = "CHAR"),
+  @MetaValue(targetEntity = Resistance.class, value = "RESI"),
+  @MetaValue(targetEntity = Toughness.class, value = "TOUG"),
+  @MetaValue(targetEntity = Coordination.class, value = "COOR"),
+  @MetaValue(targetEntity = Speed.class, value = "SPEE"),
+  @MetaValue(targetEntity = Knowledge.class, value = "KNOW"),
+  @MetaValue(targetEntity = Endurance.class, value = "ENDU"),
+  @MetaValue(targetEntity = PhysicalStrength.class, value = "PHST"),
+  @MetaValue(targetEntity = Instinct.class, value = "INST"),
+  @MetaValue(targetEntity = Intuition.class, value = "INTU") })
+  @JoinColumn(name = "SPEC2_ID")
   private ISpecialization specialization2;
   
   /**
-   * @param spec1                                - First specialization value
-   * @param spec2                                - Second specialization value 
+   * @param value1                                - First specialization value
+   * @param value2                                - Second specialization value 
    */
-  public AttributeAbstract(final ISpecialization spec1, final ISpecialization spec2) {
-    AttributesUtils.initialValidations(spec1, spec2);
+  public AttributeAbstract(final ISpecialization value1, final ISpecialization value2) {
+    AttributesUtils.initialValidations(value1, value2);
     
-    this.specialization1 = spec1;
-    this.specialization2 = spec2;
+    this.specialization1 = value1;
+    this.specialization2 = value2;
   }
 
   /**
@@ -54,10 +110,10 @@ public abstract class AttributeAbstract {
   /**
    * Add the given value to the given specializations.
    * 
-   * @param spec                                 - Specialization
-   * @param value                                - Value
+   * @param value1                                 - Specialization
+   * @param value2                                - Value
    */
-  protected final void addValueSpecialization(final ISpecialization spec, final int value) {
-    spec.setValue(spec.getValue() + value);
+  protected final void addValueSpecialization(final ISpecialization value1, final int value2) {
+    value1.setValue(value1.getValue() + value2);
   }
 }

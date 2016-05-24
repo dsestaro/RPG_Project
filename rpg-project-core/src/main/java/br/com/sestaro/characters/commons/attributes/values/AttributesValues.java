@@ -1,5 +1,14 @@
 package br.com.sestaro.characters.commons.attributes.values;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity;
@@ -12,12 +21,34 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  * 
  * @author davidson.sestaro
  */
+@Entity
 public class AttributesValues {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  
+  @OneToOne(targetEntity = Strength.class)
+  @Cascade(CascadeType.ALL)
 	private Strength strength;
+  
+  @OneToOne(targetEntity = Dexterity.class)
+  @Cascade(CascadeType.ALL)
 	private Dexterity dexterity;
+  
+  @OneToOne(targetEntity = Constitution.class)
+  @Cascade(CascadeType.ALL)
 	private Constitution constitution;
+  
+  @OneToOne(targetEntity = Intelligence.class)
+  @Cascade(CascadeType.ALL)
 	private Intelligence intelligence;
+  
+  @OneToOne(targetEntity = Wisdom.class)
+  @Cascade(CascadeType.ALL)
 	private Wisdom wisdom;
+  
+  @OneToOne(targetEntity = Charisma.class)
+  @Cascade(CascadeType.ALL)
 	private Charisma charisma;
 	
 	/**

@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.generalization.AttributesAbstract;
@@ -12,6 +14,7 @@ import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
  * 
  * @author davidson.sestaro
  */
+@Entity
 public class Attributes extends AttributesAbstract {
   
 	/**

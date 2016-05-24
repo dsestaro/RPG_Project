@@ -9,6 +9,7 @@ import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesCo
 import static br.com.sestaro.characters.commons.attributes.utils.NumericValuesConstantValues.TWELVE;
 import static org.junit.Assert.assertEquals;
 
+import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
 

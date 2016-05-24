@@ -1,10 +1,13 @@
 package br.com.sestaro.characters.commons.attributes.generalization;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
 
@@ -13,13 +16,15 @@ import br.com.sestaro.characters.commons.attributes.values.AttributesValues;
  * 
  * @author davidson.sestaro
  */
-@Entity
+@MappedSuperclass
 public class AttributesAbstract {
+  
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   
-  @ManyToOne(targetEntity = AttributesValues.class)
+  @OneToOne(targetEntity = AttributesValues.class)
+  @Cascade(CascadeType.ALL)
   private AttributesValues values;
   
   /**

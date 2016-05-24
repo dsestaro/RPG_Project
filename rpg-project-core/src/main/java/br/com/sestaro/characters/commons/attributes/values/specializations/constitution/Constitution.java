@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.constitution;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Resistance;
 import br.com.sestaro.characters.commons.attributes.values.specializations.constitution.subdivision.Toughness;
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
@@ -9,6 +11,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.gener
  *  
  * @author davidson.sestaro
  */
+@Entity
 public class Constitution extends AttributeAbstract {
 
   private static final String NAME = "CON";

@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.intelligence;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Knowledge;
 import br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.subdivision.Logic;
@@ -9,6 +11,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.intel
  *  
  * @author davidson.sestaro
  */
+@Entity
 public class Intelligence extends AttributeAbstract {
 
   private static final String NAME = "INT";

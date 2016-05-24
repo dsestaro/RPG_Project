@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.dexterity;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Coordination;
 import br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.subdivision.Speed;
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
@@ -9,6 +11,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.gener
  *  
  * @author davidson.sestaro
  */
+@Entity
 public class Dexterity extends AttributeAbstract {
 
   private static final String NAME = "DEX"; 

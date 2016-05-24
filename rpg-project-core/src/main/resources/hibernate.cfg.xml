@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+		"http://www.hibernate.org/dtd/hibernate-configuration">
 <hibernate-configuration>
 	<session-factory>
 		<!-- Database connection settings, Connect to HSQL, IN Memory -->
 		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
-		<property name="connection.url">jdbc:hsqldb:file:rpgproject</property>
+		<property name="connection.url">jdbc:hsqldb:file:database/rpgproject;shutdown=true</property>
 		<property name="connection.username">sa</property>
 		<property name="connection.password"></property>
 
@@ -16,8 +16,24 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<property name="hibernate.current_session_context_class">thread</property>
 
 		<!-- Mapped Classes -->
+		<mapping class="br.com.sestaro.characters.commons.attributes.Attributes"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.generalization.AttributesAbstract"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.AttributesValues"/>
+		
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.interfaces.ISpecialization"/>
+		
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.charisma.Charisma"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.constitution.Constitution"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.dexterity.Dexterity"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.intelligence.Intelligence"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.strength.Strength"/>
+		<mapping class="br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.Wisdom"/>
 
 	</session-factory>
 </hibernate-configuration>

@@ -1,5 +1,7 @@
 package br.com.sestaro.characters.commons.attributes.values.specializations.wisdom;
 
+import javax.persistence.Entity;
+
 import br.com.sestaro.characters.commons.attributes.values.specializations.generalizations.generalizations.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Instinct;
 import br.com.sestaro.characters.commons.attributes.values.specializations.wisdom.subdivision.Intuition;
@@ -9,6 +11,7 @@ import br.com.sestaro.characters.commons.attributes.values.specializations.wisdo
  *  
  * @author davidson.sestaro
  */
+@Entity
 public class Wisdom extends AttributeAbstract {
 
   private static final String NAME = "WIS";
