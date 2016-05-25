@@ -2,7 +2,7 @@ package br.com.sestaro.characters.commons.attributes.model.values.specialization
 
 import javax.persistence.Entity;
 
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.generalizations.AttributeAbstract;
+import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.abstracts.AttributeAbstract;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.subdivision.Instinct;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.subdivision.Intuition;
 

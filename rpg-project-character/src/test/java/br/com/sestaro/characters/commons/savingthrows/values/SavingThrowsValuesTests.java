@@ -17,7 +17,7 @@ public class SavingThrowsValuesTests {
   /**
    * Testing instantiation and information retrieve.
    */
-	@Test
+  @Test
   public final void testShouldValidateInformationRetrieve() {
 		SavingThrowsValues values = new SavingThrowsValues(ZERO, TWO, FOUR);
 		

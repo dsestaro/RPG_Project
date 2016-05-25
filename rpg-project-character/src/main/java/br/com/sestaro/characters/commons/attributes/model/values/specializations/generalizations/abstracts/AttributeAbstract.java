@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.generalizations;
+package br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.abstracts;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

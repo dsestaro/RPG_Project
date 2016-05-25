@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.constitution.subdivision.Resistance;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.constitution.subdivision.Toughness;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.generalizations.AttributeAbstract;
+import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.abstracts.AttributeAbstract;
 
 /**
  * Attribute constitution class.

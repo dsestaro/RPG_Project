@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.charisma.subdivision.Appearance;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.charisma.subdivision.Charm;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.generalizations.AttributeAbstract;
+import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.abstracts.AttributeAbstract;
 
 /**
  * Attribute charisma class.
