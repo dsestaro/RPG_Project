@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.sestaro.characters.commons.attributes.facade.AttributesFacade;
+import br.com.sestaro.characters.commons.attributes.model.facade.AttributesFacade;
 
 
 /**

@@ -1,6 +1,6 @@
 package br.com.sestaro.characters.commons.savingthrows.values;
 
-import br.com.sestaro.characters.commons.attributes.exceptions.InvalidAttributeNameException;
+import br.com.sestaro.characters.commons.attributes.model.exceptions.InvalidAttributeNameException;
 import br.com.sestaro.characters.commons.savingthrows.enums.SavingThrowsNames;
 import br.com.sestaro.characters.commons.savingthrows.exceptions.InvalidSavingThrowNameException;
 
