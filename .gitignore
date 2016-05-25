@@ -35,3 +35,15 @@
 /rpg-project-controller/.settings/org.hibernate.eclipse.console.prefs
 /rpg-project-core/.settings/org.hibernate.eclipse.console.prefs
 /rpg-project-core/database
+/rpg-project-view/build/classes/main/webapp/pages/tabs
+/rpg-project-view/build/classes/main/webapp/META-INF/MANIFEST.MF
+/rpg-project-view/build/classes/main/webapp/WEB-INF/web.xml
+/rpg-project-view/build/classes/main/webapp/css/character-sheet/attributes/attributes.css
+/rpg-project-view/build/classes/main/webapp/index.html
+/rpg-project-view/build/classes/main/webapp/js/character-sheet/app/character-sheet-app.js
+/rpg-project-view/build/classes/main/webapp/js/character-sheet/controller/attributes-controller.js
+/rpg-project-view/build/classes/main/webapp/js/character-sheet/controller/character-sheet-controller.js
+/rpg-project-view/build/classes/main/webapp/js/character-sheet/service/attributes-service.js
+/rpg-project-view/build/classes/main/webapp/js/index/app/index-app.js
+/rpg-project-view/build/classes/main/webapp/js/index/controller/index-controller.js
+/rpg-project-view/build/classes/main/webapp/pages/character-sheet.html
