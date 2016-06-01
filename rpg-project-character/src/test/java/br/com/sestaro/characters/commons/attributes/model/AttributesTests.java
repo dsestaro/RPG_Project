@@ -12,7 +12,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.attributes.model.Attributes;
 import br.com.sestaro.characters.commons.attributes.model.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.model.exceptions.NullAttributesException;
 import br.com.sestaro.characters.commons.attributes.model.values.AttributesValues;
