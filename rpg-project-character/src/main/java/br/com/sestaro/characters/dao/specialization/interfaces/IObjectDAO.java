@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.dao.specialization.interfaces;
+package br.com.sestaro.characters.dao.specialization.interfaces;
 
 import java.util.List;
 
@@ -31,7 +31,6 @@ public interface IObjectDAO<T> {
      * Saves if the record didn't exist or update if it's already in the database.
      * 
      * @param value				- Record
-     * @return					- Record ID
      */
-    Long saveOrUpdate(T value);
+    void saveOrUpdate(T value);
 }
