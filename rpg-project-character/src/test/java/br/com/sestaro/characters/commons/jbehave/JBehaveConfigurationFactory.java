@@ -9,23 +9,23 @@ import org.jbehave.core.configuration.MostUsefulConfiguration;
  * @author davidson.sestaro
  */
 public final class JBehaveConfigurationFactory {
-  
-  private static Configuration configuration;
-  
-  /**
-   * Constructor to prevent class instantiation.
-   */
-  private JBehaveConfigurationFactory() {
-  }
-  
-  /**
-   * @return                          - An instance of the jbehave configuration.
-   */
-  public static Configuration getConfiguration() {
-    if (configuration == null) {
-      configuration = new MostUsefulConfiguration();
+
+    private static Configuration configuration;
+
+    /**
+     * Constructor to prevent class instantiation.
+     */
+    private JBehaveConfigurationFactory() {
     }
-    
-    return configuration;
-  }
+
+    /**
+     * @return - An instance of the jbehave configuration.
+     */
+    public static Configuration getConfiguration() {
+	if (configuration == null) {
+	    configuration = new MostUsefulConfiguration();
+	}
+
+	return configuration;
+    }
 }

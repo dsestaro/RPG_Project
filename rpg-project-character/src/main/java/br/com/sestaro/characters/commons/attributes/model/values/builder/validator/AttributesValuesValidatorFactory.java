@@ -71,7 +71,7 @@ public final class AttributesValuesValidatorFactory {
     
     ValidatorAction action = new ValidatorAction();
     action.setName(REQUIRED);
-    action.setClassname("br.com.sestaro.characters.commons.attributes.values.builder.validator.AttributesValuesValidator");
+    action.setClassname("br.com.sestaro.characters.commons.attributes.model.values.builder.validator.AttributesValuesValidator");
     action.setMethod("validateRequired");
     action.setMethodParams("java.lang.Object, org.apache.commons.validator.Field");
     

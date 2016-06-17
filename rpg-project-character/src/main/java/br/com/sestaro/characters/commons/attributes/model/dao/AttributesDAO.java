@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import br.com.sestaro.characters.commons.attributes.model.Attributes;
+import br.com.sestaro.characters.commons.attributes.model.values.AttributesValues;
 import br.com.sestaro.characters.dao.specialization.abstracts.ObjectDAOAbstract;
 
 /**

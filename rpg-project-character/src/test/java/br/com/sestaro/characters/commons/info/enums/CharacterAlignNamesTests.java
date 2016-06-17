@@ -19,20 +19,20 @@ import org.junit.Test;
  * @author davidson.sestaro
  */
 public class CharacterAlignNamesTests {
-	
-  /**
-   * Test enum position.
-   */
-	@Test
-  public final void testShouldValidateEnumPosition() {
-		assertEquals(LAWFUL_GOOD, CharacterAlignNames.LAWFUL_GOOD.getPosition());
-		assertEquals(NEUTRAL_GOOD, CharacterAlignNames.NEUTRAL_GOOD.getPosition());
-		assertEquals(CHAOTIC_GOOD, CharacterAlignNames.CHAOTIC_GOOD.getPosition());
-		assertEquals(LAWFUL_NEUTRAL, CharacterAlignNames.LAWFUL_NEUTRAL.getPosition());
-		assertEquals(NEUTRAL, CharacterAlignNames.NEUTRAL.getPosition());
-		assertEquals(CHAOTIC_NEUTRAL, CharacterAlignNames.CHAOTIC_NEUTRAL.getPosition());
-		assertEquals(LAWFUL_EVIL, CharacterAlignNames.LAWFUL_EVIL.getPosition());
-		assertEquals(NEUTRAL_EVIL, CharacterAlignNames.NEUTRAL_EVIL.getPosition());
-		assertEquals(CHAOTIC_EVIL, CharacterAlignNames.CHAOTIC_EVIL.getPosition());
-	}
+
+    /**
+     * Test enum position.
+     */
+    @Test
+    public final void testShouldValidateEnumPosition() {
+	assertEquals(LAWFUL_GOOD, CharacterAlignNames.LAWFUL_GOOD.getPosition());
+	assertEquals(NEUTRAL_GOOD, CharacterAlignNames.NEUTRAL_GOOD.getPosition());
+	assertEquals(CHAOTIC_GOOD, CharacterAlignNames.CHAOTIC_GOOD.getPosition());
+	assertEquals(LAWFUL_NEUTRAL, CharacterAlignNames.LAWFUL_NEUTRAL.getPosition());
+	assertEquals(NEUTRAL, CharacterAlignNames.NEUTRAL.getPosition());
+	assertEquals(CHAOTIC_NEUTRAL, CharacterAlignNames.CHAOTIC_NEUTRAL.getPosition());
+	assertEquals(LAWFUL_EVIL, CharacterAlignNames.LAWFUL_EVIL.getPosition());
+	assertEquals(NEUTRAL_EVIL, CharacterAlignNames.NEUTRAL_EVIL.getPosition());
+	assertEquals(CHAOTIC_EVIL, CharacterAlignNames.CHAOTIC_EVIL.getPosition());
+    }
 }

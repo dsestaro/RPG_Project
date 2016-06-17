@@ -13,20 +13,20 @@ import org.junit.Test;
  */
 public class AttributesFacadeTests {
 
-  private static final boolean EXIST = true;
-  
-  /**
-   * Test should validate if all names are being returned by the function.
-   */
-  @Test
-  public final void testShouldValidateAttributesNames() {
-    List<String> names = AttributesFacade.getAttributesNames();
-    
-    assertEquals(EXIST, names.contains("STR"));
-    assertEquals(EXIST, names.contains("DEX"));
-    assertEquals(EXIST, names.contains("CON"));
-    assertEquals(EXIST, names.contains("INT"));
-    assertEquals(EXIST, names.contains("WIS"));
-    assertEquals(EXIST, names.contains("CHA"));
-  }
+    private static final boolean EXIST = true;
+
+    /**
+     * Test should validate if all names are being returned by the function.
+     */
+    @Test
+    public final void testShouldValidateAttributesNames() {
+	List<String> names = AttributesFacade.getAttributesNames();
+
+	assertEquals(EXIST, names.contains("STR"));
+	assertEquals(EXIST, names.contains("DEX"));
+	assertEquals(EXIST, names.contains("CON"));
+	assertEquals(EXIST, names.contains("INT"));
+	assertEquals(EXIST, names.contains("WIS"));
+	assertEquals(EXIST, names.contains("CHA"));
+    }
 }

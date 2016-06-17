@@ -28,69 +28,69 @@ import br.com.sestaro.characters.commons.attributes.model.values.specializations
  * @author davidson.sestaro
  */
 public class AttributesTests {
-	
-	private AttributesValues attributesValues;
-	
-	/**
-   * Initial configuration.
-   */
-	@Before
-  public final void beforeInitialTestsConfiguration() {
-		Strength strength = new Strength(TEN, FOURTEEN);
-		Dexterity dexterity = new Dexterity(TWELVE, FOURTEEN);
-		Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
-		Intelligence intelligence = new Intelligence(FOURTEEN, FOURTEEN);
-		Wisdom wisdom = new Wisdom(TEN, THIRTEEN);
-		Charisma charisma = new Charisma(TWELVE, TWELVE);
-		
-		this.attributesValues = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
-	}
 
-	/**
-   * Validate initial configuration.
-   */
-	@Test
-  public final void testShouldValidateInstantiationWithAllAttributes() {
-		new Attributes(this.attributesValues);
-	}
-	
-	/**
-   * Validate null values.
-   */
-	@Test(expected = NullAttributesException.class)
-  public final void testShouldFailWhenAttributesAreNull() {
-		new Attributes(null);
-	}
-	
-	/**
-	 * Validate positive attributes.
-	 */
-	@Test
-  public final void testShouldValidateGetPositiveAttributeModifier() {
-		Attributes attributes = new Attributes(this.attributesValues);
-		
-		assertEquals(1, attributes.getAttributeModifier(AttributesNames.CONSTITUTION));
-	}
-	
-	/**
-   * Validate negative attributes.
-   */
-	@Test
-  public final void testShouldValidateGetNegativeAttributeModifier() {
-		Attributes attributes = new Attributes(this.attributesValues);
-		
-		assertEquals(ELEVEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.WISDOM));
-	}
-	
-	/**
-	 * Validate addiction of value.
-	 */
-	@Test
-  public final void testShouldValidateSumOfValueToAttributeSpecialization() {
-		Attributes attributes = new Attributes(this.attributesValues);
-		
-		attributes.addAttributeValue(AttributesNames.INTELLIGENCE_LOGIC, POSITIVE);
-		
-		assertEquals(SIXTEEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE_LOGIC));
-	}
+    private AttributesValues attributesValues;
+
+    /**
+     * Initial configuration.
+     */
+    @Before
+    public final void beforeInitialTestsConfiguration() {
+	Strength strength = new Strength(TEN, FOURTEEN);
+	Dexterity dexterity = new Dexterity(TWELVE, FOURTEEN);
+	Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
+	Intelligence intelligence = new Intelligence(FOURTEEN, FOURTEEN);
+	Wisdom wisdom = new Wisdom(TEN, THIRTEEN);
+	Charisma charisma = new Charisma(TWELVE, TWELVE);
+
+	this.attributesValues = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
+    }
+
+    /**
+     * Validate initial configuration.
+     */
+    @Test
+    public final void testShouldValidateInstantiationWithAllAttributes() {
+	new Attributes(this.attributesValues);
+    }
+
+    /**
+     * Validate null values.
+     */
+    @Test(expected = NullAttributesException.class)
+    public final void testShouldFailWhenAttributesAreNull() {
+	new Attributes(null);
+    }
+
+    /**
+     * Validate positive attributes.
+     */
+    @Test
+    public final void testShouldValidateGetPositiveAttributeModifier() {
+	Attributes attributes = new Attributes(this.attributesValues);
+
+	assertEquals(1, attributes.getAttributeModifier(AttributesNames.CONSTITUTION));
+    }
+
+    /**
+     * Validate negative attributes.
+     */
+    @Test
+    public final void testShouldValidateGetNegativeAttributeModifier() {
+	Attributes attributes = new Attributes(this.attributesValues);
+
+	assertEquals(ELEVEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.WISDOM));
+    }
+
+    /**
+     * Validate addiction of value.
+     */
+    @Test
+    public final void testShouldValidateSumOfValueToAttributeSpecialization() {
+	Attributes attributes = new Attributes(this.attributesValues);
+
+	attributes.addAttributeValue(AttributesNames.INTELLIGENCE_LOGIC, POSITIVE);
+
+	assertEquals(SIXTEEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE_LOGIC));
+    }
 }

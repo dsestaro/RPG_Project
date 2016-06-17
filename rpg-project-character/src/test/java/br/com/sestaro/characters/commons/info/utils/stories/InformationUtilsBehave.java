@@ -20,30 +20,28 @@ import de.codecentric.jbehave.junit.monitoring.JUnitReportingRunner;
  */
 @RunWith(JUnitReportingRunner.class)
 public class InformationUtilsBehave extends JUnitStories {
-  
-  /**
-   * Path to the stories.
-   */
-  @Override
-  protected final List<String> storyPaths() {
-    return Arrays.asList(
-        "characters/commons/info/utils/InfoStringAttributesValidation.story");
-  }
 
-  /**
-   * Instantiation of steps class.
-   */
-  @Override
-  public final InjectableStepsFactory stepsFactory() {
-    return new InstanceStepsFactory(configuration(),
-        new InfoStringAttributesValidationSteps());
-  }
+    /**
+     * Path to the stories.
+     */
+    @Override
+    protected final List<String> storyPaths() {
+	return Arrays.asList("characters/commons/info/utils/InfoStringAttributesValidation.story");
+    }
 
-  /**
-   * Method to get the configuration from the factory.
-   */
-  @Override
-  public final Configuration configuration() {
-    return JBehaveConfigurationFactory.getConfiguration();
-  }
+    /**
+     * Instantiation of steps class.
+     */
+    @Override
+    public final InjectableStepsFactory stepsFactory() {
+	return new InstanceStepsFactory(configuration(), new InfoStringAttributesValidationSteps());
+    }
+
+    /**
+     * Method to get the configuration from the factory.
+     */
+    @Override
+    public final Configuration configuration() {
+	return JBehaveConfigurationFactory.getConfiguration();
+    }
 }

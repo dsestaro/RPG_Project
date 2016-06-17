@@ -13,12 +13,12 @@ import org.junit.Test;
  */
 public class GenderNamesTests {
 
-  /**
-   * Test enum position.
-   */
-	@Test
-  public final void testShouldValidateEnumPosition() {
-		assertEquals(MAN, GenderNames.MAN.getPosition());
-		assertEquals(WOMAN, GenderNames.WOMAN.getPosition());
-	}
+    /**
+     * Test enum position.
+     */
+    @Test
+    public final void testShouldValidateEnumPosition() {
+	assertEquals(MAN, GenderNames.MAN.getPosition());
+	assertEquals(WOMAN, GenderNames.WOMAN.getPosition());
+    }
 }

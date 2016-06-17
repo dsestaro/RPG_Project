@@ -22,31 +22,29 @@ import de.codecentric.jbehave.junit.monitoring.JUnitReportingRunner;
 @RunWith(JUnitReportingRunner.class)
 public class AttributesUtilsBehave extends JUnitStories {
 
-  /**
-   * Path to the stories.
-   */
-  @Override
-  protected final List<String> storyPaths() {
-    return Arrays.asList(
-        "characters/commons/attributes/utils/AttributeModifier.story",
-        "characters/commons/attributes/utils/InitialAttributesValidations.story");
-  }
+    /**
+     * Path to the stories.
+     */
+    @Override
+    protected final List<String> storyPaths() {
+	return Arrays.asList("characters/commons/attributes/utils/AttributeModifier.story",
+		"characters/commons/attributes/utils/InitialAttributesValidations.story");
+    }
 
-  /**
-   * Instantiation of steps class.
-   */
-  @Override
-  public final InjectableStepsFactory stepsFactory() {
-    return new InstanceStepsFactory(configuration(),
-        new AttributesUtilsModifierSteps(),
-        new AttributesUtilsInitialConfigurationSteps());
-  }
+    /**
+     * Instantiation of steps class.
+     */
+    @Override
+    public final InjectableStepsFactory stepsFactory() {
+	return new InstanceStepsFactory(configuration(), new AttributesUtilsModifierSteps(),
+		new AttributesUtilsInitialConfigurationSteps());
+    }
 
-  /**
-   * Method to get the configuration from the factory.
-   */
-  @Override
-  public final Configuration configuration() {
-    return JBehaveConfigurationFactory.getConfiguration();
-  }
+    /**
+     * Method to get the configuration from the factory.
+     */
+    @Override
+    public final Configuration configuration() {
+	return JBehaveConfigurationFactory.getConfiguration();
+    }
 }
