@@ -47,3 +47,7 @@
 /rpg-project-view/build/classes/main/webapp/js/index/app/index-app.js
 /rpg-project-view/build/classes/main/webapp/js/index/controller/index-controller.js
 /rpg-project-view/build/classes/main/webapp/pages/character-sheet.html
+/rpg-project-character/database/rpgproject.lck
+/rpg-project-character/database/rpgproject.log
+/rpg-project-character/database/rpgproject.properties
+/rpg-project-character/database/rpgproject.script
