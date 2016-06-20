@@ -1,57 +1,30 @@
 package br.com.sestaro.characters.commons.attributes.model;
 
+import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.EIGHTEEN_MODIFIER;
 import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.ELEVEN_MODIFIER;
-import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.FOURTEEN;
 import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.POSITIVE;
-import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.SIXTEEN_MODIFIER;
-import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.TEN;
-import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.THIRTEEN;
-import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.TWELVE;
+import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.TWO;
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.attributes.model.enums.AttributesNames;
 import br.com.sestaro.characters.commons.attributes.model.exceptions.NullAttributesException;
-import br.com.sestaro.characters.commons.attributes.model.values.AttributesValues;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.charisma.Charisma;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.constitution.Constitution;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.dexterity.Dexterity;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.intelligence.Intelligence;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.strength.Strength;
-import br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.Wisdom;
+import br.com.sestaro.characters.commons.rules.attributes.values.AttributesValuesRules;
 
 /**
  * Class to test {@link Attributes}.
  * 
  * @author davidson.sestaro
  */
-public class AttributesTests {
-
-    private AttributesValues attributesValues;
-
-    /**
-     * Initial configuration.
-     */
-    @Before
-    public final void beforeInitialTestsConfiguration() {
-	Strength strength = new Strength(TEN, FOURTEEN);
-	Dexterity dexterity = new Dexterity(TWELVE, FOURTEEN);
-	Constitution constitution = new Constitution(THIRTEEN, THIRTEEN);
-	Intelligence intelligence = new Intelligence(FOURTEEN, FOURTEEN);
-	Wisdom wisdom = new Wisdom(TEN, THIRTEEN);
-	Charisma charisma = new Charisma(TWELVE, TWELVE);
-
-	this.attributesValues = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
-    }
+public class AttributesTests extends AttributesValuesRules {
 
     /**
      * Validate initial configuration.
      */
     @Test
     public final void testShouldValidateInstantiationWithAllAttributes() {
-	new Attributes(this.attributesValues);
+	new Attributes(getAttributes());
     }
 
     /**
@@ -67,9 +40,9 @@ public class AttributesTests {
      */
     @Test
     public final void testShouldValidateGetPositiveAttributeModifier() {
-	Attributes attributes = new Attributes(this.attributesValues);
+	Attributes attributes = new Attributes(getAttributes());
 
-	assertEquals(1, attributes.getAttributeModifier(AttributesNames.CONSTITUTION));
+	assertEquals(TWO, attributes.getAttributeModifier(AttributesNames.CONSTITUTION));
     }
 
     /**
@@ -77,7 +50,7 @@ public class AttributesTests {
      */
     @Test
     public final void testShouldValidateGetNegativeAttributeModifier() {
-	Attributes attributes = new Attributes(this.attributesValues);
+	Attributes attributes = new Attributes(getAttributes());
 
 	assertEquals(ELEVEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.WISDOM));
     }
@@ -87,10 +60,10 @@ public class AttributesTests {
      */
     @Test
     public final void testShouldValidateSumOfValueToAttributeSpecialization() {
-	Attributes attributes = new Attributes(this.attributesValues);
+	Attributes attributes = new Attributes(getAttributes());
 
 	attributes.addAttributeValue(AttributesNames.INTELLIGENCE_LOGIC, POSITIVE);
 
-	assertEquals(SIXTEEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE_LOGIC));
+	assertEquals(EIGHTEEN_MODIFIER, attributes.getAttributeModifier(AttributesNames.INTELLIGENCE_LOGIC));
     }
 }

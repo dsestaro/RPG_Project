@@ -3,11 +3,9 @@ package br.com.sestaro.characters.commons.attributes.model.dao;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import br.com.sestaro.characters.commons.attributes.model.Attributes;
-import br.com.sestaro.characters.commons.attributes.model.values.AttributesValues;
+import br.com.sestaro.characters.dao.factory.SessionFactory;
 import br.com.sestaro.characters.dao.specialization.abstracts.ObjectDAOAbstract;
 
 /**
@@ -19,9 +17,7 @@ public class AttributesDAO extends ObjectDAOAbstract<Attributes> {
 
     @Override
     public final Attributes getById(final Long value) {
-	SessionFactory sf = new Configuration().configure().buildSessionFactory();
-	
-	Session session = sf.openSession();
+	Session session = SessionFactory.getSession();
         
 	session.beginTransaction();
         
@@ -36,9 +32,8 @@ public class AttributesDAO extends ObjectDAOAbstract<Attributes> {
     @SuppressWarnings("unchecked")
     @Override
     public final List<Attributes> getAll() {
-	SessionFactory sf = new Configuration().configure().buildSessionFactory();
 	
-	Session session = sf.openSession();
+	Session session = SessionFactory.getSession();
         
 	session.beginTransaction();
 	

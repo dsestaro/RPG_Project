@@ -1,27 +1,39 @@
 package br.com.sestaro.characters.commons.rules.attributes.dao;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.junit.Before;
 import org.junit.rules.ExternalResource;
 
+import br.com.sestaro.characters.dao.factory.SessionFactory;
+
+/**
+ * Rules to instantiate a session in tests class.
+ * 
+ * @author davidson.sestaro
+ *
+ */
 public class SessionRules extends ExternalResource {
-    private SessionFactory sessionFactory;
     private Session session;
 
+    /**
+     * Initialize all the necessary variables.
+     */
+    public SessionRules() {
+	initialConfiguration();
+    }
+    
+    /**
+     * Initialize all the necessary variables.
+     */
     @Before
     public final void initialConfiguration() {
-	sessionFactory = new Configuration().configure().buildSessionFactory();
-	session = sessionFactory.openSession();
-	Transaction transaction = session.beginTransaction();
+	session = SessionFactory.getSession();
+	session.beginTransaction();
     }
 
-    public final SessionFactory getSessionFactory() {
-	return sessionFactory;
-    }
-
+    /**
+     * @return					- Session
+     */
     public final Session getSession() {
 	return session;
     }

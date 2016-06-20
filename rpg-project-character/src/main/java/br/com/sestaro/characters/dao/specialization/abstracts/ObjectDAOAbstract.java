@@ -3,9 +3,8 @@ package br.com.sestaro.characters.dao.specialization.abstracts;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
+import br.com.sestaro.characters.dao.factory.SessionFactory;
 import br.com.sestaro.characters.dao.specialization.interfaces.IObjectDAO;
 
 /**
@@ -23,9 +22,7 @@ public abstract class ObjectDAOAbstract<T> implements IObjectDAO<T> {
      * @param value				- Record
      */
     public final void saveOrUpdate(final T value) {
-	SessionFactory sf = new Configuration().configure().buildSessionFactory();
-	
-	Session session = sf.openSession();
+	Session session = SessionFactory.getSession();
         
 	session.beginTransaction();
         session.saveOrUpdate(value);  
@@ -38,9 +35,7 @@ public abstract class ObjectDAOAbstract<T> implements IObjectDAO<T> {
      * @param value				- Record to be deleted
      */
     public final void delete(final T value) {
-	SessionFactory sf = new Configuration().configure().buildSessionFactory();
-	
-	Session session = sf.openSession();
+	Session session = SessionFactory.getSession();
         
 	session.beginTransaction();
         session.delete(value);  

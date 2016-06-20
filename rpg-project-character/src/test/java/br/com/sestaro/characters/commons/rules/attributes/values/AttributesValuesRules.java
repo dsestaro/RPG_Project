@@ -17,6 +17,11 @@ import br.com.sestaro.characters.commons.attributes.model.values.specializations
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.strength.Strength;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.Wisdom;
 
+/**
+ * Class to handle attributes values inside test cases. 
+ * 
+ * @author davidson.sestaro
+ */
 public class AttributesValuesRules extends ExternalResource {
 
     private AttributesValues attributes;
@@ -27,6 +32,9 @@ public class AttributesValuesRules extends ExternalResource {
     private Wisdom wisdom;
     private Charisma charisma;
 
+    /**
+     * Default constructor to initialize the variables.
+     */
     public AttributesValuesRules() {
 	beforeInitialTestsConfiguration();
     }
@@ -46,31 +54,52 @@ public class AttributesValuesRules extends ExternalResource {
 	this.attributes = new AttributesValues(strength, dexterity, constitution, intelligence, wisdom, charisma);
     }
 
-    public AttributesValues getAttributes() {
+    /**
+     * @return					- Get attributes values
+     */
+    public final AttributesValues getAttributes() {
 	return attributes;
     }
 
-    public Strength getStrength() {
+    /**
+     * @return					- Get Strength
+     */
+    public final Strength getStrength() {
 	return strength;
     }
 
-    public Dexterity getDexterity() {
+    /**
+     * @return					- Get Dexterity
+     */
+    public final Dexterity getDexterity() {
 	return dexterity;
     }
 
-    public Constitution getConstitution() {
+    /**
+     * @return					- Get Constitution
+     */
+    public final Constitution getConstitution() {
 	return constitution;
     }
 
-    public Intelligence getIntelligence() {
+    /**
+     * @return					- Get Intelligence
+     */
+    public final Intelligence getIntelligence() {
 	return intelligence;
     }
 
-    public Wisdom getWisdom() {
+    /**
+     * @return					- Get Wisdom
+     */
+    public final Wisdom getWisdom() {
 	return wisdom;
     }
 
-    public Charisma getCharisma() {
+    /**
+     * @return					- Get Charisma
+     */
+    public final Charisma getCharisma() {
 	return charisma;
     }
 }
