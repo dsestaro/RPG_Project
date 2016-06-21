@@ -17,97 +17,116 @@ import br.com.sestaro.characters.commons.attributes.model.values.specializations
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.Wisdom;
 
 /**
- * Class that group all the attributes and give the methods to access their values.
+ * Class that group all the attributes and give the methods to access their
+ * values.
  * 
  * @author davidson.sestaro
  */
 @Entity
 public class AttributesValues {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @OneToOne(targetEntity = Strength.class)
-  @Cascade(CascadeType.ALL)
-	private Strength strength;
-  
-  @OneToOne(targetEntity = Dexterity.class)
-  @Cascade(CascadeType.ALL)
-	private Dexterity dexterity;
-  
-  @OneToOne(targetEntity = Constitution.class)
-  @Cascade(CascadeType.ALL)
-	private Constitution constitution;
-  
-  @OneToOne(targetEntity = Intelligence.class)
-  @Cascade(CascadeType.ALL)
-	private Intelligence intelligence;
-  
-  @OneToOne(targetEntity = Wisdom.class)
-  @Cascade(CascadeType.ALL)
-	private Wisdom wisdom;
-  
-  @OneToOne(targetEntity = Charisma.class)
-  @Cascade(CascadeType.ALL)
-	private Charisma charisma;
-	
-	/**
-	 * @param value1                                         - Strength
-	 * @param value2                                         - Dexterity
-	 * @param value3                                         - Constitution
-	 * @param value4                                         - Intelligence
-	 * @param value5                                         - Wisdom
-	 * @param value6                                         - Charisma
-	 */
-	public AttributesValues(final Strength value1, final Dexterity value2, final Constitution value3, 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne(targetEntity = Strength.class)
+    @Cascade(CascadeType.ALL)
+    private Strength strength;
+
+    @OneToOne(targetEntity = Dexterity.class)
+    @Cascade(CascadeType.ALL)
+    private Dexterity dexterity;
+
+    @OneToOne(targetEntity = Constitution.class)
+    @Cascade(CascadeType.ALL)
+    private Constitution constitution;
+
+    @OneToOne(targetEntity = Intelligence.class)
+    @Cascade(CascadeType.ALL)
+    private Intelligence intelligence;
+
+    @OneToOne(targetEntity = Wisdom.class)
+    @Cascade(CascadeType.ALL)
+    private Wisdom wisdom;
+
+    @OneToOne(targetEntity = Charisma.class)
+    @Cascade(CascadeType.ALL)
+    private Charisma charisma;
+
+    /**
+     * @param value1
+     *            - Strength
+     * @param value2
+     *            - Dexterity
+     * @param value3
+     *            - Constitution
+     * @param value4
+     *            - Intelligence
+     * @param value5
+     *            - Wisdom
+     * @param value6
+     *            - Charisma
+     */
+    public AttributesValues(final Strength value1, final Dexterity value2, final Constitution value3,
 	    final Intelligence value4, final Wisdom value5, final Charisma value6) {
-		this.strength = value1;
-		this.dexterity = value2;
-		this.constitution = value3;
-		this.intelligence = value4;
-		this.wisdom = value5;
-		this.charisma = value6;
-	}
-	
-	/**
-	 * @return                                               - Return the strength
-	 */
-	public final Strength getStrength() {
-		return strength;
-	}
-	
-	/**
-   * @return                                               - Return the dexterity
-   */
-	public final Dexterity getDexterity() {
-		return dexterity;
-	}
-	
-	/**
-   * @return                                               - Return the constitution
-   */
-	public final Constitution getConstitution() {
-		return constitution;
-	}
-	
-	/**
-   * @return                                               - Return the intelligence
-   */
-	public final Intelligence getIntelligence() {
-		return intelligence;
-	}
-	
-	/**
-   * @return                                               - Return the wisdom
-   */
-	public final Wisdom getWisdom() {
-		return wisdom;
-	}
-	
-	/**
-   * @return                                               - Return the charisma
-   */
-	public final Charisma getCharisma() {
-		return charisma;
-	}
+	this.strength = value1;
+	this.dexterity = value2;
+	this.constitution = value3;
+	this.intelligence = value4;
+	this.wisdom = value5;
+	this.charisma = value6;
+    }
+
+    /**
+     * Constructor for hibernate use.
+     */
+    public AttributesValues() {
+	this.strength = new Strength();
+	this.dexterity = new Dexterity();
+	this.constitution = new Constitution();
+	this.intelligence = new Intelligence();
+	this.wisdom = new Wisdom();
+	this.charisma = new Charisma();
+    }
+
+    /**
+     * @return - Return the strength
+     */
+    public final Strength getStrength() {
+	return strength;
+    }
+
+    /**
+     * @return - Return the dexterity
+     */
+    public final Dexterity getDexterity() {
+	return dexterity;
+    }
+
+    /**
+     * @return - Return the constitution
+     */
+    public final Constitution getConstitution() {
+	return constitution;
+    }
+
+    /**
+     * @return - Return the intelligence
+     */
+    public final Intelligence getIntelligence() {
+	return intelligence;
+    }
+
+    /**
+     * @return - Return the wisdom
+     */
+    public final Wisdom getWisdom() {
+	return wisdom;
+    }
+
+    /**
+     * @return - Return the charisma
+     */
+    public final Charisma getCharisma() {
+	return charisma;
+    }
 }

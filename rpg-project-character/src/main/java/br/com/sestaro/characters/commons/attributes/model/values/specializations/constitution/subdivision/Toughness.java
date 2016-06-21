@@ -10,47 +10,56 @@ import br.com.sestaro.characters.commons.attributes.model.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
- * Constituion subdivion. 
+ * Constituion subdivion.
  * 
  * @author davidson.sestaro
  */
 @Entity
 public class Toughness implements ISpecialization {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @Column
-	private int health;
-	private static final String NAME = "Toughness";
-	
-	/**
-   * @param value                              - Toughness value
-   */
-  public Toughness(final int value) {
-		setValue(value);
-	}
-	
-  /**
-   * @return                                   - Toughness value
-   */
-  public final int getValue() {
-		return this.health;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  /**
-   * @param value                              - Toughness value
-   */
-  public final void setValue(final int value) {
-		AttributesUtils.validateAttributeValue(value);
-		this.health = value;
-	}
+    @Column
+    private int health;
+    private static final String NAME = "Toughness";
 
-  /**
-   * @return                                   - Return the specialization name
-   */
-  public final String getName() {
-		return NAME;
-	}
+    /**
+     * @param value
+     *            - Toughness value
+     */
+    public Toughness(final int value) {
+	setValue(value);
+    }
+
+    /**
+     * Constructor for hibernate use.
+     */
+    public Toughness() {
+	setValue(0);
+    }
+
+    /**
+     * @return - Toughness value
+     */
+    public final int getValue() {
+	return this.health;
+    }
+
+    /**
+     * @param value
+     *            - Toughness value
+     */
+    public final void setValue(final int value) {
+	AttributesUtils.validateAttributeValue(value);
+	this.health = value;
+    }
+
+    /**
+     * @return - Return the specialization name
+     */
+    public final String getName() {
+	return NAME;
+    }
 }

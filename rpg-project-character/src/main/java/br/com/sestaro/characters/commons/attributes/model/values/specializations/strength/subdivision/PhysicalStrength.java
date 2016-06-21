@@ -10,47 +10,56 @@ import br.com.sestaro.characters.commons.attributes.model.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
- * Strength subdivision. 
+ * Strength subdivision.
  * 
  * @author davidson.sestaro
  */
 @Entity
 public class PhysicalStrength implements ISpecialization {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @Column
-	private int physicalStrength;
-	private static final String NAME = "Physical Strength";
-	
-	/**
-   * @param value                              - Physical strength value
-   */
-	public PhysicalStrength(final int value) {
-		setValue(value);
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	/**
-   * @return                                   - Return physical strength value
-   */
-	public final int getValue() {
-		return this.physicalStrength;
-	}
+    @Column
+    private int physicalStrength;
+    private static final String NAME = "Physical Strength";
 
-	/**
-   * @param value                              - Physical Strength value
-   */
-	public final void setValue(final int value) {
-		AttributesUtils.validateAttributeValue(value);
-		this.physicalStrength = value;
-	}
-	
-	/**
-   * @return                                   - Return the specialization name
-   */
-	public final String getName() {
-		return NAME;
-	}
+    /**
+     * @param value
+     *            - Physical strength value
+     */
+    public PhysicalStrength(final int value) {
+	setValue(value);
+    }
+
+    /**
+     * Constructor for hibernate use.
+     */
+    public PhysicalStrength() {
+	setValue(0);
+    }
+
+    /**
+     * @return - Return physical strength value
+     */
+    public final int getValue() {
+	return this.physicalStrength;
+    }
+
+    /**
+     * @param value
+     *            - Physical Strength value
+     */
+    public final void setValue(final int value) {
+	AttributesUtils.validateAttributeValue(value);
+	this.physicalStrength = value;
+    }
+
+    /**
+     * @return - Return the specialization name
+     */
+    public final String getName() {
+	return NAME;
+    }
 }

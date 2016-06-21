@@ -27,8 +27,8 @@ public abstract class ObjectDAOAbstract<T> implements IObjectDAO<T> {
 	session.beginTransaction();
         session.saveOrUpdate(value);  
         
-        session.flush();
         session.getTransaction().commit();
+        session.flush();
     }
     
     /**
@@ -40,8 +40,8 @@ public abstract class ObjectDAOAbstract<T> implements IObjectDAO<T> {
 	session.beginTransaction();
         session.delete(value);  
         
-        session.flush();
         session.getTransaction().commit();
+        session.flush();
     }
     
     /**

@@ -27,6 +27,13 @@ public class Attributes extends AttributesAbstract {
 		
 		this.setValues(value);
 	}
+	
+	/**
+	 * Constructor for hibernate use.
+	 */
+	public Attributes() {
+	    this.setValues(new AttributesValues());
+	}
 
 	/**
 	 * Given a attribute name returns its modifier.

@@ -23,8 +23,8 @@ public class AttributesDAO extends ObjectDAOAbstract<Attributes> {
         
 	Attributes attributes = (Attributes) session.get(Attributes.class, value);
         
+	session.getTransaction().commit();
         session.flush();
-        session.getTransaction().commit();
 	
         return attributes;
     }
@@ -39,8 +39,8 @@ public class AttributesDAO extends ObjectDAOAbstract<Attributes> {
 	
 	List<Attributes> attributesList = session.createCriteria(Attributes.class).list();  
         
+	session.getTransaction().commit();
         session.flush();
-        session.getTransaction().commit();
         
         return attributesList;
     }

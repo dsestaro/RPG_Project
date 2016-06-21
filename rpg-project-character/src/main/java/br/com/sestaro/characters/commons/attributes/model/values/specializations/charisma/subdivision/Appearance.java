@@ -10,48 +10,57 @@ import br.com.sestaro.characters.commons.attributes.model.utils.AttributesUtils;
 import br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.interfaces.ISpecialization;
 
 /**
- * Charisma subdivision. 
+ * Charisma subdivision.
  * 
  * @author davidson.sestaro
  */
 @Entity
 public class Appearance implements ISpecialization {
-  
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @Column
-  private int appearance;
-  
-  private static final String NAME = "Appearance";
-  
-  /**
-   * @param value                              - Appearance value
-   */
-  public Appearance(final int value) {
-    setValue(value);
-  }
 
-  /**
-   * @return                                   - Return appearance value
-   */
-  public final int getValue() {
-    return this.appearance;
-  }
-  
-  /**
-   * @param value                              - Appearance value
-   */
-  public final void setValue(final int value) {
-    AttributesUtils.validateAttributeValue(value);
-    this.appearance = value;
-  }
-  
-  /**
-   * @return                                   - Return the specialization name
-   */
-  public final String getName() {
-    return NAME;
-  }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
+    private int appearance;
+
+    private static final String NAME = "Appearance";
+
+    /**
+     * @param value
+     *            - Appearance value
+     */
+    public Appearance(final int value) {
+	setValue(value);
+    }
+
+    /**
+     * Constructor for hibernate use.
+     */
+    public Appearance() {
+	setValue(0);
+    }
+
+    /**
+     * @return - Return appearance value
+     */
+    public final int getValue() {
+	return this.appearance;
+    }
+
+    /**
+     * @param value
+     *            - Appearance value
+     */
+    public final void setValue(final int value) {
+	AttributesUtils.validateAttributeValue(value);
+	this.appearance = value;
+    }
+
+    /**
+     * @return - Return the specialization name
+     */
+    public final String getName() {
+	return NAME;
+    }
 }
