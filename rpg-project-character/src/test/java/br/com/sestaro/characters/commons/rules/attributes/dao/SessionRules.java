@@ -1,6 +1,8 @@
 package br.com.sestaro.characters.commons.rules.attributes.dao;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.rules.ExternalResource;
 
@@ -14,6 +16,7 @@ import br.com.sestaro.characters.dao.factory.SessionFactory;
  */
 public class SessionRules extends ExternalResource {
     private Session session;
+    private Transaction transaction;
 
     /**
      * Initialize all the necessary variables.
@@ -28,13 +31,28 @@ public class SessionRules extends ExternalResource {
     @Before
     public final void initialConfiguration() {
 	session = SessionFactory.getSession();
-	session.beginTransaction();
+	transaction = session.beginTransaction();
     }
 
+    /**
+     * Finalize all the necessary variables.
+     */
+    @After
+    public final void finalConfiguration() {
+	transaction.rollback();
+    }
+    
     /**
      * @return					- Session
      */
     public final Session getSession() {
 	return session;
+    }
+    
+    /**
+     * Commit the alterations made.
+     */
+    public final void commit() {
+	transaction.commit();
     }
 }
