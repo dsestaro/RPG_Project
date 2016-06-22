@@ -17,7 +17,7 @@ import br.com.sestaro.characters.commons.attributes.model.values.AttributesValue
  * @author davidson.sestaro
  */
 @MappedSuperclass
-public class AttributesAbstract {
+public abstract class AttributesAbstract {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
