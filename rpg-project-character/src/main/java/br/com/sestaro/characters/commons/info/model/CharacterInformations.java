@@ -1,7 +1,7 @@
-package br.com.sestaro.characters.commons.info;
+package br.com.sestaro.characters.commons.info.model;
 
-import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationException;
-import br.com.sestaro.characters.commons.info.values.CharacterInformationsValues;
+import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;
+import br.com.sestaro.characters.commons.info.model.values.CharacterInformationsValues;
 
 /**
  * Class to interact and manipulate the character information. 

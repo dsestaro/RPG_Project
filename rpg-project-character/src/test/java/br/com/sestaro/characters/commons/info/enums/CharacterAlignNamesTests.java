@@ -13,6 +13,8 @@ import static br.com.sestaro.characters.commons.info.enums.constants.CharacterAl
 
 import org.junit.Test;
 
+import br.com.sestaro.characters.commons.info.model.enums.CharacterAlignNames;
+
 /**
  * Class to test {@link CharacterAlignNames}.
  * 

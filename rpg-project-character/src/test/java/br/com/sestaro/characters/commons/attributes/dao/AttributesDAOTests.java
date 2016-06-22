@@ -4,9 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.rules.attributes.dao.SessionRules;
-import br.com.sestaro.characters.commons.attributes.dao.AttributesDAO;
 import br.com.sestaro.characters.commons.attributes.model.Attributes;
+import br.com.sestaro.characters.commons.rules.attributes.dao.SessionRules;
 import br.com.sestaro.characters.commons.rules.attributes.values.AttributesValuesRules;
 
 /**

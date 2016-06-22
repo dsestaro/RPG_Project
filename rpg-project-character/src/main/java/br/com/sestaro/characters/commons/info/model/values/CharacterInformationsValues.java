@@ -1,8 +1,8 @@
-package br.com.sestaro.characters.commons.info.values;
+package br.com.sestaro.characters.commons.info.model.values;
 
-import br.com.sestaro.characters.commons.info.enums.CharacterAlignNames;
-import br.com.sestaro.characters.commons.info.enums.GenderNames;
-import br.com.sestaro.characters.commons.info.utils.CharacterInformationUtils;
+import br.com.sestaro.characters.commons.info.model.enums.CharacterAlignNames;
+import br.com.sestaro.characters.commons.info.model.enums.GenderNames;
+import br.com.sestaro.characters.commons.info.model.utils.CharacterInformationUtils;
 
 /**
  * Class that will group informations about the character.

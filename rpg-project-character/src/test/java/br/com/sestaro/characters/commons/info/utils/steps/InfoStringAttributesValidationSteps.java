@@ -5,8 +5,8 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationException;
-import br.com.sestaro.characters.commons.info.utils.CharacterInformationUtils;
+import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;
+import br.com.sestaro.characters.commons.info.model.utils.CharacterInformationUtils;
 
 /**
  * Steps to test infomation inputs.

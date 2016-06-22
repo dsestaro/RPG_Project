@@ -2,7 +2,8 @@ package br.com.sestaro.characters.commons.info.utils;
 
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationException;
+import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;
+import br.com.sestaro.characters.commons.info.model.utils.CharacterInformationUtils;
 
 /**
  * Class to test {@link CharacterInformationUtils}.

@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.info.enums;
+package br.com.sestaro.characters.commons.info.model.enums;
 
 /**
  * Class that contain all character alignments names.

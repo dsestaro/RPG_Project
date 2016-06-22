@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.info.exceptions;
+package br.com.sestaro.characters.commons.info.model.exceptions;
 
 /**
  * Exception to handle invalid character information. 

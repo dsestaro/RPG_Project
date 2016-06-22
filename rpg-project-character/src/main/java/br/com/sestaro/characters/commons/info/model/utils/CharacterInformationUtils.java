@@ -1,6 +1,6 @@
-package br.com.sestaro.characters.commons.info.utils;
+package br.com.sestaro.characters.commons.info.model.utils;
 
-import br.com.sestaro.characters.commons.info.exceptions.InvalidInformationException;
+import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;
 
 /**
 * Class with methods to validate information.

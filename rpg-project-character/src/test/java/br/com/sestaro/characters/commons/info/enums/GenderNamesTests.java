@@ -6,6 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import br.com.sestaro.characters.commons.info.model.enums.GenderNames;
+
 /**
  * Class to test {@link GenderNames}.
  * 
