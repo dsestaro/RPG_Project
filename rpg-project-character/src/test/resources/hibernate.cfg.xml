@@ -20,36 +20,5 @@
 		
 		<property name="hibernate.current_session_context_class">thread</property>
 
-		<!-- Mapped Classes -->
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.Attributes"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.generalization.AttributesAbstract"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.AttributesValues"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.generalizations.interfaces.ISpecialization"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.charisma.Charisma"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.charisma.subdivision.Appearance"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.charisma.subdivision.Charm"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.constitution.Constitution"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.constitution.subdivision.Resistance"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.constitution.subdivision.Toughness"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.dexterity.Dexterity"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.dexterity.subdivision.Coordination"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.dexterity.subdivision.Speed"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.intelligence.Intelligence"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.intelligence.subdivision.Knowledge"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.intelligence.subdivision.Logic"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.strength.Strength"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.strength.subdivision.Endurance"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.strength.subdivision.PhysicalStrength"/>
-		
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.Wisdom"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.subdivision.Instinct"/>
-		<mapping class="br.com.sestaro.characters.commons.attributes.model.values.specializations.wisdom.subdivision.Intuition"/>
-
 	</session-factory>
 </hibernate-configuration>

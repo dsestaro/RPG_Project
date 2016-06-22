@@ -26,6 +26,13 @@
 			<version>0.2.0</version>
 		</dependency>
 
+		<!-- Reflection to Hibernate -->
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.9-RC1</version>
+		</dependency>
+
 		<!-- Validations -->
 		<dependency>
 			<groupId>commons-validator</groupId>
