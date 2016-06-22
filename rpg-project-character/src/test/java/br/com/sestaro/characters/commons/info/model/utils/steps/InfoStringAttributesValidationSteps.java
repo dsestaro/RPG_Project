@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.info.utils.steps;
+package br.com.sestaro.characters.commons.info.model.utils.steps;
 
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;

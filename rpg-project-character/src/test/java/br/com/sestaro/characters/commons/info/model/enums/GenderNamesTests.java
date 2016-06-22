@@ -1,12 +1,10 @@
-package br.com.sestaro.characters.commons.info.enums;
+package br.com.sestaro.characters.commons.info.model.enums;
 
-import static br.com.sestaro.characters.commons.info.enums.constants.GenderNamesPositionConstants.MAN;
-import static br.com.sestaro.characters.commons.info.enums.constants.GenderNamesPositionConstants.WOMAN;
+import static br.com.sestaro.characters.commons.info.model.enums.constants.GenderNamesPositionConstants.MAN;
+import static br.com.sestaro.characters.commons.info.model.enums.constants.GenderNamesPositionConstants.WOMAN;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import br.com.sestaro.characters.commons.info.model.enums.GenderNames;
 
 /**
  * Class to test {@link GenderNames}.

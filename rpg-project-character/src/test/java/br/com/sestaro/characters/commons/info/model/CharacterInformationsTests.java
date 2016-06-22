@@ -1,11 +1,10 @@
-package br.com.sestaro.characters.commons.info;
+package br.com.sestaro.characters.commons.info.model;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.info.model.CharacterInformations;
 import br.com.sestaro.characters.commons.info.model.enums.CharacterAlignNames;
 import br.com.sestaro.characters.commons.info.model.enums.GenderNames;
 import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;

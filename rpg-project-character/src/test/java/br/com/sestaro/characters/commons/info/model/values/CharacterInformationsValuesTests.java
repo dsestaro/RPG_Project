@@ -1,13 +1,12 @@
-package br.com.sestaro.characters.commons.info.values;
+package br.com.sestaro.characters.commons.info.model.values;
+
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import br.com.sestaro.characters.commons.info.model.enums.CharacterAlignNames;
 import br.com.sestaro.characters.commons.info.model.enums.GenderNames;
 import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;
-import br.com.sestaro.characters.commons.info.model.values.CharacterInformationsValues;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * Class to test {@link CharacterInformationsValues}.

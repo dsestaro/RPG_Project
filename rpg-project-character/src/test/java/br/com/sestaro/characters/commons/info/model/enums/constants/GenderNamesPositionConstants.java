@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.info.enums.constants;
+package br.com.sestaro.characters.commons.info.model.enums.constants;
 
 /**
  * Class with constant values for the test classes.
