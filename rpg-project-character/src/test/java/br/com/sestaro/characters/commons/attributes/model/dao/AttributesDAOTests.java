@@ -28,10 +28,35 @@ public class AttributesDAOTests extends SessionRules {
 	attributes = new Attributes(attributesValues.getAttributes());
     }
     
+    /**
+     * Save an attribute and verify if the insertion was done correctly.
+     */
     @Test
     public final void saveAnAttributeSuccessfully() {
 	attributesDAO.saveOrUpdate(attributes);
 	
 	Assert.assertEquals(attributesDAO.getById(attributes.getId()).getId(), attributes.getId());
+    }
+    
+    /**
+     * Delete an attribute and verify if the deletion was done correctly.
+     */
+    @Test
+    public final void deleteAnAttributeSuccessfully() {
+	attributesDAO.saveOrUpdate(attributes);
+	
+	Long id = attributes.getId();
+	
+	attributesDAO.delete(attributes);
+	
+	Assert.assertNull(attributesDAO.getById(id));
+    }
+    
+    /**
+     * Get all the attributes.
+     */
+    @Test
+    public final void getAllAttributesSuccessfully() {
+	Assert.assertNotNull(attributesDAO.getAll());
     }
 }
