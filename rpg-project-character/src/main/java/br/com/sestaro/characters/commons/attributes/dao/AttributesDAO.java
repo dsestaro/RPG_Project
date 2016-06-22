@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.model.dao;
+package br.com.sestaro.characters.commons.attributes.dao;
 
 import java.util.List;
 
