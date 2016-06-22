@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.rules.attributes.dao;
+package br.com.sestaro.characters.commons.rules;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;

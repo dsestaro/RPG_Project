@@ -4,30 +4,18 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.info.model.enums.CharacterAlignNames;
-import br.com.sestaro.characters.commons.info.model.enums.GenderNames;
 import br.com.sestaro.characters.commons.info.model.exceptions.InvalidInformationException;
+import br.com.sestaro.characters.commons.rules.info.values.CharacterInformationsRules;
 
 /**
  * Class to test {@link CharacterInformationsValues}.
  * 
  * @author davidson.sestaro
  */
-public class CharacterInformationsValuesTests {
-
-    private static final String NAME = "Dahlion";
-    private static final CharacterAlignNames ALIGN = CharacterAlignNames.NEUTRAL;
-    private static final String DEITY = "Va'al";
-    private static final String HOMELAND = "Kazzad";
-    private static final GenderNames GENDER = GenderNames.MAN;
-    private static final int AGE = 180;
-    private static final int HEIGHT = 90;
-    private static final int WEIGHT = 190;
-    private static final String HAIR_COLOR = "black";
-    private static final String EYES_COLOR = "green";
+public class CharacterInformationsValuesTests extends CharacterInformationsRules {
 
     /**
-     * Initial configuration.
+     * Test of instantiation.
      */
     @Test
     public final void testShouldValidateInstantiationWithAllParameters() {
@@ -40,20 +28,16 @@ public class CharacterInformationsValuesTests {
      */
     @Test
     public final void testShouldValidateInformationRetrieve() {
-	CharacterInformationsValues character = new CharacterInformationsValues(NAME, ALIGN, DEITY, HOMELAND, GENDER,
-		AGE, HEIGHT, WEIGHT, HAIR_COLOR, EYES_COLOR);
-
-	assertEquals(NAME, character.getName());
-	assertEquals(ALIGN, character.getAlignment());
-	assertEquals(DEITY, character.getDeity());
-	assertEquals(HOMELAND, character.getHomeland());
-	assertEquals(GENDER, character.getGender());
-	assertEquals(AGE, character.getAge());
-	assertEquals(HEIGHT, character.getHeight());
-	assertEquals(WEIGHT, character.getWeight());
-	assertEquals(HAIR_COLOR, character.getHairColor());
-	assertEquals(EYES_COLOR, character.getEyesColor());
-
+	assertEquals(NAME, getCharacter().getName());
+	assertEquals(ALIGN, getCharacter().getAlignment());
+	assertEquals(DEITY, getCharacter().getDeity());
+	assertEquals(HOMELAND, getCharacter().getHomeland());
+	assertEquals(GENDER, getCharacter().getGender());
+	assertEquals(AGE, getCharacter().getAge());
+	assertEquals(HEIGHT, getCharacter().getHeight());
+	assertEquals(WEIGHT, getCharacter().getWeight());
+	assertEquals(HAIR_COLOR, getCharacter().getHairColor());
+	assertEquals(EYES_COLOR, getCharacter().getEyesColor());
     }
 
     /**
