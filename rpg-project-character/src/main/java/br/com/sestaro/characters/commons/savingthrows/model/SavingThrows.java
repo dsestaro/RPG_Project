@@ -1,9 +1,9 @@
-package br.com.sestaro.characters.commons.savingthrows;
+package br.com.sestaro.characters.commons.savingthrows.model;
 
-import br.com.sestaro.characters.commons.savingthrows.enums.SavingThrowsNames;
-import br.com.sestaro.characters.commons.savingthrows.exceptions.NullSavingThrowsException;
-import br.com.sestaro.characters.commons.savingthrows.values.SavingThrowsValueHandler;
-import br.com.sestaro.characters.commons.savingthrows.values.SavingThrowsValues;
+import br.com.sestaro.characters.commons.savingthrows.model.enums.SavingThrowsNames;
+import br.com.sestaro.characters.commons.savingthrows.model.exceptions.NullSavingThrowsException;
+import br.com.sestaro.characters.commons.savingthrows.model.values.SavingThrowsValueHandler;
+import br.com.sestaro.characters.commons.savingthrows.model.values.SavingThrowsValues;
 
 /**
  * Class to interact and manipulate the saving throws values. 

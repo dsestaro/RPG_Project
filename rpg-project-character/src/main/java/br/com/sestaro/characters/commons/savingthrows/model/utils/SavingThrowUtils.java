@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.savingthrows.utils;
+package br.com.sestaro.characters.commons.savingthrows.model.utils;
 
 /**
  * Class with generic methods to handle saving throws values.

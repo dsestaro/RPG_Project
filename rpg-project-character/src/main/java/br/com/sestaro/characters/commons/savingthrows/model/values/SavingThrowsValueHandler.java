@@ -1,8 +1,8 @@
-package br.com.sestaro.characters.commons.savingthrows.values;
+package br.com.sestaro.characters.commons.savingthrows.model.values;
 
 import br.com.sestaro.characters.commons.attributes.model.exceptions.InvalidAttributeNameException;
-import br.com.sestaro.characters.commons.savingthrows.enums.SavingThrowsNames;
-import br.com.sestaro.characters.commons.savingthrows.exceptions.InvalidSavingThrowNameException;
+import br.com.sestaro.characters.commons.savingthrows.model.enums.SavingThrowsNames;
+import br.com.sestaro.characters.commons.savingthrows.model.exceptions.InvalidSavingThrowNameException;
 
 /**
  * Class to handle the values in difference saving throws.

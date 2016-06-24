@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.savingthrows.values;
+package br.com.sestaro.characters.commons.savingthrows.model.values;
 
 /**
  * Class that group all the saving throws and give the methods to access their values.

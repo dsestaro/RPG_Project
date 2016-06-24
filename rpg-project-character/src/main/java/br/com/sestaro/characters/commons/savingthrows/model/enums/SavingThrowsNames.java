@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.savingthrows.enums;
+package br.com.sestaro.characters.commons.savingthrows.model.enums;
 
 /**
  * Class that contain all saving throws names.

@@ -7,7 +7,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.savingthrows.enums.SavingThrowsNames;
+import br.com.sestaro.characters.commons.savingthrows.model.enums.SavingThrowsNames;
+import br.com.sestaro.characters.commons.savingthrows.model.values.SavingThrowsValueHandler;
+import br.com.sestaro.characters.commons.savingthrows.model.values.SavingThrowsValues;
 
 /**
  * Class to test {@link SavingThrowsValueHandler}.

@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.savingthrows.exceptions;
+package br.com.sestaro.characters.commons.savingthrows.model.exceptions;
 
 /**
  * Exception to handle invalid saving throw names. 
