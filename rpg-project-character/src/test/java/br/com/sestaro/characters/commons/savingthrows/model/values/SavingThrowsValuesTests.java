@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.savingthrows.values;
+package br.com.sestaro.characters.commons.savingthrows.model.values;
 
 import static org.junit.Assert.assertEquals;
 import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.FOUR;

@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.savingthrows.values;
+package br.com.sestaro.characters.commons.savingthrows.model.values;
 
 import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.THREE;
 import static br.com.sestaro.characters.commons.attributes.model.utils.NumericValuesConstantValues.TWO;

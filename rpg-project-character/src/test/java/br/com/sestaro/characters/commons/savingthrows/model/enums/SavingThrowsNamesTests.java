@@ -1,8 +1,8 @@
-package br.com.sestaro.characters.commons.savingthrows.enums;
+package br.com.sestaro.characters.commons.savingthrows.model.enums;
 
-import static br.com.sestaro.characters.commons.savingthrows.enums.constants.SavingThrowsNamesPosition.FORTITUDE;
-import static br.com.sestaro.characters.commons.savingthrows.enums.constants.SavingThrowsNamesPosition.REFLEX;
-import static br.com.sestaro.characters.commons.savingthrows.enums.constants.SavingThrowsNamesPosition.WILL;
+import static br.com.sestaro.characters.commons.savingthrows.model.enums.constants.SavingThrowsNamesPosition.FORTITUDE;
+import static br.com.sestaro.characters.commons.savingthrows.model.enums.constants.SavingThrowsNamesPosition.REFLEX;
+import static br.com.sestaro.characters.commons.savingthrows.model.enums.constants.SavingThrowsNamesPosition.WILL;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
