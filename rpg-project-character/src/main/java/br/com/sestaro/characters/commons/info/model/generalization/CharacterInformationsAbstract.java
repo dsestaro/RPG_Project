@@ -12,7 +12,7 @@ import org.hibernate.annotations.CascadeType;
 import br.com.sestaro.characters.commons.info.model.values.CharacterInformationsValues;
 
 /**
- * Abstract class to interact and manipulate the attribute values. 
+ * Abstract class to interact and manipulate the character information values. 
  * 
  * @author davidson.sestaro
  */
@@ -35,7 +35,7 @@ public abstract class CharacterInformationsAbstract {
   }
 
   /**
-   * @return                                   - Attribute values
+   * @return                                   - Character information values
    */
   public final CharacterInformationsValues getValues() {
     return values;
@@ -44,7 +44,7 @@ public abstract class CharacterInformationsAbstract {
   /**
    * Set the attributes values.
    * 
-   * @param value                               - Attribute values
+   * @param value                               - Character information values
    */
   public final void setValues(final CharacterInformationsValues value) {
     this.values = value;

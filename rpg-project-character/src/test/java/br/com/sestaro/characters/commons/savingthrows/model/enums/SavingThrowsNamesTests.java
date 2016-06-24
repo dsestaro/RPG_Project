@@ -7,8 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import br.com.sestaro.characters.commons.savingthrows.model.enums.SavingThrowsNames;
-
 /**
  * Class to test {@link SavingThrowsNames}.
  * 

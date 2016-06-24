@@ -30,6 +30,7 @@ public class CharacterInformationsValues {
     private CharacterAlignNames alignment;
     
     private String deity;
+    
     private String homeland;
     
     @Enumerated(EnumType.STRING)
