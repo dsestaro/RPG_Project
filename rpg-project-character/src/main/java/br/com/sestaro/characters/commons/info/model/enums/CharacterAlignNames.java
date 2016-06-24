@@ -14,7 +14,8 @@ public enum CharacterAlignNames {
 	CHAOTIC_NEUTRAL(6),
 	LAWFUL_EVIL(7),
 	NEUTRAL_EVIL(8),
-	CHAOTIC_EVIL(9);
+	CHAOTIC_EVIL(9),
+	NULL(10);
 	
 	private final int position;
 	

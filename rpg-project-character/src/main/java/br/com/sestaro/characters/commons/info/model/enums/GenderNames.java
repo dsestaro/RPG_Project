@@ -7,7 +7,8 @@ package br.com.sestaro.characters.commons.info.model.enums;
  */
 public enum GenderNames {
 	MAN(1),
-	WOMAN(2);
+	WOMAN(2),
+	NULL(3);
 	
 	private final int position;
 	
