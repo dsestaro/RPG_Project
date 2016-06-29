@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.model.facade;
+package br.com.sestaro.characters.commons.communication.facades;
 
 import static org.junit.Assert.assertEquals;
 
