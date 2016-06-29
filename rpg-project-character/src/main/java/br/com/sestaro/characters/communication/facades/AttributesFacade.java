@@ -1,4 +1,4 @@
-package br.com.sestaro.characters.commons.attributes.model.facade;
+package br.com.sestaro.characters.communication.facades;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import br.com.sestaro.characters.communication.facades.AttributesFacade;
+
 /**
  * Class to test {@link AttributesFacade}.
  * 
